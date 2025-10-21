@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-
+#include "Pregunta.h"
 
 class PantallaCaracteres {
 
@@ -16,6 +16,10 @@ public:
   ~PantallaCaracteres();
 
   void configurar();
+
+  void cargarPregunta(int linea, Pregunta nuevaPregunta);
+
+  void moverIzquierda(int linea);
 
   void actualizar();
 
@@ -34,6 +38,8 @@ public:
   uint8_t pos1 = 0;
   uint8_t pos2 = 0;
   uint8_t pos3 = 0;
+
+  int pausa = 500;
 
   LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
     direccion,

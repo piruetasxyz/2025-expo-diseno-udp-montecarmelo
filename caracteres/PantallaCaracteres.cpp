@@ -15,6 +15,33 @@ void PantallaCaracteres::configurar() {
   PantallaCaracteres::mostrarMensaje();
 }
 
+void PantallaCaracteres::cargarPregunta(int nuevaLinea, Pregunta nuevaPregunta) {
+  if (nuevaLinea == 0) {
+    PantallaCaracteres::linea0 = nuevaPregunta.texto;
+  } else if (nuevaLinea == 1) {
+    PantallaCaracteres::linea1 = nuevaPregunta.texto;
+  } else if (nuevaLinea == 2) {
+    PantallaCaracteres::linea2 = nuevaPregunta.texto;
+  } else if (nuevaLinea == 3) {
+    PantallaCaracteres::linea3 = nuevaPregunta.texto;
+  }
+}
+
+void PantallaCaracteres::moverIzquierda(int linea) {
+  if (linea == 0) {
+    pos0 = pos0 + 1;
+  } else if (linea == 1) {
+    pos1 = pos1 + 1;
+  } else if (linea == 2) {
+    pos2 = pos2 + 1;
+  } else if (linea == 3) {
+    pos3 = pos3 + 1;
+  }
+  PantallaCaracteres::mostrarMensaje();
+  delay(PantallaCaracteres::pausa);
+}
+
+
 void PantallaCaracteres::actualizar() {
   pos0 = pos0 + 1;
   pos1 = pos1 + 2;
@@ -24,7 +51,7 @@ void PantallaCaracteres::actualizar() {
   // PantallaCaracteres::lcd.autoscroll();
   // PantallaCaracteres::lcd.scrollDisplayLeft();
   // PantallaCaracteres::lcd.shiftIncrement();
-  delay(500);
+  delay(PantallaCaracteres::pausa);
 }
 
 void PantallaCaracteres::mostrarMensaje() {
