@@ -38,11 +38,12 @@ void PantallaCaracteres::cargarLinea(int linea, String nuevoTexto) {
 
 void PantallaCaracteres::moverIzquierda(int linea) {
   if (linea == 0) {
+    Serial.println(PantallaCaracteres::pos0);
     PantallaCaracteres::pos0 += 1;
-    PantallaCaracteres::pos0 = PantallaCaracteres::pos0 % PantallaCaracteres::linea0.length();
+    PantallaCaracteres::pos0 = PantallaCaracteres::pos0 % (PantallaCaracteres::linea0.length() + PantallaCaracteres::columnas - 1);
     PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::linea0.substring(pos0);
     if (PantallaCaracteres::lineaMostrar0.length() < PantallaCaracteres::columnas) {
-      PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::rellenarConEspacios(lineaMostrar0);
+      // PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::rellenarConEspacios(lineaMostrar0);
     } else {
       PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::lineaMostrar0.substring(0, PantallaCaracteres::columnas);
     }
@@ -74,8 +75,6 @@ void PantallaCaracteres::moverIzquierda(int linea) {
       PantallaCaracteres::lineaMostrar3 = PantallaCaracteres::lineaMostrar3.substring(0, PantallaCaracteres::columnas);
     }
   }
-  // PantallaCaracteres::lcd.scrollDisplayLeft();
-
   PantallaCaracteres::mostrarMensaje();
   delay(PantallaCaracteres::pausa);
 }
@@ -90,7 +89,7 @@ void PantallaCaracteres::actualizar() {
   // PantallaCaracteres::lcd.autoscroll();
   // PantallaCaracteres::lcd.scrollDisplayLeft();
   // PantallaCaracteres::lcd.shiftIncrement();
-  delay(PantallaCaracteres::pausa);
+  // delay(PantallaCaracteres::pausa);
 }
 
 void PantallaCaracteres::mostrarMensaje() {
@@ -114,7 +113,7 @@ void PantallaCaracteres::mostrarMensaje() {
 }
 
 String PantallaCaracteres::rellenarConEspacios(String original) {
-  String resultado = original;
+  String resultado = original.substring(0);
   while (original.length() <= PantallaCaracteres::columnas) {
     resultado = resultado + " ";
   }

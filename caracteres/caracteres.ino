@@ -1,5 +1,6 @@
 #include "PantallaCaracteres.h"
 #include "Preguntas.h"
+#include "Respuestas.h"
 
 PantallaCaracteres pantallita;
 

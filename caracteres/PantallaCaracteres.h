@@ -46,7 +46,7 @@ public:
   int pos2 = 0;
   int pos3 = 0;
 
-  int pausa = 100;
+  int pausa = 50;
 
   LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
     direccion,
