@@ -93,7 +93,7 @@ void PantallaCaracteres::actualizar() {
 }
 
 void PantallaCaracteres::mostrarMensaje() {
-  PantallaCaracteres::lcd.clear();
+  // PantallaCaracteres::lcd.clear();
 
   PantallaCaracteres::lcd.setCursor(0, 0);
   PantallaCaracteres::lcd.print(
