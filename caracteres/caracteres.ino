@@ -6,17 +6,20 @@ PantallaCaracteres pantallita;
 void setup() {
 
   pantallita.configurar();
-  pantallita.cargarPregunta(0, preguntas[0]);
-  pantallita.cargarPregunta(1, preguntas[1]);
-  pantallita.cargarPregunta(2, preguntas[2]);
-  pantallita.cargarPregunta(3, preguntas[3]);
+  pantallita.cargarLinea(0, preguntas[0].texto);
+  // pantallita.cargarLinea(1, preguntas[1].texto);
+  // pantallita.cargarLinea(2, preguntas[2].texto);
+  // pantallita.cargarLinea(3, preguntas[3].texto);
 }
 
 void loop() {
 
-  if (random(100) > 50) {
-    pantallita.moverIzquierda(random(4));
-  }
+  pantallita.moverIzquierda(0);
+  // if (random(100) > 90) {
+  //   Serial.println(random(100));
+  //   pantallita.moverIzquierda(random(4));
+  // }
 
   // pantallita.actualizar();
+  pantallita.mostrarMensaje();
 }

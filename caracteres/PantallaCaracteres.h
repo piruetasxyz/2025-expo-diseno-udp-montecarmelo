@@ -17,7 +17,7 @@ public:
 
   void configurar();
 
-  void cargarPregunta(int linea, Pregunta nuevaPregunta);
+  void cargarLinea(int linea, String nuevoTexto);
 
   void moverIzquierda(int linea);
 
@@ -25,21 +25,28 @@ public:
 
   void mostrarMensaje();
 
+  String rellenarConEspacios(String original);
+
   uint8_t direccion = 0x27;
-  uint8_t columnas = 20;
-  uint8_t filas = 4;
+  int columnas = 20;
+  int filas = 4;
+
+  String lineaMostrar0 = "";
+  String lineaMostrar1 = "";
+  String lineaMostrar2 = "";
+  String lineaMostrar3 = "";
 
   String linea0 = "discusiones";
   String linea1 = "contemporaneas";
   String linea2 = "del";
   String linea3 = "diseno";
 
-  uint8_t pos0 = 0;
-  uint8_t pos1 = 0;
-  uint8_t pos2 = 0;
-  uint8_t pos3 = 0;
+  int pos0 = 0;
+  int pos1 = 0;
+  int pos2 = 0;
+  int pos3 = 0;
 
-  int pausa = 500;
+  int pausa = 100;
 
   LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
     direccion,
