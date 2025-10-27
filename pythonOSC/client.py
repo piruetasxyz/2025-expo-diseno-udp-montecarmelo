@@ -20,7 +20,7 @@ lasOtrasRaspberries = [
     # 04
     "192.168.1.126",
     # 05
-    "",
+    "192.168.1.127",
     # 06
     "",
     # 07
@@ -52,4 +52,4 @@ if __name__ == "__main__":
 
             for x in range(10):
                 client.send_message("/filter", random.random())
-                time.sleep(1)
+                time.sleep(0.1)
