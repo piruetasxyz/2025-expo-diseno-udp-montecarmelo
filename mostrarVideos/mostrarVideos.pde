@@ -9,6 +9,8 @@ void setup() {
   noCursor();
 
   background(negro);
+  
+  frameRate(30);
 }
 
 void draw() {
