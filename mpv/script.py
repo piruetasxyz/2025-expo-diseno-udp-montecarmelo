@@ -5,6 +5,8 @@ import time
 import os
 import sys
 
+# ... your other code ...
+
 videosGracias = [
     "../gracias/gracias-cc-bloque-1.mp4",
     "../gracias/gracias-cc-bloque-2.mp4",
@@ -14,12 +16,13 @@ videosGracias = [
     "../gracias/gracias-cc-bloque-6.mp4"
 ]
 
-rotation_angle = 90
+# Set your desired rotation angle here (e.g., 90 for a vertical display)
+rotation_value = 90  # Use 90, 180, or 270
 
 videoGraciasSeleccionado = videosGracias[int(sys.argv[1])]
 
-# use os to call terminal to play video with mpv
-os.system(f"mpv --fullscreen --window-maximized --autofit=100% --loop {videoGraciasSeleccionado}")
+# The command line now includes the --rotate option
+os.system(f"mpv --fullscreen --window-maximized --autofit=100% --loop --rotate={rotation_value} {videoGraciasSeleccionado}")
 
 # GPIO.setmode(GPIO.BOARD)
 # GPIO.setup(8, GPIO.IN, pull_up_down=GPIO.PUD_UP)
