@@ -5,5 +5,6 @@ activate() {
 . /home/discusiones04/2025-expo-diseno-udp-montecarmelo/mpv/env/bin/activate
 }
 activate
+pip3 install python-mpv
 which python
-python script.py
+# python script.py
