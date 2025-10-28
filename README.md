@@ -21,6 +21,7 @@ gracias
 ```bash
 curl -L "https://www.dropbox.com/scl/fi/619ch4muonjt30a0bbpd3/gracias.zip?rlkey=adi5ginh75paizr9zsh9c9w6j&dl=1
 " > gracias.zip
+```
 
 ## Créditos
 
