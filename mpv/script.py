@@ -14,10 +14,10 @@ videosGracias = [
     "../gracias/gracias-cc-bloque-6.mp4"
 ]
 
-videoGraciasSeleccionado = videosGracias[sys.argv[1]]
+videoGraciasSeleccionado = videosGracias[int(sys.argv[1])]
 
 # use os to call terminal to play video with mpv
-os.system(f"mpv --fullscreen --window-maximized --autofit=100% --loop {int(videoGraciasSeleccionado)}")
+os.system(f"mpv --fullscreen --window-maximized --autofit=100% --loop {videoGraciasSeleccionado}")
 
 # GPIO.setmode(GPIO.BOARD)
 # GPIO.setup(8, GPIO.IN, pull_up_down=GPIO.PUD_UP)
