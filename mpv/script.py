@@ -5,7 +5,7 @@ import time
 import os
 
 # use os to call terminal to play video with mpv
-os.system("mpv --fullscreen --window-maximized --loop ../gracias/gracias-cc-bloque-1.mp4") 
+os.system("mpv --fullscreen --window-maximized --autofit --loop ../gracias/gracias-cc-bloque-1.mp4") 
 
 # GPIO.setmode(GPIO.BOARD)
 # GPIO.setup(8, GPIO.IN, pull_up_down=GPIO.PUD_UP)
