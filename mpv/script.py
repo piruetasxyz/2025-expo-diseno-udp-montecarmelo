@@ -3,9 +3,21 @@ import mpv
 # import RPi.GPIO as GPIO
 import time
 import os
+import sys
+
+videosGracias = [
+    "../gracias/gracias-cc-bloque-1.mp4",
+    "../gracias/gracias-cc-bloque-2.mp4",
+    "../gracias/gracias-cc-bloque-3.mp4",
+    "../gracias/gracias-cc-bloque-4.mp4",
+    "../gracias/gracias-cc-bloque-5.mp4",
+    "../gracias/gracias-cc-bloque-6.mp4"
+]
+
+videoGraciasSeleccionado = videosGracias[sys.argv[1]]
 
 # use os to call terminal to play video with mpv
-os.system("mpv --fullscreen --window-maximized --autofit=100% --loop ../gracias/gracias-cc-bloque-1.mp4") 
+os.system(f"mpv --fullscreen --window-maximized --autofit=100% --loop {videoGraciasSeleccionado}")
 
 # GPIO.setmode(GPIO.BOARD)
 # GPIO.setup(8, GPIO.IN, pull_up_down=GPIO.PUD_UP)
