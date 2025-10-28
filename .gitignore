@@ -3,3 +3,7 @@
 
 # Python
 env/
+
+# videos
+*.mp4
+*.mov
