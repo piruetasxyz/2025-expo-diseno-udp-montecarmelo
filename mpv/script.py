@@ -14,6 +14,8 @@ videosGracias = [
     "../gracias/gracias-cc-bloque-6.mp4"
 ]
 
+rotation_angle = 90
+
 videoGraciasSeleccionado = videosGracias[int(sys.argv[1])]
 
 # use os to call terminal to play video with mpv
