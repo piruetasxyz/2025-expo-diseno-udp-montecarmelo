@@ -14,7 +14,7 @@ videosGracias = [
 ]
 
 # Set your desired rotation angle here (e.g., 90 for a vertical display)
-rotation_value = 90  # Can be 90, 180, or 270
+rotation_value = 270  # Can be 90, 180, or 270
 
 # Ensure the argument is provided and valid
 if len(sys.argv) < 2:
