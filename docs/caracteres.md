@@ -38,8 +38,11 @@ Las pantallas sin modificaciones están en la dirección 0x27
 
 Veamos las otras direcciones cuando se sueldan A0, A1 o A2.
 
+Soldado A0: 0x26
 
+Soldado A1: 0x25
 
+Soldado A2: 0x23
 
 ## Cableado
 
@@ -47,6 +50,12 @@ Veamos las otras direcciones cuando se sueldan A0, A1 o A2.
 
 This library allows an Arduino board to control LiquidCrystal displays (LCDs) based on the Hitachi HD44780 (or a compatible) chipset, which is found on most text-based LCDs. The library works with in either 4- or 8-bit mode (i.e. using 4 or 8 data lines in addition to the rs, enable, and, optionally, the rw control lines).
 
-## Conexiones I2C
+Cable rojo a 5V
+
+Cable verde a GND
+
+Cable blanco a A4 SDA
+
+Cable azul a A5 SCL
 
 ## Código

@@ -4,7 +4,8 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include "Pregunta.h"
+// #include "Pregunta.h"
+#include "Textos.h"
 
 class PantallaCaracteres {
 
@@ -15,7 +16,7 @@ public:
   // destructor
   ~PantallaCaracteres();
 
-  void configurar();
+  void configurar(uint8_t direccion);
 
   void cargarLinea(int linea, String nuevoTexto);
 
