@@ -1,6 +1,7 @@
 #include "Pregunta.h"
 
-Pregunta::Pregunta(int numero, String texto) {
+Pregunta::Pregunta(int numero, String texto)
+{
   Pregunta::numero = numero;
   Pregunta::texto = "                 ";
   Pregunta::texto += "Pregunta ";
@@ -11,9 +12,12 @@ Pregunta::Pregunta(int numero, String texto) {
 
 Pregunta::~Pregunta() {}
 
-void Pregunta::agregarRespuestasEje1(int respuestas[]) {
+void Pregunta::agregarRespuestasEje1(int respuestas[])
+{
 
-  for (int i = 0; i < sizeof(respuestas) / sizeof(respuestas[0]); i++) {}
+  for (int i = 0; i < sizeof(respuestas) / sizeof(respuestas[0]); i++)
+  {
+  }
 }
 void Pregunta::agregarRespuestasEje2(int respuestas[]) {}
 void Pregunta::agregarRespuestasEje3(int respuestas[]) {}

@@ -28,10 +28,25 @@ Interfaz i2c soldado a la pantalla
 
 <https://www.prometec.net/bus-i2c/>
 
+## Conexiones I2C
+
+En esta web encontramos un tutorial sobre cómo escanear y encontrar direcciones i2c
+
+<https://learn.adafruit.com/scanning-i2c-addresses/arduino>
+
+Las pantallas sin modificaciones están en la dirección 0x27
+
+Veamos las otras direcciones cuando se sueldan A0, A1 o A2.
+
+
+
+
 ## Cableado
 
-Simplemente Arduino A4 a SDA (Datos) y A5 a SCL (Clock), más GND y alimentación. Vamos con el programa.
+ Arduino A4 a SDA (Datos) y A5 a SCL (Clock), más GND y alimentación. Vamos con el programa.
 
 This library allows an Arduino board to control LiquidCrystal displays (LCDs) based on the Hitachi HD44780 (or a compatible) chipset, which is found on most text-based LCDs. The library works with in either 4- or 8-bit mode (i.e. using 4 or 8 data lines in addition to the rs, enable, and, optionally, the rw control lines).
+
+## Conexiones I2C
 
 ## Código
