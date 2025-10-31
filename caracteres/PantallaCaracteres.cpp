@@ -1,21 +1,26 @@
 #include <Arduino.h>
 #include "PantallaCaracteres.h"
 
-// constructor
-PantallaCaracteres::PantallaCaracteres() {
+
+// destructor
+PantallaCaracteres::~PantallaCaracteres() {}
+
+void PantallaCaracteres::configurar(uint8_t direccion) {
+
+
   for (int i = 0; i < PantallaCaracteres::columnas; i++) {
     PantallaCaracteres::lineaMostrar0 += " ";
     PantallaCaracteres::lineaMostrar1 += " ";
     PantallaCaracteres::lineaMostrar2 += " ";
     PantallaCaracteres::lineaMostrar3 += " ";
   }
-}
-
-// destructor
-PantallaCaracteres::~PantallaCaracteres() {}
-
-void PantallaCaracteres::configurar(uint8_t direccion) {
   PantallaCaracteres::direccion = direccion;
+
+  // PantallaCaracteres::lcd = LiquidCrystal_I2C(
+  //   PantallaCaracteres::direccion,
+  //   PantallaCaracteres::columnas,
+  //   PantallaCaracteres::filas);
+
   PantallaCaracteres::lcd.init();
   PantallaCaracteres::lcd.backlight();
   PantallaCaracteres::lcd.noAutoscroll();
@@ -24,60 +29,38 @@ void PantallaCaracteres::configurar(uint8_t direccion) {
   // PantallaCaracteres::mostrarMensaje();
 }
 
-void PantallaCaracteres::cargarLinea(int linea, String nuevoTexto) {
-  if (linea == 0) {
-    PantallaCaracteres::linea0 = nuevoTexto;
-  } else if (linea == 1) {
-    PantallaCaracteres::linea1 = nuevoTexto;
-  } else if (linea == 2) {
-    PantallaCaracteres::linea2 = nuevoTexto;
-  } else if (linea == 3) {
-    PantallaCaracteres::linea3 = nuevoTexto;
+void PantallaCaracteres::cargarTexto(String nuevoTexto) {
+
+  int numCaracteres = nuevoTexto.length();
+
+  PantallaCaracteres::lineaMostrar1 = " ";
+  PantallaCaracteres::lineaMostrar2 = " ";
+  PantallaCaracteres::lineaMostrar3 = " ";
+
+  if (numCaracteres < 20) {
+    PantallaCaracteres::lineaMostrar0 = nuevoTexto.substring(0, numCaracteres);
+  } else {
+    PantallaCaracteres::lineaMostrar0 = nuevoTexto.substring(0, 0 + 20);
+
+    if (numCaracteres < 40) {
+      PantallaCaracteres::lineaMostrar1 = nuevoTexto.substring(20, numCaracteres);
+    } else {
+      PantallaCaracteres::lineaMostrar1 = nuevoTexto.substring(20, 20 + 20);
+
+      if (numCaracteres < 60) {
+        PantallaCaracteres::lineaMostrar2 = nuevoTexto.substring(40, numCaracteres);
+      } else {
+        PantallaCaracteres::lineaMostrar2 = nuevoTexto.substring(40, 40 + 20);
+        if (numCaracteres < 80) {
+          PantallaCaracteres::lineaMostrar3 = nuevoTexto.substring(60, numCaracteres);
+        } else {
+          PantallaCaracteres::lineaMostrar3 = nuevoTexto.substring(60, 40 + 20);
+        }
+      }
+    }
   }
 }
 
-void PantallaCaracteres::moverIzquierda(int linea) {
-  if (linea == 0) {
-    Serial.println(PantallaCaracteres::pos0);
-    PantallaCaracteres::pos0 += 1;
-    PantallaCaracteres::pos0 = PantallaCaracteres::pos0 % (PantallaCaracteres::linea0.length() + PantallaCaracteres::columnas - 1);
-    PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::linea0.substring(pos0);
-    if (PantallaCaracteres::lineaMostrar0.length() < PantallaCaracteres::columnas) {
-      // PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::rellenarConEspacios(lineaMostrar0);
-    } else {
-      PantallaCaracteres::lineaMostrar0 = PantallaCaracteres::lineaMostrar0.substring(0, PantallaCaracteres::columnas);
-    }
-  } else if (linea == 1) {
-    PantallaCaracteres::pos1 += 1;
-    PantallaCaracteres::pos1 = PantallaCaracteres::pos1 % PantallaCaracteres::linea1.length();
-    PantallaCaracteres::lineaMostrar1 = PantallaCaracteres::linea1.substring(pos1);
-    if (PantallaCaracteres::lineaMostrar1.length() < PantallaCaracteres::columnas) {
-      PantallaCaracteres::lineaMostrar1 = PantallaCaracteres::rellenarConEspacios(lineaMostrar1);
-    } else {
-      PantallaCaracteres::lineaMostrar1 = PantallaCaracteres::lineaMostrar1.substring(0, PantallaCaracteres::columnas);
-    }
-  } else if (linea == 2) {
-    PantallaCaracteres::pos2 += 1;
-    PantallaCaracteres::pos2 = PantallaCaracteres::pos2 % PantallaCaracteres::linea2.length();
-    PantallaCaracteres::lineaMostrar2 = PantallaCaracteres::linea2.substring(pos2);
-    if (PantallaCaracteres::lineaMostrar2.length() < PantallaCaracteres::columnas) {
-      PantallaCaracteres::lineaMostrar2 = PantallaCaracteres::rellenarConEspacios(lineaMostrar2);
-    } else {
-      PantallaCaracteres::lineaMostrar2 = PantallaCaracteres::lineaMostrar2.substring(0, PantallaCaracteres::columnas);
-    }
-  } else if (linea == 3) {
-    PantallaCaracteres::pos3 += 1;
-    PantallaCaracteres::pos3 = PantallaCaracteres::pos3 % PantallaCaracteres::linea3.length();
-    PantallaCaracteres::lineaMostrar3 = PantallaCaracteres::linea3.substring(pos3);
-    if (PantallaCaracteres::lineaMostrar3.length() < PantallaCaracteres::columnas) {
-      PantallaCaracteres::lineaMostrar3 = PantallaCaracteres::rellenarConEspacios(lineaMostrar3);
-    } else {
-      PantallaCaracteres::lineaMostrar3 = PantallaCaracteres::lineaMostrar3.substring(0, PantallaCaracteres::columnas);
-    }
-  }
-  PantallaCaracteres::mostrarMensaje();
-  delay(PantallaCaracteres::pausa);
-}
 
 void PantallaCaracteres::actualizar() {
   // pos0 = pos0 + 1;
@@ -97,6 +80,7 @@ void PantallaCaracteres::mostrarMensaje() {
   PantallaCaracteres::lcd.setCursor(0, 0);
   PantallaCaracteres::lcd.print(
     PantallaCaracteres::lineaMostrar0);
+
 
   PantallaCaracteres::lcd.setCursor(0, 1);
   PantallaCaracteres::lcd.print(

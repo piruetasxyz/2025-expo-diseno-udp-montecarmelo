@@ -4,23 +4,28 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-// #include "Pregunta.h"
 #include "Textos.h"
 
 class PantallaCaracteres {
 
+private:
+  LiquidCrystal_I2C lcd;
+
 public:
   // constructor
-  PantallaCaracteres();
+  PantallaCaracteres(uint8_t direccion, int columnas, int filas): lcd(direccion, columnas, filas) {}
+
+  // Graph(int _count, int _spacing, int _chart_width) :
+  //   count(_count),
+  //   spacing(_spacing),
+  //   width((_chart_width - (_count - 1) * _spacing) / _count) {}
 
   // destructor
   ~PantallaCaracteres();
 
   void configurar(uint8_t direccion);
 
-  void cargarLinea(int linea, String nuevoTexto);
-
-  void moverIzquierda(int linea);
+  void cargarTexto(String nuevoTexto);
 
   void actualizar();
 
@@ -28,7 +33,7 @@ public:
 
   String rellenarConEspacios(String original);
 
-  uint8_t direccion = 0x27;
+  uint8_t direccion = 0x25;
   int columnas = 20;
   int filas = 4;
 
@@ -49,10 +54,12 @@ public:
 
   int pausa = 10;
 
-  LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
-    direccion,
-    columnas,
-    filas);
+  Textos textos;
+
+  // LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
+  //   direccion,
+  //   columnas,
+  //   filas);
 };
 
 #endif
