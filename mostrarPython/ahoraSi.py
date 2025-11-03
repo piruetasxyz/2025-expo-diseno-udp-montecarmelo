@@ -25,12 +25,14 @@ for video in range(len(listaVideos)):
                 time.sleep(listaVideosDuraciones[video])
             except Exception as e:
                 print("Error al reproducir el video en bucle:", e)
+                continue
     else:
         try:
             comando = comandoPrefijo + listaVideos[video] + comandoSufijo
             os.system(comando)
         except Exception as e:
             print("Error al reproducir el video:", e)
+            continue
 
 # instancia = crearInstance()
 # player = crearPlayer(instancia)
