@@ -2,6 +2,7 @@ void setup() {
   size(800, 600);
   //background(255);
   fill(255);
+  textSize(32);
 }
 
 void draw() {
@@ -9,8 +10,16 @@ void draw() {
   int s = second();  // Values from 0 - 59
   int m = minute();  // Values from 0 - 59
   int h = hour();    // Values from 0 - 23
-  textSize(32);
-  text(h, 50*width/100, 30*height/100);
-  text(m, 50*width/100, 40*height/100);
-  text(s, 50*width/100, 50*height/100);
+
+
+  // Apply transformations
+  pushMatrix();
+  translate(width/2, height/2); // Move the origin to the center
+  rotate(radians(90)); // Rotate by 90 degrees
+
+  text(h, 0, -15* height/100);
+  text(m, 0, 0*height/100);
+  text(s, 0, 15*height/100);
+
+  popMatrix();
 }
