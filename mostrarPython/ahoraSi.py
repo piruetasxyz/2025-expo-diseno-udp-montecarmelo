@@ -14,7 +14,7 @@ listaVideos = ["placeholder", "085", "097"]
 # Duraciones en segundos para cada video
 listaVideosDuraciones = [5, 30, 57]
 
-repeticionesMax = 5
+repeticionesMax = 3
 isLooping = True
 
 for video in range(len(listaVideos)):
@@ -26,7 +26,7 @@ for video in range(len(listaVideos)):
                 time.sleep(1.05 * listaVideosDuraciones[video])
             except Exception as e:
                 print("Error al reproducir el video en bucle:", e)
-                isLooping = False
+                # isLooping = False
                 continue
         # kill process
         os.system("vlc::quit")
