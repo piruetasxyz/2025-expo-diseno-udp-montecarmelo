@@ -220,6 +220,10 @@ gracias
 curl -L "https://www.dropbox.com/scl/fi/619ch4muonjt30a0bbpd3/gracias.zip?rlkey=adi5ginh75paizr9zsh9c9w6j&dl=1" > gracias.zip
 ```
 
+```bash
+curl -L "https://www.dropbox.com/scl/fo/3r1fue255qoz44qeycqkr/AHjgOFN2GZxVBgKXyr9SPpU?rlkey=kvpz4wgsz4n6bd4h4r3g8mo7j&st=uw3acjb8&dl=1" > respuestas.zip
+```
+
 ## Créditos
 
 Contenidos por Escuela de Diseño UDP.
