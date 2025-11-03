@@ -52,14 +52,15 @@ videoActual = 0
 listaVideos = ["085", "097"]
 
 # crear player
-player = vlc.Instance('--fullscreen').media_player_new()
+# player = vlc.Instance('--fullscreen').media_player_new()
+
+player = None
 
 while True:
 
-    if player is not None and player.is_playing():
-
-        # crear player
+    if player is None:
         player = vlc.Instance('--fullscreen').media_player_new()
+    else: 
         direccion = './../data/' + listaVideos[videoActual] + '.mp4'
         media = vlc.Instance().media_new(direccion)
         player.set_media(media)
@@ -68,7 +69,10 @@ while True:
             player.play()
         except Exception as e:
             print("Error al reproducir el video:", e)
+            player = None
 
-    else:
+    if player.is_playing() is False:
+        player.stop()
+        player = None
         videoActual = (videoActual + 1) % len(listaVideos)
         time.sleep(1)
