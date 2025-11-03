@@ -15,9 +15,10 @@ listaVideos = ["placeholder", "085", "097"]
 listaVideosDuraciones = [5, 30, 57]
 
 repeticionesMax = 5
+isLooping = True
 
 for video in range(len(listaVideos)):
-    if video == 0:
+    if video == 0 and isLooping is False:
         for i in range(repeticionesMax):
             comando = comandoPrefijo + listaVideos[video] + comandoSufijo
             try:
@@ -25,6 +26,7 @@ for video in range(len(listaVideos)):
                 time.sleep(listaVideosDuraciones[video])
             except Exception as e:
                 print("Error al reproducir el video en bucle:", e)
+                isLooping = False
                 continue
     else:
         try:
