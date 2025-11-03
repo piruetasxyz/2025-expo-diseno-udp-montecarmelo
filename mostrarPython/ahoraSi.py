@@ -22,7 +22,7 @@ for video in range(len(listaVideos)):
         for i in range(repeticionesMax):
             try:
                 os.system(comando)
-                time.sleep(0.02 * listaVideosDuraciones[video])
+                # time.sleep(0.02 * listaVideosDuraciones[video])
             except Exception as e:
                 print("Error al reproducir el video en bucle:", e)
                 # isLooping = False
