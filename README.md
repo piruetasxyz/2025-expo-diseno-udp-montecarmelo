@@ -98,6 +98,74 @@ flowchart LR
     arduino3 --> pantallasArduino3
 ```
 
+```mermaid
+---
+config:
+  layout: dagre
+  theme: mc
+title: Pantallas de caracteres - todos los ejes
+---
+flowchart LR
+  subgraph subGraph2["eje 3"]
+        pantallasArduino11["Caracteres-eje-3-1
+                        Caracteres-eje-3-2
+                        Caracteres-eje-3-3
+                        Caracteres-eje-3-4"]
+        arduino11["Arduino-eje-3-numero-1"]
+        pantallasArduino12["Caracteres-eje-3-5
+                        Caracteres-eje-3-6
+                        Caracteres-eje-3-7"]
+        arduino12["Arduino-eje-3-numero-2"]
+        pantallasArduino13["Caracteres-eje-3-8
+                        Caracteres-eje-3-9
+                        Caracteres-eje-3-10"]
+        arduino13["Arduino-eje-3-numero-3"]
+  end
+  subgraph subGraph1["eje 2"]
+        pantallasArduino21["Caracteres-eje-2-1
+                        Caracteres-eje-2-2
+                        Caracteres-eje-2-3
+                        Caracteres-eje-2-4"]
+        arduino21["Arduino-eje-2-numero-1"]
+        pantallasArduino22["Caracteres-eje-2-5
+                        Caracteres-eje-2-6
+                        Caracteres-eje-2-7"]
+        arduino22["Arduino-eje-2-numero-2"]
+        pantallasArduino23["Caracteres-eje-2-8
+                        Caracteres-eje-2-9
+                        Caracteres-eje-2-10"]
+        arduino23["Arduino-eje-2-numero-3"]
+  end
+  subgraph subGraph0["eje 1"]
+  arduino31["Arduino-eje-1-numero-1"]
+  arduino32["Arduino-eje-1-numero-2"]
+  arduino33["Arduino-eje-1-numero-3"]
+  pantallasArduino31["Caracteres-eje-1-1
+                      Caracteres-eje-1-2
+                      Caracteres-eje-1-3
+                      Caracteres-eje-1-4"]
+        
+  pantallasArduino32["Caracteres-eje-1-5
+                      Caracteres-eje-1-6
+                      Caracteres-eje-1-7"]
+        
+  pantallasArduino33["Caracteres-eje-1-8
+                      Caracteres-eje-1-9
+                      Caracteres-eje-1-10"]
+        
+  end
+  
+    arduino21 --> pantallasArduino21
+    arduino22 --> pantallasArduino22
+    arduino23 --> pantallasArduino23
+    arduino31 --> pantallasArduino31
+    arduino32 --> pantallasArduino32
+    arduino33 --> pantallasArduino33
+    arduino11 --> pantallasArduino11
+    arduino12 --> pantallasArduino12
+    arduino13 --> pantallasArduino13
+```
+
 ## Hardware para pantallas de caracteres
 
 Las pantallas de caracteres son Pantalla LCD Verde 20x04 2004 con i2c <https://afel.cl/products/pantalla-lcd-verde-20x04-2004-con-i2c>
