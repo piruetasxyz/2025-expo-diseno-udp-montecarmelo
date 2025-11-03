@@ -2,16 +2,16 @@
 import os
 import time
 
-
 # comandoPrefijo = "cvlc  --loop --fulscreen --no-sub-autodetect-file './../data/"
 comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --play-and-exit './../data/"
+comandoPrefijoLoop = "vlc --fullscreen --no-sub-autodetect-file --play-and-exit --loop './../data/"
 
 comandoSufijo = ".mp4'"
 
-listaVideos = ["085", "097"]
+listaVideos = ["placeholder", "085", "097"]
 
-for video in listaVideos:
-    comando = comandoPrefijo + video + comandoSufijo
+for video in range(len(listaVideos)):
+    comando = comandoPrefijo + listaVideos[video] + comandoSufijo
     os.system(comando)
 
 
