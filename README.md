@@ -65,21 +65,6 @@ end
 
 ### Preguntas en pantalla de caracteres
 
-```mermaid
----
-config:
-  layout: dagre
-title: Diagrama de estados, caracteres
----
-stateDiagram
-  direction TB
-  estadoApagada --> estadoMostrar: Arduino se prende
-  estadoMostrar --> estadoApagada: Arduino se apaga
-  estadoApagada: Apagada
-  estadoMostrar: Muestra pregunta
-
-```
-
 Eje 1:
 
 1. El diseño especulativo ensaya futuros que cuestionan lo existente
@@ -120,6 +105,20 @@ Eje 3
 10. La tecnología no es neutra, es política
 
 ## Pantallas de caracteres
+
+```mermaid
+---
+config:
+  layout: dagre
+title: Diagrama de estados, caracteres
+---
+stateDiagram
+  direction TB
+  estadoApagada --> estadoMostrar: Arduino se prende
+  estadoMostrar --> estadoApagada: Arduino se apaga
+  estadoApagada: Apagada
+  estadoMostrar: Muestra pregunta
+```
 
 Cada eje tiene 3 Arduino, numerados del 1 a 3, que se encargan de las siguientes frases:
 
@@ -234,7 +233,7 @@ flowchart LR
     arduino13 --> pantallasArduino13
 ```
 
-## Hardware para pantallas de caracteres
+### Hardware para pantallas de caracteres
 
 Las pantallas de caracteres son Pantalla LCD Verde 20x04 2004 con i2c <https://afel.cl/products/pantalla-lcd-verde-20x04-2004-con-i2c>
 
@@ -262,15 +261,43 @@ Cada pantalla de caracteres se conecta a 2 pines en Arduino, la patita de datos 
 - Cable blanco a A4 SDA
 - Cable azul a A5 SCL
 
-## Software de pantallas de caracteres
+### Software de pantallas de caracteres
 
-### Computadores con pantallas de 15 pulgadas
+## Pantallas chicas con Raspberry Pi
 
-### Microcontroladores con pantallas de 4 x 20 caracteres
+borrador
 
-## Comandos
+```mermaid
+---
+config:
+  layout: dagre
+  look: neo
+  theme: forest
+title: Diagrama de estados, chicas
+---
+stateDiagram
+  direction LR
+  estadoNegro --> estadoRefrescoPaisaje:minuto 15
+  estadoNegro --> estadoRefrescoPaisaje:minuto 30
+  estadoNegro --> estadoRefrescoPaisaje:minuto 45
+  estadoRefrescoPaisaje --> estadoNegro
+  estadoNegro --> estadoAleatorio:cada minuto excepto 00/15/30/45
+  estadoAleatorio --> chica1:quizás video
+  estadoAleatorio --> chica2:quizás video
+  estadoAleatorio --> chica3:quizás video
+  estadoAleatorio --> chica4:quizás video
+  chica1 --> estadoNegro:finVideo
+  chica2 --> estadoNegro:finVideo
+  chica3 --> estadoNegro:finVideo
+  chica4 --> estadoNegro:finVideo
+  estadoNegro:negro
+  estadoRefrescoPaisaje:refresco paisaje
+  estadoAleatorio:aleatoreidad
 
-### Base de datos
+```
+
+
+## Base de datos
 
 ```bash
 curl -L "https://dropbox.com/scl/fo/tfw5kolr5j1315hu786pc/AD96AmiWAiCZbJgoPz6h96c?rlkey=hsp57zw9aitt7uvlbi9l3hhbm&st=bud75oq0&dl=1" > dia-01.zip
