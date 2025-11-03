@@ -5,7 +5,7 @@ directorio_actual = os.getcwd()
 print("El directorio actual es:", directorio_actual)
 
 comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --play-and-exit './../data/"
-comandoSufijo = ".mp4"
+comandoSufijo = ".mp4'"
 
 listaVideos = ["085", "097"]
 
