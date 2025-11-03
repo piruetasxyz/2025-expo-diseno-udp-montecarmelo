@@ -1,3 +1,5 @@
+
+
 String comando = "vlc --video-filter 'transform' --transform-type '270' '/085.mp4'";
 
 void setup() {
