@@ -4,7 +4,7 @@ import time
 
 
 # comandoPrefijo = "cvlc  --loop --fulscreen --no-sub-autodetect-file './../data/"
-comandoPrefijo = "vlc --fullscreen  --loop --width 800 --height 600 --no-sub-autodetect-file './../data/"
+comandoPrefijo = "vlc --fullscreen --width 800 --height 600 --no-sub-autodetect-file './../data/"
 
 comandoSufijo = ".mp4'"
 
