@@ -1,50 +1,40 @@
 import vlc
 import os
-import time
-import threading
-import screeninfo
+import cv2
 
-video_file_1 = './../data/085.mp4'
-video_file_2 = './../data/097.mp4'
+# Video file paths
+video1_path = "data/085.mp4"
+video2_path = "data/097.mp4"
 
-def play_video_on_display(file_path, monitor_index, is_fullscreen=True):
-    """
-    reproduce un archivo de video especifico en un monitor determinado por su indice.
-    """
-    # obtenemos la lista de monitores disponibles
-    monitors = get_monitors()
-    if monitor_index >= len(monitors):
-        print(f"error: el indice de monitor {monitor_index} no fue encontrado.")
-        return
+# Open video captures
+cap1 = cv2.VideoCapture(video1_path)
+cap2 = cv2.VideoCapture(video2_path)
 
-    monitor = monitors[monitor_index]
-    
-    # configuramos argumentos de vlc para posicionar la ventana en el monitor correcto
-    # video-x y video-y definen la coordenada de inicio de la pantalla de destino
-    vlc_args = [
-        f'--video-x={monitor.x}',
-        f'--video-y={monitor.y}',
-        '--no-video-title-show', # opcional: oculta el titulo de la ventana
-        '--embedded-video',      # opcional: previene que los controles se separen
-    ]
+# Create named windows
+cv2.namedWindow("Monitor 1 Video")
+cv2.namedWindow("Monitor 2 Video")
 
-instance = vlc.Instance(vlc_args)
-media = instance.media_new(file_path)
-player = instance.media_player_new()
-player.set_media(media)
+# Position windows (adjust coordinates based on your monitor setup)
+# Assuming Monitor 1 is to the left of Monitor 2
+cv2.moveWindow("Monitor 1 Video", 0, 0)  # Top-left of Monitor 1
+cv2.moveWindow("Monitor 2 Video", 1920, 0) # Top-left of Monitor 2 (if Monitor 1 is 1920px wide)
 
-player.play()
+while True:
+    ret1, frame1 = cap1.read()
+    ret2, frame2 = cap2.read()
 
-player.set_fullscreen(True)
+    if not ret1 or not ret2:
+        break
 
-thread1 = threading.Thread(target=play_video_on_display, args=(video_file_1, 0))
-thread2 = threading.Thread(target=play_video_on_display, args=(video_file_2, 1))
+    cv2.imshow("Monitor 1 Video", frame1)
+    cv2.imshow("Monitor 2 Video", frame2)
 
-thread1.start()
-thread2.start()
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
-thread1.join()
-thread2.join()
+cap1.release()
+cap2.release()
+cv2.destroyAllWindows()
 
 
 # # obtener directorio actual
