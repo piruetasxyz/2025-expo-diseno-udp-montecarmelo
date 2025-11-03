@@ -11,7 +11,10 @@ comandoSufijo = ".mp4'"
 listaVideos = ["placeholder", "085", "097"]
 
 for video in range(len(listaVideos)):
-    comando = comandoPrefijo + listaVideos[video] + comandoSufijo
+    if video == 0:
+        comando = comandoPrefijoLoop + listaVideos[video] + comandoSufijo
+    else:
+        comando = comandoPrefijo + listaVideos[video] + comandoSufijo
     os.system(comando)
 
 
