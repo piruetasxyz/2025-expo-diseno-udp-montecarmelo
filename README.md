@@ -271,8 +271,6 @@ borrador
 ---
 config:
   layout: dagre
-  look: neo
-  theme: forest
 title: Diagrama de estados, chicas
 ---
 stateDiagram
@@ -293,7 +291,6 @@ stateDiagram
   estadoNegro:negro
   estadoRefrescoPaisaje:refresco paisaje
   estadoAleatorio:aleatoreidad
-
 ```
 
 
