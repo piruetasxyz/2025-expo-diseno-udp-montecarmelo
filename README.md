@@ -12,13 +12,6 @@ Cada eje tiene una lógica y hardware equivalente.
 
 ```mermaid
 flowchart LR
-    estadoInicio["inicio
-    hora en punto"]
-    estadoRefresco["refresco
-    videos alvarejo"]
-    estadoPreguntaAleatoria["preguntaAleatoria"]
-
-estadoInicio --> estadoRefresco
 
 style pantallasCaracteresEje1 fill:#ccf,stroke:#faf,stroke-width:2px,color:#fff
 style pantallasCaracteresEje2 fill:#ccf,stroke:#faf,stroke-width:2px,color:#fff
