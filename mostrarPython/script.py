@@ -70,6 +70,8 @@ def reproducirVideo(player, media):
     return player
 
 
+player = crearPlayer()
+
 while True:
 
     if player is None:
