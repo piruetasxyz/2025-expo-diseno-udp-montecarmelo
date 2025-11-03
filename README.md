@@ -2,6 +2,8 @@
 
 ## Índice
 
+- [pantallas de caracteres](#pantallas-de-caracteres)
+
 ## Contenidos en general
 
 Hay 3 ejes, numerados de 1 a 3.
@@ -49,7 +51,7 @@ Eje 3
 9. ¿Cómo podríamos, desde el diseño, proponer nuevas maneras de entender la tecnología?
 10. La tecnología no es neutra, es política
 
-## Armado pantalla de caracteres
+## Pantallas de caracteres
 
 Cada eje tiene 3 Arduino, numerados del 1 a 3, que se encargan de las siguientes frases:
 
@@ -69,6 +71,31 @@ Entonces los 9 Arduino usados son:
 8. Arduino-eje-3-numero-2
 9. Arduino-eje-3-numero-3
 
+## Hardware para pantallas de caracteres
+
+Las pantallas de caracteres son Pantalla LCD Verde 20x04 2004 con i2c <https://afel.cl/products/pantalla-lcd-verde-20x04-2004-con-i2c>
+
+Si tomamos los jumpers de izquierda a derecha, dicen A0, A1, A2, y podemos decir que sin intevenir parten en 000, y al soldar cualquiera, resulta en 1, con lo que las posibilidades son:
+
+| Jumpers | A0 | A1 | A2 | Dirección |
+| ------- | -- | -- | -- | --------- |
+| 000     | 0  | 0  | 0  | 0x27      |
+| 001     | 0  | 0  | 1  | 0x23      |
+| 010     | 0  | 1  | 0  | 0x25      |
+| 011     | 0  | 1  | 1  | Dirección |
+| 100     | 1  | 0  | 0  | 0x26      |
+| 101     | 1  | 0  | 1  | Dirección |
+| 110     | 1  | 1  | 0  | Dirección |
+| 111     | 1  | 1  | 1  | Dirección |
+
+Cada pantalla de caracteres tiene un potenciómetro con el que se regula la intensidad de la luz.
+
+Cada pantalla de caracteres se conecta a alimentación en Arduino: GND y 5V.
+
+Cada pantalla de caracteres se conecta a 2 pines en Arduino, la patita de datos SDA se conecta a A4, y la patita de clock SCL se conecta a A5.
+
+## Software de pantallas de caracteres
+
 ### Computadores con pantallas de 15 pulgadas
 
 ### Microcontroladores con pantallas de 4 x 20 caracteres
@@ -76,8 +103,6 @@ Entonces los 9 Arduino usados son:
 ## Comandos
 
 ### Base de datos
-
-dia-201
 
 ```bash
 curl -L "https://dropbox.com/scl/fo/tfw5kolr5j1315hu786pc/AD96AmiWAiCZbJgoPz6h96c?rlkey=hsp57zw9aitt7uvlbi9l3hhbm&st=bud75oq0&dl=1" > dia-01.zip
