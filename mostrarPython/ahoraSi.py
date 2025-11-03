@@ -15,19 +15,17 @@ listaVideos = ["placeholder", "085", "097"]
 listaVideosDuraciones = [5, 30, 57]
 
 repeticionesMax = 3
-isLooping = True
 
 for video in range(len(listaVideos)):
-    if video == 0 and isLooping is False:
+    if video == 0:
+        comando = comandoPrefijo + listaVideos[video] + comandoSufijo
         for i in range(repeticionesMax):
-            comando = comandoPrefijo + listaVideos[video] + comandoSufijo
             try:
                 os.system(comando)
                 time.sleep(1.05 * listaVideosDuraciones[video])
             except Exception as e:
                 print("Error al reproducir el video en bucle:", e)
                 # isLooping = False
-                continue
         # kill process
         os.system("vlc::quit")
     else:
