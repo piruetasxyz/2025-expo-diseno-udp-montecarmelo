@@ -4,21 +4,21 @@ import time
 
 # comandoPrefijo = "cvlc  --loop --fulscreen --no-sub-autodetect-file './../data/"
 comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../data/"
-comandoPrefijoLoop = "vlc --fullscreen --loop 5 --no-sub-autodetect-file --no-video-title-show --play-and-exit  './../data/"
+# comandoPrefijoLoop = "vlc --fullscreen --loop 5 --no-sub-autodetect-file --no-video-title-show --play-and-exit  './../data/"
 
 comandoSufijo = ".mp4'"
 
 listaVideos = ["placeholder", "085", "097"]
 
-# repeticionesMax = 5
-# repeticionesActual = 0
+repeticionesMax = 5
+repeticionesActual = 0
 
 for video in range(len(listaVideos)):
     if video == 0:
-        comando = comandoPrefijoLoop + listaVideos[video] + comandoSufijo
-        # repeticionesActual += 1
-        # if (repeticionesActual >= repeticionesMax):
-        #     os.system("pkill vlc")
+        comando = comandoPrefijo + listaVideos[video] + comandoSufijo
+        repeticionesActual += 1
+        if (repeticionesActual >= repeticionesMax):
+            break
     else:
         comando = comandoPrefijo + listaVideos[video] + comandoSufijo
     os.system(comando)
