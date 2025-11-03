@@ -13,19 +13,16 @@ listaVideos = ["placeholder", "085", "097"]
 listaVideosDuraciones = [5, 30, 57]
 
 repeticionesMax = 5
-repeticionesActual = 0
 
 for video in range(len(listaVideos)):
     if video == 0:
-        comando = comandoPrefijo + listaVideos[video] + comandoSufijo
-        repeticionesActual += 1
-        if (repeticionesActual >= repeticionesMax):
-            break
+        for i in range(repeticionesMax):
+            comando = comandoPrefijo + listaVideos[video] + comandoSufijo
+            os.system(comando)
+            time.sleep(listaVideosDuraciones[video])
     else:
         comando = comandoPrefijo + listaVideos[video] + comandoSufijo
-    os.system(comando)
-    time.sleep(listaVideosDuraciones[video])
-
+        os.system(comando)
 
 # instancia = crearInstance()
 # player = crearPlayer(instancia)
