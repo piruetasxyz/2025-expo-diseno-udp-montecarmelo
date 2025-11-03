@@ -26,6 +26,7 @@ while player.is_playing():
     print("Reproduciendo...")
     time.sleep(1.0)
 
+player = vlc.Instance('--fullscreen').media_player_new()
 player.set_media(media1)
 
 try:
