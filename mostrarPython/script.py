@@ -13,7 +13,10 @@ media1 = vlc.Instance().media_new('./../data/097.mp4')
 player.set_media(media0)
 
 # reproducir media
-player.play()
+try:
+    player.play()
+except Exception as e:
+    print("Error al reproducir el video:", e)
 
 # esperar a que termine la reproduccion
 time.sleep(10)  # ajustar el tiempo segun la duracion del video
@@ -24,8 +27,11 @@ while player.is_playing():
     # time.sleep(1)
 
 player.set_media(media1)
-player.play()
 
+try:
+    player.play()
+except Exception as e:
+    print("Error al reproducir el video:", e)
 
 
 # # obtener directorio actual
