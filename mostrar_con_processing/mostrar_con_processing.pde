@@ -1,10 +1,11 @@
-String comando = "vlc --video-filter \"transform\" --transform-type \"270\" \"/home/discusiones03/2025-expo-diseno-udp-montecarmelo/085.mp4\"";
+String comando = "vlc --video-filter 'transform' --transform-type '270' '/085.mp4'";
 
 void setup() {
   size(1600, 900);
   //background(255);
   fill(255);
   textSize(64);
+  launch(comando);
 }
 
 void draw() {
@@ -23,9 +24,4 @@ void draw() {
   text(s, 0, 15*height/100);
 
   popMatrix();
-}
-
-void mousePressed() {
-  launch("pwd");
-  launch(comando);
 }
