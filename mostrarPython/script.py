@@ -54,8 +54,6 @@ listaVideos = ["085", "097"]
 # crear player
 player = vlc.Instance('--fullscreen').media_player_new()
 
-player = None
-
 while True:
 
     if player.is_playing() is False:
