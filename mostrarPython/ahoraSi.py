@@ -9,6 +9,8 @@ comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-sho
 comandoSufijo = ".mp4'"
 
 listaVideos = ["placeholder", "085", "097"]
+# Duraciones en segundos para cada video
+listaVideosDuraciones = [5, 30, 57]
 
 repeticionesMax = 5
 repeticionesActual = 0
@@ -22,6 +24,7 @@ for video in range(len(listaVideos)):
     else:
         comando = comandoPrefijo + listaVideos[video] + comandoSufijo
     os.system(comando)
+    time.sleep(listaVideosDuraciones[video])
 
 
 # instancia = crearInstance()
