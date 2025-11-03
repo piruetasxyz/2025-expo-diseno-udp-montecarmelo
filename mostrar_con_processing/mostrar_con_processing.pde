@@ -1,3 +1,5 @@
+String comando = "vlc --video-filter \"transform\" --transform-type \"270\" \"./data/085.mp4\"";
+
 void setup() {
   size(1600, 900);
   //background(255);
@@ -22,4 +24,10 @@ void draw() {
   text(s, 0, 15*height/100);
 
   popMatrix();
+}
+
+void mousePressed() {
+  launch("pwd");
+  launch(comando);
+  //launch("vlc ./data/085.mp4");
 }
