@@ -10,6 +10,66 @@ Hay 3 ejes, numerados de 1 a 3.
 
 Cada eje tiene una lógica y hardware equivalente.
 
+```mermaid
+flowchart LR
+    estadoInicio["inicio
+    hora en punto"]
+    estadoRefresco["refresco
+    videos alvarejo"]
+    estadoPreguntaAleatoria["preguntaAleatoria"]
+
+estadoInicio --> estadoRefresco
+
+style pantallasCaracteresEje1 fill:#ccf,stroke:#faf,stroke-width:2px,color:#fff
+style pantallasCaracteresEje2 fill:#ccf,stroke:#faf,stroke-width:2px,color:#fff
+style pantallasCaracteresEje3 fill:#ccf,stroke:#faf,stroke-width:2px,color:#fff
+
+style pantallasChicasEje1 fill:#000000,stroke:#faf,stroke-width:2px,color:#00ff00
+style pantallasChicasEje2 fill:#000000,stroke:#faf,stroke-width:2px,color:#00ff00
+style pantallasChicasEje3 fill:#000000,stroke:#faf,stroke-width:2px,color:#00ff00
+
+style pantallasMedianasEje1 fill:#0000ff,stroke:#faf,stroke-width:2px,color:#ffffff
+style pantallasMedianasEje2 fill:#0000ff,stroke:#faf,stroke-width:2px,color:#ffffff
+style pantallasMedianasEje3 fill:#0000ff,stroke:#faf,stroke-width:2px,color:#ffffff
+
+style pantallasGrandesEje1 fill:#ff00ff,stroke:#faf,stroke-width:2px,color:#ffffff
+style pantallasGrandesEje2 fill:#ff00ff,stroke:#faf,stroke-width:2px,color:#ffffff
+style pantallasGrandesEje3 fill:#ff00ff,stroke:#faf,stroke-width:2px,color:#ffffff
+
+subgraph ejeTres ["eje 3"]
+pantallasCaracteresEje3["10x caracteres
+eje 3"]
+pantallasChicasEje3["4x chicas
+eje 3"]
+pantallasMedianasEje3["2x medianas
+eje 3"]
+pantallasGrandesEje3["1x grandes
+eje 3"]
+end
+
+subgraph ejeDos["eje 2"]
+pantallasCaracteresEje2["10x caracteres
+eje 2"]
+pantallasChicasEje2["4x chicas
+eje 2"]
+pantallasMedianasEje2["2x medianas
+eje 2"]
+pantallasGrandesEje2["1x grandes
+eje 2"]
+end
+
+subgraph ejeUno["eje 1"]
+pantallasCaracteresEje1["10x caracteres
+eje 1"]
+pantallasChicasEje1["4x chicas
+eje 1"]
+pantallasMedianasEje1["2x medianas
+eje 1"]
+pantallasGrandesEje1["1x grandes
+eje 1"]
+end
+```
+
 ### Preguntas en pantalla de caracteres
 
 Eje 1:
@@ -217,7 +277,7 @@ curl -L "https://www.dropbox.com/scl/fo/6am51z9b7pujhfbmgz0z2/AA0VGTswSzKxF1UA67
 gracias
 
 ```bash
-curl -L "https://www.dropbox.com/scl/fi/619ch4muonjt30a0bbpd3/gracias.zip?rlkey=adi5ginh75paizr9zsh9c9w6j&dl=1" > gracias.zip
+curl -L "https://www.dropbox.com/scl/fi/619ch4muonjt30a0bbpd3/gracias.zip? rlkey=adi5ginh75paizr9zsh9c9w6j&dl=1" > gracias.zip
 ```
 
 ```bash
