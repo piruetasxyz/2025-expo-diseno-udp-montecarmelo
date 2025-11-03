@@ -1,11 +1,5 @@
 # caracteres
 
-## Bill of materials
-
-Pantalla LCD Verde 20x04 2004 con i2c
-
-<https://afel.cl/products/pantalla-lcd-verde-20x04-2004-con-i2c>
-
 ## Apuntes
 
 Con esta pantalla LCD 2004 con interfaz I2C y controlador interno HD44780, podrás mostrar datos en formato alfanumérico de manera clara y nítida, lo que le añadirá un toque más profesional a tus proyectos. Además, esta pantalla es muy útil para hacer debugging o para hacer correcciones en distintos proyectos, especialmente en el manejo de sensores y el procesamiento de datos.
@@ -33,29 +27,3 @@ Interfaz i2c soldado a la pantalla
 En esta web encontramos un tutorial sobre cómo escanear y encontrar direcciones i2c
 
 <https://learn.adafruit.com/scanning-i2c-addresses/arduino>
-
-Las pantallas sin modificaciones están en la dirección 0x27
-
-Veamos las otras direcciones cuando se sueldan A0, A1 o A2.
-
-Soldado A0: 0x26
-
-Soldado A1: 0x25
-
-Soldado A2: 0x23
-
-## Cableado
-
- Arduino A4 a SDA (Datos) y A5 a SCL (Clock), más GND y alimentación. Vamos con el programa.
-
-This library allows an Arduino board to control LiquidCrystal displays (LCDs) based on the Hitachi HD44780 (or a compatible) chipset, which is found on most text-based LCDs. The library works with in either 4- or 8-bit mode (i.e. using 4 or 8 data lines in addition to the rs, enable, and, optionally, the rw control lines).
-
-Cable rojo a 5V
-
-Cable verde a GND
-
-Cable blanco a A4 SDA
-
-Cable azul a A5 SCL
-
-## Código

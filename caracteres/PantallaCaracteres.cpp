@@ -7,7 +7,6 @@ PantallaCaracteres::~PantallaCaracteres() {}
 
 void PantallaCaracteres::configurar(uint8_t direccion) {
 
-
   for (int i = 0; i < PantallaCaracteres::columnas; i++) {
     PantallaCaracteres::lineaMostrar0 += " ";
     PantallaCaracteres::lineaMostrar1 += " ";
