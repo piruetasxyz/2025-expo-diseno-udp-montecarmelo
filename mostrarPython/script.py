@@ -4,7 +4,7 @@ import os
 directorio_actual = os.getcwd()
 print("El directorio actual es:", directorio_actual)
 
-comandoPrefijo = "cvlc --fullscreen --no-sub-autodetect-file --play-and-exit './../data/"
+comandoPrefijo = "cvlc --fullscreen --no-sub-autodetect-filename --play-and-exit './../data/"
 comandoSufijo = ".mp4'"
 
 listaVideos = ["085", "097"]
