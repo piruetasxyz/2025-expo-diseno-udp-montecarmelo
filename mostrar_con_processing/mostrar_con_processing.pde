@@ -1,4 +1,4 @@
-String comando = "vlc --video-filter \"transform\" --transform-type \"270\" \"./data/085.mp4\"";
+String comando = "vlc --video-filter \"transform\" --transform-type \"270\" \"/home/discusiones03/2025-expo-diseno-udp-montecarmelo/085.mp4\"";
 
 void setup() {
   size(1600, 900);
@@ -12,7 +12,6 @@ void draw() {
   int s = second();  // Values from 0 - 59
   int m = minute();  // Values from 0 - 59
   int h = hour();    // Values from 0 - 23
-
 
   // Apply transformations
   pushMatrix();
@@ -29,5 +28,4 @@ void draw() {
 void mousePressed() {
   launch("pwd");
   launch(comando);
-  //launch("vlc ./data/085.mp4");
 }
