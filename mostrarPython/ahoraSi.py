@@ -3,7 +3,8 @@ import os
 import time
 
 # comandoPrefijo = "cvlc  --loop --fulscreen --no-sub-autodetect-file './../data/"
-comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../data/"
+# comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../data/"
+comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-pause './../data/"
 
 # comandoPrefijoLoop = "vlc --fullscreen --loop 5 --no-sub-autodetect-file --no-video-title-show --play-and-exit  './../data/"
 
