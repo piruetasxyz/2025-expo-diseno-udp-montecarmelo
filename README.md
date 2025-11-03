@@ -65,6 +65,21 @@ end
 
 ### Preguntas en pantalla de caracteres
 
+```mermaid
+---
+config:
+  layout: dagre
+title: Diagrama de estados, caracteres
+---
+stateDiagram
+  direction TB
+  estadoApagada --> estadoMostrar: Arduino se prende
+  estadoMostrar --> estadoApagada: Arduino se apaga
+  estadoApagada: Apagada
+  estadoMostrar: Muestra pregunta
+
+```
+
 Eje 1:
 
 1. El diseño especulativo ensaya futuros que cuestionan lo existente
