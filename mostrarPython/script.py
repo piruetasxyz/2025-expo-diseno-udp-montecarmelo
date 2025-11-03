@@ -78,6 +78,7 @@ instancia = crearInstance()
 player = crearPlayer(instancia)
 
 while True:
+    print(instancia, player)
 
     if player is None:
         direccion = './../data/' + listaVideos[videoActual] + '.mp4'
