@@ -1,25 +1,25 @@
-import vlc
+# import vlc
 import os
 import time
 
-# crear player
-player = vlc.Instance('--fullscreen').media_player_new()
+# # crear player
+# player = vlc.Instance('--fullscreen').media_player_new()
 
-# # crear media
-media0 = vlc.Instance().media_new('./../data/085.mp4')
-# media1 = vlc.Instance().media_new('./../data/097.mp4')
+# # # crear media
+# media0 = vlc.Instance().media_new('./../data/085.mp4')
+# # media1 = vlc.Instance().media_new('./../data/097.mp4')
 
-# # asignar media al player
-player.set_media(media0)
+# # # asignar media al player
+# player.set_media(media0)
 
-# # reproducir media
-try:
-    player.play()
-except Exception as e:
-    print("Error al reproducir el video:", e)
+# # # reproducir media
+# try:
+#     player.play()
+# except Exception as e:
+#     print("Error al reproducir el video:", e)
 
-# # esperar a que termine la reproduccion
-time.sleep(10)  # ajustar el tiempo segun la duracion del video
+# # # esperar a que termine la reproduccion
+# time.sleep(10)  # ajustar el tiempo segun la duracion del video
 
 
 # while player.is_playing():
@@ -35,19 +35,18 @@ time.sleep(10)  # ajustar el tiempo segun la duracion del video
 # except Exception as e:
 #     print("Error al reproducir el video:", e)
 
-
 # # obtener directorio actual
 # directorio_actual = os.getcwd()
 # print("El directorio actual es:", directorio_actual)
 
-# comandoPrefijo = "cvlc --fullscreen --no-sub-autodetect-file  --no-play-and-exit './../data/"
-# comandoSufijo = ".mp4'"
+comandoPrefijo = "cvlc --fullscreen --no-sub-autodetect-file  --no-play-and-exit './../data/"
+comandoSufijo = ".mp4'"
 
-# listaVideos = ["085", "097"]
+listaVideos = ["085", "097"]
 
-# for video in listaVideos:
-#     comando = comandoPrefijo + video + comandoSufijo
-#     os.system(comando)
+for video in listaVideos:
+    comando = comandoPrefijo + video + comandoSufijo
+    os.system(comando)
 
 videoActual = 0
 listaVideos = ["085", "097"]
