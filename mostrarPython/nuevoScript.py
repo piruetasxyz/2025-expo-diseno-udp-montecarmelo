@@ -1,10 +1,12 @@
 import vlc
 import time
 
-files = ['./../085.mp4','./../097.mp4'] 
+files = ['./../data/085.mp4', './../data/097.mp4'] 
 instances = []
 medias = []
 players = []
+
+
 
 for idx, fname in enumerate(files):
     print("Loading", fname)

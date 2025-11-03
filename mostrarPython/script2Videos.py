@@ -7,6 +7,8 @@ import screeninfo
 video_file_1 = './../data/085.mp4'
 video_file_2 = './../data/097.mp4'
 
+vlcs_args = None
+
 def play_video_on_display(file_path, monitor_index, is_fullscreen=True):
     """
     reproduce un archivo de video especifico en un monitor determinado por su indice.
@@ -18,7 +20,7 @@ def play_video_on_display(file_path, monitor_index, is_fullscreen=True):
         return
 
     monitor = monitors[monitor_index]
-    
+   
     # configuramos argumentos de vlc para posicionar la ventana en el monitor correcto
     # video-x y video-y definen la coordenada de inicio de la pantalla de destino
     vlc_args = [
@@ -27,6 +29,10 @@ def play_video_on_display(file_path, monitor_index, is_fullscreen=True):
         '--no-video-title-show', # opcional: oculta el titulo de la ventana
         '--embedded-video',      # opcional: previene que los controles se separen
     ]
+
+
+play_video_on_display(file_path, monitor_index, is_fullscreen=True)
+
 
 instance = vlc.Instance(vlc_args)
 media = instance.media_new(file_path)
