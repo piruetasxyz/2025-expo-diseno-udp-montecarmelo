@@ -1,8 +1,8 @@
 void setup() {
-  size(800, 600);
+  size(1600, 900);
   //background(255);
   fill(255);
-  textSize(32);
+  textSize(64);
 }
 
 void draw() {
