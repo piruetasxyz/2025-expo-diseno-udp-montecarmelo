@@ -15,7 +15,7 @@ void draw() {
   // Apply transformations
   pushMatrix();
   translate(width/2, height/2); // Move the origin to the center
-  rotate(radians(90)); // Rotate by 90 degrees
+  rotate(radians(270)); // Rotate by 90 degrees
 
   text(h, 0, -15* height/100);
   text(m, 0, 0*height/100);
