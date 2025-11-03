@@ -32,10 +32,19 @@ instance = vlc.Instance(vlc_args)
 media = instance.media_new(file_path)
 player = instance.media_player_new()
 player.set_media(media)
-    
+
 player.play()
-    
+
 player.set_fullscreen(True)
+
+thread1 = threading.Thread(target=play_video_on_display, args=(video_file_1, 0))
+thread2 = threading.Thread(target=play_video_on_display, args=(video_file_2, 1))
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
 
 
 # # obtener directorio actual
