@@ -71,6 +71,33 @@ Entonces los 9 Arduino usados son:
 8. Arduino-eje-3-numero-2
 9. Arduino-eje-3-numero-3
 
+```mermaid
+---
+title: Pantallas de caracteres - cualquier eje
+---
+flowchart LR
+    arduino1[Arduino-numero-1]
+    arduino2[Arduino-numero-2]
+    arduino3[Arduino-numero-3]
+    pantallasArduino1["`Caracteres-1
+                        Caracteres-2
+                        Caracteres-3
+                        Caracteres-4
+                        `"]
+    pantallasArduino2["`Caracteres-5
+                        Caracteres-6
+                        Caracteres-7
+                        `"]
+    pantallasArduino3["`Caracteres-8
+                        Caracteres-9
+                        Caracteres-10
+                        `"]
+
+    arduino1 --> pantallasArduino1
+    arduino2 --> pantallasArduino2
+    arduino3 --> pantallasArduino3
+```
+
 ## Hardware para pantallas de caracteres
 
 Las pantallas de caracteres son Pantalla LCD Verde 20x04 2004 con i2c <https://afel.cl/products/pantalla-lcd-verde-20x04-2004-con-i2c>
@@ -92,7 +119,12 @@ Cada pantalla de caracteres tiene un potenciómetro con el que se regula la inte
 
 Cada pantalla de caracteres se conecta a alimentación en Arduino: GND y 5V.
 
-Cada pantalla de caracteres se conecta a 2 pines en Arduino, la patita de datos SDA se conecta a A4, y la patita de clock SCL se conecta a A5.
+Cada pantalla de caracteres se conecta a 2 pines en Arduino, la patita de datos SDA se conecta a A4, y la patita de clock SCL se conecta a A5. Se sugiere
+
+- Cable rojo a 5V
+- Cable verde a GND
+- Cable blanco a A4 SDA
+- Cable azul a A5 SCL
 
 ## Software de pantallas de caracteres
 
