@@ -24,7 +24,7 @@ time.sleep(10)  # ajustar el tiempo segun la duracion del video
 while player.is_playing():
     # nothing
     print("Reproduciendo...")
-    # time.sleep(1)
+    time.sleep(1.0)
 
 player.set_media(media1)
 
