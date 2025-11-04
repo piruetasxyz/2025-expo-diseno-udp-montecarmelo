@@ -56,7 +56,7 @@ def launch_vlc(video_path, x, y, width, height):
 
 proc1 = launch_vlc(video1_path, 
                    MONITOR_1_POS[0], MONITOR_1_POS[1],
-                   MONITOR_1_RES[0]/2, MONITOR_1_RES[1]/2)
+                   MONITOR_1_RES[0]/20, MONITOR_1_RES[1]/20)
 
 
 # Pequeña pausa para que los procesos no compitan por los recursos
@@ -65,7 +65,7 @@ time.sleep(0.5)
 # Lanzar video 2 en Monitor 2
 proc2 = launch_vlc(video2_path, 
                    MONITOR_2_POS[0], MONITOR_2_POS[1],
-                   MONITOR_2_RES[0]/2, MONITOR_2_RES[1]/2)
+                   MONITOR_2_RES[0]/20, MONITOR_2_RES[1]/20)
 
 print("\nVideos lanzados en modo 'kiosk'.")
 print("Este script se quedara corriendo para mantener vivos los procesos.")
