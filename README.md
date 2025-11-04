@@ -316,6 +316,50 @@ curl -L "https://www.dropbox.com/scl/fi/619ch4muonjt30a0bbpd3/gracias.zip? rlkey
 curl -L "https://www.dropbox.com/scl/fo/3r1fue255qoz44qeycqkr/AHjgOFN2GZxVBgKXyr9SPpU?rlkey=kvpz4wgsz4n6bd4h4r3g8mo7j&st=uw3acjb8&dl=1" > respuestas.zip
 ```
 
+## python script en boot
+
+```bash
+# crear servicio en el sistema
+sudo nano /etc/systemd/system/expo.service
+```
+
+```bash
+# pegar esto en la consola
+[Unit]
+Description=Script Expo Diseno Montecarmelo (Una Sola Vez)
+After=graphical.target
+
+[Service]
+Environment=DISPLAY=:0
+User=discusiones03
+
+# Le dice a systemd que es un script que se ejecuta una vez y termina
+Type=oneshot
+
+WorkingDirectory=/home/discusiones03/2025-expo-diseno-udp-montecarmelo/mostrarPython
+
+# Ejecuta el script y descarta los mensajes de error (para el warning de audio)
+ExecStart=/bin/sh -c '/usr/bin/python3 /home/discusiones03/2025-expo-diseno-udp-montecarmelo/mostrarPython/script-v0.py 2>/dev/null'
+
+[Install]
+WantedBy=graphical.target
+```
+
+```bash
+# guardar con ctrl + X
+
+# Y para Yes
+
+# recargar sistema
+sudo systemctl daemon-reload
+
+#reiniciar el servidor (ejecutará el script)
+sudo systemctl restart expo.service
+
+# revisar el estado
+systemctl status expo.service
+```
+
 ## Créditos
 
 Contenidos por Escuela de Diseño UDP.
