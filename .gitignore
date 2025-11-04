@@ -3,6 +3,8 @@
 
 # Python
 env/
+__pycache__/
+*.pyc
 
 # videos
 *.mp4
