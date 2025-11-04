@@ -3,27 +3,43 @@
 # con python3
 # usar 2 argumentos numericos
 
+# uso
+# python3 main.py x y z
+#donde
+# x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande
+# y = eje, 1, 2, 3
+# z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4.
+
+
+
 # print("importando bibliotecas")
 import sys
-import Admin
-import Raspi
+from Admin import Admin
+from RaspiPantallaChica import RaspiPantallaChica
+from RaspiPantallaMediana import RaspiPantallaMediana
+from RaspiPantallaGrande import RaspiPantallaGrande
 
 # print(sys.argv)
 
-if len(sys.argv) == 3:
+if len(sys.argv) == 4:
     argumento1 = sys.argv[1]
     argumento2 = sys.argv[2]
+    argumento3 = sys.argv[3]
 
     if int(argumento1) == 0:
+        admin = Admin()
         print("soy raspi admin")
 
     elif int(argumento1) == 1:
+        raspiChica = RaspiPantallaChica(argumento2, 1)
         print("soy raspi pantalla chica")
 
     elif int(argumento1) == 2:
+        raspiMediana = RaspiPantallaMediana(argumento2, 1)
         print("soy raspi pantalla mediana")
 
     elif int(argumento1) == 3:
+        raspiGrande = RaspiPantallaGrande(argumento2, 1)
         print("soy raspi pantalla grande")
     else:
         print("mi argumento no tiene sentido")
