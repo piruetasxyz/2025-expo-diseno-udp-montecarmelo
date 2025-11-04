@@ -24,9 +24,8 @@ video2_path = os.path.join(base_dir, "data/placeholder.mp4")
 # Opciones de VLC para modo "kiosk" (fullscreen simulado)
 vlc_options = [              # Sin controles en pantalla (OSD)
     '--loop',                  # Repetir el video indefinidamente
-    '--no-video-title-show',   # No mostrar el título   
-    '--video-filter=transform',  
-    '--transform-type=-270',             
+    '--no-video-title-show',   # No mostrar el título    
+    '--transform-type=90',             
     '--no-video-deco',         # ¡CLAVE: Sin bordes ni título de ventana!
     '--video-on-top'           # (Opcional) Asegura que la ventana esté encima
 ]
