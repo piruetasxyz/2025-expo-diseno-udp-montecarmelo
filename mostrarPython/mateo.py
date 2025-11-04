@@ -26,7 +26,7 @@ video2_path = os.path.join(base_dir, "data/placeholder.mp4")
 vlc_options = [              # Sin controles en pantalla (OSD)
     '--loop',                  # Repetir el video indefinidamente
     '--no-video-title-show',   # No mostrar el título    
-    '--transform-type=90',             
+    # '--transform-type=90',             
     '--no-video-deco',         # ¡CLAVE: Sin bordes ni título de ventana!
     '--video-on-top'           # (Opcional) Asegura que la ventana esté encima
 ]
@@ -49,28 +49,26 @@ def launch_vlc(video_path, x, y, width, height):
         f'--width={width}',
         f'--height={height}'
     ] + vlc_options
-    
     print(f"Lanzando: {' '.join(command)}")
     # Popen ejecuta el comando en un proceso separado
     return subprocess.Popen(command)
 
-# --- Lanzar Videos ---
 
-# Lanzar video 1 en Monitor 1
 proc1 = launch_vlc(video1_path, 
-                   MONITOR_1_POS[0], MONITOR_1_POS[1], 
-                   MONITOR_1_RES[0], MONITOR_1_RES[1])
+                   MONITOR_1_POS[0], MONITOR_1_POS[1],
+                   MONITOR_1_RES[0]/2, MONITOR_1_RES[1]/2)
+
 
 # Pequeña pausa para que los procesos no compitan por los recursos
-time.sleep(0.5) 
+time.sleep(0.5)
 
 # Lanzar video 2 en Monitor 2
 proc2 = launch_vlc(video2_path, 
-                   MONITOR_2_POS[0], MONITOR_2_POS[1], 
-                   MONITOR_2_RES[0], MONITOR_2_RES[1])
+                   MONITOR_2_POS[0], MONITOR_2_POS[1],
+                   MONITOR_2_RES[0]/2, MONITOR_2_RES[1]/2)
 
 print("\nVideos lanzados en modo 'kiosk'.")
-print("Este script se quedará corriendo para mantener vivos los procesos.")
+print("Este script se quedara corriendo para mantener vivos los procesos.")
 print("Presiona Ctrl+C en esta terminal para detener ambos videos.")
 
 try:
@@ -82,7 +80,7 @@ except KeyboardInterrupt:
     print("\nCerrando procesos de VLC...")
     if proc1:
         # Pide amablemente a VLC que se cierre
-        proc1.terminate() 
+        proc1.terminate()
     if proc2:
         proc2.terminate()
     print("Listo.")
