@@ -6,8 +6,8 @@ import time
 
 # ¡IMPORTANTE! 
 # Ajusta la resolución de tus monitores aquí.
-MONITOR_1_RES = (1080, 1920)  # (ancho, alto) del Monitor 1
-MONITOR_2_RES = (1080, 1920)  # (ancho, alto) del Monitor 2
+MONITOR_1_RES = (1920, 1080)  # (ancho, alto) del Monitor 1
+MONITOR_2_RES = (1920, 1080)  # (ancho, alto) del Monitor 2
 
 # Coordenadas (x, y) de la esquina superior izquierda de cada monitor
 # Monitor 1 (principal)
