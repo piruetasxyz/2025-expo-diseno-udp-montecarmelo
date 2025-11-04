@@ -17,7 +17,7 @@ MONITOR_1_POS = (0, 0)
 MONITOR_2_POS = (MONITOR_1_RES[0], 0) # e.g., (1920, 0)
 
 # Rutas (usando tu usuario de la conversación anterior)
-base_dir = "/home/discusiones03/2025-expo-diseno-udp-montecarmelo/mostrarPython"
+base_dir = "/home/discusiones03/2025-expo-diseno-udp-montecarmelo"
 video1_path = os.path.join(base_dir, "data/085.mp4")
 video2_path = os.path.join(base_dir, "data/097.mp4")
 
