@@ -4,7 +4,7 @@ import time
 
 # --- Configuración ---
 
-# ¡IMPORTANTE! 
+# ¡IMPORTANTE!
 # Ajusta la resolución de tus monitores aquí.
 MONITOR_1_RES = (1920, 1080)  # (ancho, alto) del Monitor 1
 MONITOR_2_RES = (1920, 1080)  # (ancho, alto) del Monitor 2
@@ -14,7 +14,8 @@ MONITOR_2_RES = (1920, 1080)  # (ancho, alto) del Monitor 2
 MONITOR_1_POS = (0, 0)
 # Monitor 2 (a la derecha del 1)
 # La 'x' es el ancho del Monitor 1. La 'y' es 0.
-MONITOR_2_POS = (MONITOR_1_RES[0], 0) # e.g., (1920, 0)
+# e.g., (1920, 0)
+MONITOR_2_POS = (MONITOR_1_RES[0], 0)
 
 # Rutas (usando tu usuario de la conversación anterior)
 base_dir = "/home/discusiones01/2025-expo-diseno-udp-montecarmelo"
@@ -30,7 +31,6 @@ vlc_options = [              # Sin controles en pantalla (OSD)
     '--video-on-top'           # (Opcional) Asegura que la ventana esté encima
 ]
 
-# --- Ejecución ---
 
 def launch_vlc(video_path, x, y, width, height):
     """
@@ -81,7 +81,8 @@ except KeyboardInterrupt:
     # Si el usuario presiona Ctrl+C
     print("\nCerrando procesos de VLC...")
     if proc1:
-        proc1.terminate() # Pide amablemente a VLC que se cierre
+        # Pide amablemente a VLC que se cierre
+        proc1.terminate() 
     if proc2:
         proc2.terminate()
     print("Listo.")
