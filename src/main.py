@@ -35,7 +35,9 @@ else:
 
     if int(argumento1) == 0:
         admin = Admin()
-        print("soy raspi admin")
+        admin.crearCliente(5005)
+        admin.buclear()
+        print("soy raspi servidor")
 
     elif int(argumento1) == 1:
         raspiChica = RaspiPantallaChica(argumento2, 1)
