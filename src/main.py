@@ -5,12 +5,10 @@
 
 # uso
 # python3 main.py x y z
-#donde
+# donde
 # x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande
 # y = eje, 1, 2, 3
-# z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4.
-
-
+# z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4
 
 # print("importando bibliotecas")
 import sys
@@ -21,7 +19,16 @@ from RaspiPantallaGrande import RaspiPantallaGrande
 
 # print(sys.argv)
 
-if len(sys.argv) == 4:
+if len(sys.argv) != 4:
+    print("error en argumentos")
+    print("uso: python3 main.py x y z")
+    print("donde")
+    print("x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande")
+    print("y = eje, 1, 2, 3")
+    print("z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4")
+    sys.exit()
+
+else:
     argumento1 = sys.argv[1]
     argumento2 = sys.argv[2]
     argumento3 = sys.argv[3]
