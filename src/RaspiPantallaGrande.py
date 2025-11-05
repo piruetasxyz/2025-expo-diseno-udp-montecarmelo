@@ -1,7 +1,7 @@
-import RaspiBase
+import RaspiPantalla
 
 
-class RaspiPantallaGrande(RaspiBase.RaspiBase):
+class RaspiPantallaGrande(RaspiPantalla.RaspiPantalla):
     def __init__(self, eje, numero):
         super().__init__(eje, numero)
-        super().tamano = "grande"
+        self.tamano = "grande"

@@ -1,12 +1,10 @@
-
-import argparse
 import math
 
 from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server
 
 
-class RaspiBase:
+class RaspiPantalla:
     def __init__(self, eje, numero):
         self.eje = eje
         self.numero = numero
@@ -25,14 +23,14 @@ class RaspiBase:
             pass
 
     def handler(self):
-        self.parser = argparse.ArgumentParser()
-        self.parser.add_argument("--ip",
-                                 default="127.0.0.1",
-                                 help="The ip to listen on")
-        self.parser.add_argument("--port",
-                                 type=int, default=5005,
-                                 help="The port to listen on")
-        self.args = self.parser.parse_args()
+        # self.parser = argparse.ArgumentParser()
+        # self.parser.add_argument("--ip",
+        #                          default="127.0.0.1",
+        #                          help="The ip to listen on")
+        # self.parser.add_argument("--port",
+        #                          type=int, default=5005,
+        #                          help="The port to listen on")
+        # self.args = self.parser.parse_args()
 
         self.dispatcher = Dispatcher()
         self.dispatcher.map("/filter", print)
@@ -45,6 +43,6 @@ class RaspiBase:
                             math.log)
 
         self.server = osc_server.ThreadingOSCUDPServer(
-            (self.args.ip, self.args.port), self.dispatcher)
+            ("127.0.0.1", 5005), self.dispatcher)
         print("Serving on {}".format(self.server.server_address))
         self.server.serve_forever()

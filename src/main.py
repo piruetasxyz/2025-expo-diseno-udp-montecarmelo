@@ -41,14 +41,17 @@ else:
 
     elif int(argumento1) == 1:
         raspiChica = RaspiPantallaChica(argumento2, 1)
+        raspiChica.handler()
         print("soy raspi pantalla chica")
 
     elif int(argumento1) == 2:
         raspiMediana = RaspiPantallaMediana(argumento2, 1)
+        raspiMediana.handler()
         print("soy raspi pantalla mediana")
 
     elif int(argumento1) == 3:
         raspiGrande = RaspiPantallaGrande(argumento2, 1)
+        raspiGrande.handler()
         print("soy raspi pantalla grande")
     else:
         print("mi argumento no tiene sentido")
