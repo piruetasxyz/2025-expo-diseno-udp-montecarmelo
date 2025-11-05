@@ -7,6 +7,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "01.mp4",
+        "respuestas": {
+            "eje-1": [
+                1, 3, 4, 7
+            ],
+            "eje-2": [
+                61, 62, 63
+            ],
+            "eje-3": [
+                67, 70, 74, 75, 78, 79, 80, 81, 83, 84, 85, 86, 87, 89, 90, 93
+            ]
+        }
     },
     "2":
     {
@@ -17,6 +28,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "02.mp4",
+        "respuestas": {
+            "eje-1": [
+                1, 4, 7, 19, 20
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "3":
     {
@@ -26,6 +48,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "03.mp4",
+        "respuestas": {
+            "eje-1": [
+                12, 14, 17
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "4":
     {
@@ -35,6 +68,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "04.mp4",
+        "respuestas": {
+            "eje-1": [
+               13, 17, 18, 27, 28
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "5":
     {
@@ -44,6 +88,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "05.mp4",
+        "respuestas": {
+            "eje-1": [
+               7, 17
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "6":
     {
@@ -53,6 +108,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "06.mp4",
+        "respuestas": {
+            "eje-1": [
+                24, 25, 27, 28, 30, 31, 32, 33
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "7":
     {
@@ -62,6 +128,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "07.mp4",
+        "respuestas": {
+            "eje-1": [
+                12, 14, 15
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "8":
     {
@@ -71,6 +148,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "08.mp4",
+        "respuestas": {
+            "eje-1": [
+               8, 9, 21
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "9":
     {
@@ -80,6 +168,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "09.mp4",
+        "respuestas": {
+            "eje-1": [
+               10, 11, 17, 18, 19, 32
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "10":
     {
@@ -89,6 +188,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "10.mp4",
+        "respuestas": {
+            "eje-1": [
+                1, 21
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "11":
     {
@@ -98,6 +208,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "11.mp4",
+        "respuestas": {
+            "eje-1": [
+               1, 2, 3
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "12":
     {
@@ -107,6 +228,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "12.mp4",
+        "respuestas": {
+            "eje-1": [
+                4, 21
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "13":
     {
@@ -116,6 +248,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "13.mp4",
+        "respuestas": {
+            "eje-1": [
+                1, 2, 4, 8, 9, 18, 21, 25, 30
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "14":
     {
@@ -125,6 +268,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "14.mp4",
+        "respuestas": {
+            "eje-1": [
+                3, 10, 11, 21, 27, 28, 30
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "15":
     {
@@ -134,6 +288,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "15.mp4",
+        "respuestas": {
+            "eje-1": [
+                11, 28, 30
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "16":
     {
@@ -143,6 +308,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "16.mp4",
+        "respuestas": {
+            "eje-1": [
+               8, 9, 10, 25
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "17":
     {
@@ -152,6 +328,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "17.mp4",
+        "respuestas": {
+            "eje-1": [
+                10,
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "18":
     {
@@ -161,6 +348,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "18.mp4",
+        "respuestas": {
+            "eje-1": [
+                19, 20, 25, 27, 28, 30, 31, 32, 33
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "19":
     {
@@ -170,6 +368,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "19.mp4",
+        "respuestas": {
+            "eje-1": [
+                12, 13, 24
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "20":
     {
@@ -179,6 +388,17 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "20.mp4",
+        "respuestas": {
+            "eje-1": [
+               6, 12, 19, 20, 24, 34
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     },
     "21":
     {
@@ -188,5 +408,16 @@ preguntas = {
         ),
         "existencia": False,
         "archivo": "21.mp4",
+        "respuestas": {
+            "eje-1": [
+                13, 14, 15, 16, 23, 24
+            ],
+            "eje-2": [
+                0,
+            ],
+            "eje-3": [
+                0,
+            ]
+        }
     }
 }
