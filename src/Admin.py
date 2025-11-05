@@ -18,6 +18,7 @@ class Admin:
         print("admin detenido")
 
     def crearCliente(self, port):
+        print("tratando de crear cliente")
         self.cliente = RaspiPrincipal(port)
         print("cliente creado")
         self.cliente.enviarMensajeATodos("/admin/init", 1)

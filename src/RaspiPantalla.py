@@ -1,5 +1,5 @@
 from pythonosc.dispatcher import Dispatcher
-from pythonosc import osc_server
+# from pythonosc import osc_server
 from pythonosc.osc_server import BlockingOSCUDPServer
 
 
@@ -27,7 +27,7 @@ class RaspiPantalla:
     def handler(self):
 
         self.dispatcher = Dispatcher()
-        self.dispatcher.map("/something/*", self.print_handler)
+        self.dispatcher.map("/admin/bucle", self.print_handler)
         self.dispatcher.set_default_handler(self.default_handler)
         self.server = BlockingOSCUDPServer(("127.0.0.1", 1234), self.dispatcher)
         self.server.serve_forever()  # Blocks forever

@@ -5,20 +5,25 @@ class RaspiPrincipal:
     def __init__(self, puerto):
         self.puerto = puerto
         self.numeroDeRaspis = 128
-        self.ips = ["127.0.0.1"]
+        self.ips = ["10.30.123.162"]
         self.puertoEnviar = 1234
+        self.clientes = []
 
-        for i in range(self.numeroDeRaspis):
-            self.ips.append(
-                "192.168.0." + str(i))
+        # for i in range(self.numeroDeRaspis):
+        #     self.ips.append(
+        #         "10.30.123." + str(i))
 
-    def enviarMensaje(self, ip, etiqueta, valor):
-        client = SimpleUDPClient(ip, self.puerto)
-        client.send_message(etiqueta, valor)
+        for ip in self.ips:
+            # cliente = SimpleUDPClient(ip, self.puerto)
+            self.clientes.append(SimpleUDPClient(ip, self.puerto))
+
+    def enviarMensaje(self, cliente, etiqueta, valor):
+        cliente.send_message(etiqueta, valor)
 
     def enviarMensajeATodos(self, etiqueta, valor):
-        for ip in self.ips:
-            self.enviarMensaje(ip, etiqueta, valor)
+        for cliente in self.clientes:
+            print(cliente)
+            self.enviarMensaje(cliente, etiqueta, valor)
             print("etiqueta:" + etiqueta +
                   " valor: " + str(valor) +
-                  " enviado a " + ip)
+                  " enviado a " + "bla")
