@@ -65,7 +65,6 @@ class Admin:
             "bosque",
         ]
 
-
         # pantallasChicas muestran respuestas
         self.comportamientoPantallasChicas = [
             ["minuto 0", "nada"],

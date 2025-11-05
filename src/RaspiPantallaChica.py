@@ -9,8 +9,9 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
     def mostrarEscena(self, escena):
         print(
-            "pantalla chica, eje " + str(self.convertirComputadorHumano(self.eje)) +
+            "pantalla chica, eje " + 
+            str(self.convertirComputadorHumano(self.eje)) +
             ", numero " + str(self.convertirComputadorHumano(self.numero)) +
-            "de un maximo de " + str(self.maximoPantallas) +
+            " de un maximo de " + str(self.maximoPantallas) +
             ", escena: " + str(self.convertirComputadorHumano(escena))
             )

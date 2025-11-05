@@ -27,5 +27,5 @@ class RaspiPrincipal:
                 #       " valor: " + str(valor) +
                 #       " enviado a " + "bla")
             except Exception as e:
-                pass
+                print(e)
                 # print("pucha")
