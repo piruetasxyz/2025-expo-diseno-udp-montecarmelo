@@ -25,8 +25,7 @@ class Admin:
         self.puertoPrincipalEnviar = 1234
         self.puertoPantallasRecibir = 1234
         self.corriendo = True
-        print("admin iniciado")
-        
+
         # guion
         self.comportamientoRaspisPantallaChica = []
         self.comportamientoRaspisPantallaMediana = []
@@ -36,7 +35,7 @@ class Admin:
         self.probabilidadMostrarPantallasChicas = 0.5
         self.probabilidadMostrarPantallasMedianas = 0.3
         self.probabilidadMostrarPantallasGrandes = 0.2
-        
+
         # configuracion del sistema
         self.servidores = []
         self.numeroPantallasChicas = 10
@@ -140,13 +139,12 @@ class Admin:
         while self.corriendo:
             self.actualizarTiempo()
             if self.detectarMinutoCambio():
-                print("ojo cambio el minuto")
+                print("nuevo minuto: " + str(self.ahoraMinuto))
 
             if self.detectarHoraCambio():
-                print("ojo cambio la hora")
+                print("nueva hora: " + str(self.ahoraHora))
             # self.cliente.enviarMensajeATodos("/admin/bucle", 1)
         # self.detener()
-        
 
     def crearPrincipal(self):
         self.raspi = RaspiPrincipal(self.puertoPrincipalEnviar)
