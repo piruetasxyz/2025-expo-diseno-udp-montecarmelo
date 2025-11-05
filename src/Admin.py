@@ -57,6 +57,8 @@ class Admin:
             return True
         else:
             return False
+        
+    
 
     def buclear(self):
         self.iniciar()

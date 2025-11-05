@@ -11,6 +11,7 @@ class RaspiPantalla:
         self.parser = None
         self.server = None
         self.dispatcher = None
+        self.maximoPantallas = None
 
     def print_handler(self, unused_addr, args):
         print(f"{unused_addr}: {args}")
@@ -37,3 +38,12 @@ class RaspiPantalla:
         #     ("127.0.0.1", 1234), self.dispatcher)
         # print("Serving on {}".format(self.server.server_address))
         # self.server.serve_forever()
+
+    def mostrarEscena(self, escena):
+        print("metodo no implementado en clase base")
+    
+    def convertirComputadorHumano(self, valor):
+        return valor + 1
+    
+    def convertirHumanoComputador(self, valor):
+        return valor - 1
