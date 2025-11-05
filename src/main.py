@@ -35,7 +35,7 @@ else:
 
     if int(argumento1) == 0:
         admin = Admin()
-        admin.crearCliente(5005)
+        admin.crearCliente(1234)
         admin.buclear()
         print("soy raspi servidor")
 

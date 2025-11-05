@@ -5,7 +5,7 @@ class RaspiPrincipal:
     def __init__(self, puerto):
         self.puerto = puerto
         self.numeroDeRaspis = 128
-        self.ips = ["10.30.123.162"]
+        self.ips = ["10.30.123.87"]
         self.puertoEnviar = 1234
         self.clientes = []
 
