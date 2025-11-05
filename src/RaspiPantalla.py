@@ -12,6 +12,10 @@ class RaspiPantalla:
         self.server = None
         self.dispatcher = None
         self.maximoPantallas = None
+        self.corriendo = True
+
+    def buclear(self):
+        pass
 
     def print_handler(self, unused_addr, args):
         print(f"{unused_addr}: {args}")

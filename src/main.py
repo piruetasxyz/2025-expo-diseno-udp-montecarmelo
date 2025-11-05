@@ -11,9 +11,9 @@
 
 import sys
 from Admin import Admin
-from RaspiPantallaChica import RaspiPantallaChica
-from RaspiPantallaMediana import RaspiPantallaMediana
-from RaspiPantallaGrande import RaspiPantallaGrande
+
+
+admin = Admin()
 
 if len(sys.argv) != 4:
     print("error en argumentos")
@@ -21,7 +21,7 @@ if len(sys.argv) != 4:
     print("donde")
     print("x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande")
     print("y = eje, 1, 2, 3")
-    print("z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4")
+    print("z = numero de raspi en ese eje, entre 0 y 4")
     sys.exit()
 
 else:
@@ -29,25 +29,29 @@ else:
     argumento2 = sys.argv[2]
     argumento3 = sys.argv[3]
 
+    # crear administrador en la raspi
+    # si argumento1 es 0, crear cliente raspi principal y buclear
     if int(argumento1) == 0:
-        admin = Admin()
-        admin.crearCliente(1234)
+        admin.crearPrincipal()
         admin.buclear()
         # print("soy raspi servidor")
 
     elif int(argumento1) == 1:
-        raspiChica = RaspiPantallaChica(argumento2, 1)
-        raspiChica.handler()
+        admin.crearChica(argumento2, argumento3)
+        # raspiChica = RaspiPantallaChica(argumento2, 1)
+        # raspiChica.handler()
         # print("soy raspi pantalla chica")
 
     elif int(argumento1) == 2:
-        raspiMediana = RaspiPantallaMediana(argumento2, 1)
-        raspiMediana.handler()
+        admin.crearMediana(argumento2, argumento3)
+        #   raspiMediana = RaspiPantallaMediana(argumento2, 1)
+        # raspiMediana.handler()
         # print("soy raspi pantalla mediana")
 
     elif int(argumento1) == 3:
-        raspiGrande = RaspiPantallaGrande(argumento2, 1)
-        raspiGrande.handler()
+        admin.crearGrande(argumento2, argumento3)
+        # raspiGrande = RaspiPantallaGrande(argumento2, 1)
+        # raspiGrande.handler()
         # print("soy raspi pantalla grande")
     else:
         print("mi argumento no tiene sentido")

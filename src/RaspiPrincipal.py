@@ -6,15 +6,12 @@ class RaspiPrincipal:
     def __init__(self, puerto):
         self.puerto = puerto
         self.numeroDeRaspis = 128
-        self.ips = ["10.30.123.87"]
-        self.puertoEnviar = 1234
+        self.ipsPantallas = ["10.30.123.87"]
         self.clientes = []
+        self.enviarMensajeATodos("/admin/init", 1)
+        self.corriendo = True
 
-        # for i in range(self.numeroDeRaspis):
-        #     self.ips.append(
-        #         "10.30.123." + str(i))
-
-        for ip in self.ips:
+        for ip in self.ipsPantallas:
             # cliente = SimpleUDPClient(ip, self.puerto)
             self.clientes.append(SimpleUDPClient(ip, self.puerto))
 

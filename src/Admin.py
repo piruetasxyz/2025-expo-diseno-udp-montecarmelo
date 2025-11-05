@@ -1,6 +1,8 @@
 from RaspiPrincipal import RaspiPrincipal
-
-import time
+from RaspiPantallaChica import RaspiPantallaChica
+from RaspiPantallaMediana import RaspiPantallaMediana
+from RaspiPantallaGrande import RaspiPantallaGrande
+# import time
 import datetime
 
 
@@ -19,6 +21,11 @@ class Admin:
         self.antesMinuto = self.ahoraMinuto
         self.antesSegundo = self.ahoraSegundo
         self.mensajesEnviados = []
+        self.raspi = None
+        self.puertoPrincipalEnviar = 1234
+        self.puertoPantallasRecibir = 1234
+        self.corriendo = True
+        print("admin iniciado")
         
         # guion
         self.comportamientoRaspisPantallaChica = []
@@ -29,9 +36,10 @@ class Admin:
         self.probabilidadMostrarPantallasChicas = 0.5
         self.probabilidadMostrarPantallasMedianas = 0.3
         self.probabilidadMostrarPantallasGrandes = 0.2
-
-        self.numeroPantallasChicas = 10
         
+        # configuracion del sistema
+        self.servidores = []
+        self.numeroPantallasChicas = 10
 
         self.comportamientoPantallasChicas = [
             ["minuto 0", "nada"],
@@ -96,22 +104,12 @@ class Admin:
             ["minuto 59", "quizasMostrar"]
         ]
 
-    def iniciar(self):
-        self.corriendo = True
-        print("admin iniciado")
-
     def detener(self):
         self.corriendo = False
         print("admin detenido")
 
-    def crearCliente(self, port):
-        print("tratando de crear cliente")
-        self.cliente = RaspiPrincipal(port)
-        print("cliente creado")
-        self.cliente.enviarMensajeATodos("/admin/init", 1)
-
     def mostrarPantallasChicas(self):
-
+        pass
 
     def actualizarTiempo(self):
         # actualizar ahora
@@ -130,7 +128,7 @@ class Admin:
             return True
         else:
             return False
-        
+
     def detectarMinutoCambio(self):
         if self.ahoraMinuto != self.antesMinuto:
             return True
@@ -138,7 +136,7 @@ class Admin:
             return False
 
     def buclear(self):
-        self.iniciar()
+        print(self.raspi.__class__.__name__)
         while self.corriendo:
             self.actualizarTiempo()
             if self.detectarMinutoCambio():
@@ -146,7 +144,22 @@ class Admin:
 
             if self.detectarHoraCambio():
                 print("ojo cambio la hora")
-            self.cliente.enviarMensajeATodos("/admin/bucle", 1)
+            # self.cliente.enviarMensajeATodos("/admin/bucle", 1)
         # self.detener()
+        
 
+    def crearPrincipal(self):
+        self.raspi = RaspiPrincipal(self.puertoPrincipalEnviar)
+        self.buclear()
 
+    def crearChica(self, eje, numero):
+        self.raspi = RaspiPantallaChica(eje, numero)
+        self.buclear()
+
+    def crearMediana(self, eje, numero):
+        self.raspi = RaspiPantallaMediana(eje, numero)
+        self.buclear()
+
+    def crearGrande(self, eje, numero):
+        self.raspi = RaspiPantallaGrande(eje, numero)
+        self.buclear()
