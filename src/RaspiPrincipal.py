@@ -1,3 +1,4 @@
+# importar biblioteca
 from pythonosc.udp_client import SimpleUDPClient
 
 
@@ -22,8 +23,12 @@ class RaspiPrincipal:
 
     def enviarMensajeATodos(self, etiqueta, valor):
         for cliente in self.clientes:
-            print(cliente)
-            self.enviarMensaje(cliente, etiqueta, valor)
-            print("etiqueta:" + etiqueta +
-                  " valor: " + str(valor) +
-                  " enviado a " + "bla")
+            try:
+                # print(cliente)
+                self.enviarMensaje(cliente, etiqueta, valor)
+                # print("etiqueta:" + etiqueta +
+                #       " valor: " + str(valor) +
+                #       " enviado a " + "bla")
+            except Exception as e:
+                pass
+                # print("pucha")

@@ -1,7 +1,6 @@
-# codig por montoyamoraga
 # correr desde terminal
 # con python3
-# usar 2 argumentos numericos
+# usar 3 argumentos numericos
 
 # uso
 # python3 main.py x y z
@@ -10,14 +9,11 @@
 # y = eje, 1, 2, 3
 # z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4
 
-# print("importando bibliotecas")
 import sys
 from Admin import Admin
 from RaspiPantallaChica import RaspiPantallaChica
 from RaspiPantallaMediana import RaspiPantallaMediana
 from RaspiPantallaGrande import RaspiPantallaGrande
-
-# print(sys.argv)
 
 if len(sys.argv) != 4:
     print("error en argumentos")
