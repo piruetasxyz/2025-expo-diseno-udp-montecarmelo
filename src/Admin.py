@@ -40,6 +40,33 @@ class Admin:
         self.servidores = []
         self.numeroPantallasChicas = 10
 
+        self.comportamientos = [
+            "negro",
+            "mostrarPregunta",
+            "mostrarRefresco",
+        ]
+
+        self.preguntas = [
+            "¿Te gusta el arte?",
+            "¿Cuál es tu color favorito?",
+            "¿Prefieres el mar o la montaña?",
+        ]
+
+        self.respuestas = [
+            "respuesta 1",
+            "2,",
+            "3",
+
+        ]
+
+        self.refresco = [
+            "desierto",
+            "cielo",
+            "bosque",
+        ]
+
+
+        # pantallasChicas muestran respuestas
         self.comportamientoPantallasChicas = [
             ["minuto 0", "nada"],
             ["minuto 1", "quizasMostrar"],
