@@ -1,9 +1,11 @@
+# importar modulos de Python
+import datetime
+import random
+# importar archivos del proyecto
 from RaspiPrincipal import RaspiPrincipal
 from RaspiPantallaChica import RaspiPantallaChica
 from RaspiPantallaMediana import RaspiPantallaMediana
 from RaspiPantallaGrande import RaspiPantallaGrande
-# import time
-import datetime
 
 
 class Admin:

@@ -1,4 +1,5 @@
 import RaspiPantalla
+import Respuestas
 
 
 class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
@@ -15,3 +16,4 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             " de un maximo de " + str(self.maximoPantallas) +
             ", escena: " + str(self.convertirComputadorHumano(escena))
             )
+
