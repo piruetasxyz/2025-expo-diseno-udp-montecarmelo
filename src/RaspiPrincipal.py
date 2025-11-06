@@ -29,3 +29,9 @@ class RaspiPrincipal:
             except Exception as e:
                 print(e)
                 # print("pucha")
+
+    def mostrar(self):
+        print("mostrar en raspiPrincipal")
+
+    def enviarMensajeNuevaPregunta(self, preguntaActual):
+        self.enviarMensajeATodos("/paraMedianas/nuevaPregunta", preguntaActual)

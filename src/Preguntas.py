@@ -1,5 +1,5 @@
 preguntas = {
-    "1":
+    1:
     {
         "texto": (
             "¿De qué manera el diseño contribuye a configurar nuevas "
@@ -19,7 +19,7 @@ preguntas = {
             ]
         }
     },
-    "2":
+    2:
     {
         "texto": (
             "¿Cómo se redefine la agencia del diseño ante las "

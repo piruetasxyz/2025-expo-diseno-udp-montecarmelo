@@ -9,9 +9,10 @@
 # y = eje, 1, 2, 3
 # z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4
 
+
+
 import sys
 from Admin import Admin
-
 
 admin = Admin()
 

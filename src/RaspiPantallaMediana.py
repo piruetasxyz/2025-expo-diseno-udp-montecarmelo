@@ -1,5 +1,5 @@
 import RaspiPantalla
-import Preguntas
+from Preguntas import preguntas
 
 
 class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
@@ -7,6 +7,9 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         super().__init__(eje, numero)
         self.tamano = "mediana"
         self.maximoPantallas = 2
+       
+        self.preguntaActual = preguntas.get(1)
+        self.preguntaAnterior = None
 
     def mostrarEscena(self, escena):
         print(
@@ -16,10 +19,12 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
             "de un maximo de " + str(self.maximoPantallas) +
             ", escena: " + str(self.convertirComputadorHumano(escena))
             )
-    
+
+    def mostrar(self, preguntaActual=None):
+        self.mostrarPregunta(preguntaActual, self.eje)
+
     def mostrarPregunta(self, pregunta, eje):
-        self.pregunta = Preguntas.preguntas.get(pregunta, "pucha")
-        print(self.pregunta)
+        print(self.preguntaActual["texto"])
 
     def mostrarRespuestas(self, pregunta, eje):
         self.pregunta = Preguntas.preguntas.get(pregunta, "pucha")

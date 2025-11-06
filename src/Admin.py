@@ -7,6 +7,7 @@ from RaspiPantallaChica import RaspiPantallaChica
 from RaspiPantallaMediana import RaspiPantallaMediana
 from RaspiPantallaGrande import RaspiPantallaGrande
 import Guion
+from Preguntas import preguntas
 
 
 class Admin:
@@ -16,18 +17,24 @@ class Admin:
         self.cliente = None
         self.ahora = datetime.datetime.now().time()
         # ahora
-        self.ahoraHora = self.ahora.hour
-        self.ahoraMinuto = self.ahora.minute
-        self.ahoraSegundo = self.ahora.second
+        self.ahoraH = self.ahora.hour
+        self.ahoraM = self.ahora.minute
+        self.ahoraS = self.ahora.second
         # antes
-        self.antesHora = self.ahoraHora
-        self.antesMinuto = self.ahoraMinuto
-        self.antesSegundo = self.ahoraSegundo
+        self.antesH = self.ahoraH
+        self.antesM = self.ahoraM
+        self.antesS = self.ahoraS
         self.mensajesEnviados = []
         self.raspi = None
         self.puertoPrincipalEnviar = 1234
         self.puertoPantallasRecibir = 1234
         self.corriendo = True
+
+        # cada X minutos cambia la pregunta
+        self.mEntrePreguntas = 3
+        self.mUltimaPregunta = self.ahoraM
+        self.preguntaActual = random.randint(1, len(preguntas))
+        self.preguntaAnterior = None
 
         # guion
         self.comportamientoRaspisPantallaChica = []
@@ -43,31 +50,26 @@ class Admin:
         self.servidores = []
         self.numeroPantallasChicas = 10
 
-        self.comportamientos = [
-            "negro",
-            "mostrarPregunta",
-            "mostrarRefresco",
-        ]
-
-        self.preguntas = [
-            "¿Te gusta el arte?",
-            "¿Cuál es tu color favorito?",
-            "¿Prefieres el mar o la montaña?",
-        ]
-
-        self.respuestas = [
-            "respuesta 1",
-            "2,",
-            "3",
-
-        ]
-
         self.refresco = [
             "desierto",
             "cielo",
             "bosque",
         ]
 
+    def calcularSiNuevaPregunta(self):
+        if (self.ahoraM - self.mUltimaPregunta) >= self.mEntrePreguntas:
+            
+            return True
+        else:
+            return False
+
+    def nuevaPregunta(self):
+        # elegir nueva pregunta aleatoria
+        if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+            self.mUltimaPregunta = self.ahoraM
+            self.preguntaAnterior = self.preguntaActual
+            self.preguntaActual = random.randint(1, len(preguntas))
+            self.raspi.enviarMensajeNuevaPregunta(self.preguntaActual)
 
     def detener(self):
         self.corriendo = False
@@ -80,22 +82,22 @@ class Admin:
         # actualizar ahora
         self.ahora = datetime.datetime.now().time()
         # guardar ahora en anterior
-        self.antesHora = self.ahoraHora
-        self.antesMinuto = self.ahoraMinuto
-        self.antesSegundo = self.ahoraSegundo
+        self.antesH = self.ahoraH
+        self.antesM = self.ahoraM
+        self.antesS = self.ahoraS
         # actualizar ahora
-        self.ahoraHora = self.ahora.hour
-        self.ahoraMinuto = self.ahora.minute
-        self.ahoraSegundo = self.ahora.second
+        self.ahoraH = self.ahora.hour
+        self.ahoraM = self.ahora.minute
+        self.ahoraS = self.ahora.second
 
     def detectarHoraCambio(self):
-        if self.ahoraHora != self.antesHora:
+        if self.ahoraH != self.antesH:
             return True
         else:
             return False
 
     def detectarMinutoCambio(self):
-        if self.ahoraMinuto != self.antesMinuto:
+        if self.ahoraM != self.antesM:
             return True
         else:
             return False
@@ -105,10 +107,13 @@ class Admin:
         while self.corriendo:
             self.actualizarTiempo()
             if self.detectarMinutoCambio():
-                print("nuevo minuto: " + str(self.ahoraMinuto))
-
+                print("nuevo minuto: " + str(self.ahoraM))
+                if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+                    if (self.calcularSiNuevaPregunta()):
+                        self.nuevaPregunta()
+                # self.raspi.mostrar()
             if self.detectarHoraCambio():
-                print("nueva hora: " + str(self.ahoraHora))
+                print("nueva hora: " + str(self.ahoraH))
             # self.cliente.enviarMensajeATodos("/admin/bucle", 1)
         # self.detener()
 

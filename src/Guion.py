@@ -1,3 +1,6 @@
+
+
+
 # pantallasChicas muestran respuestas
 chicas = [
     ["minuto 0", "nada"],
@@ -62,6 +65,7 @@ chicas = [
     ["minuto 59", "quizasMostrar"]
 ]
 
+# pantallas medianas muestran preguntas
 medianas = [
     ["minuto 0", "nada"],
     ["minuto 1", "quizasMostrar"],

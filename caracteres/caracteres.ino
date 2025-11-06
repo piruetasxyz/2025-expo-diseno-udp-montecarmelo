@@ -1,8 +1,8 @@
 #include "PantallaCaracteres.h"
 #include "Cunas.h"
 
-// ejes pueden valer 1, 2, 3
-// numeroArduino puede valer 1, 2, 3
+// eje puede ser 1, 2, 3
+// numeroArduino puede ser 1, 2, 3
 
 // pantalla 1 no esta soldada
 // pantalla 2 tiene soldada A0
@@ -10,12 +10,12 @@
 // pantalla 4 tiene soldada A2
 
 const int eje = 1;
-const int numeroArduino = 1;
+const int numeroArduino = 3;
 
 const uint8_t direccion1 = 0x27;
 const uint8_t direccion2 = 0x26;
-const uint8_t direccion3 = 0x25;
-const uint8_t direccion4 = 0x23;
+const uint8_t direccion3 = 0x23;
+const uint8_t direccion4 = 0x25;
 
 const int ancho = 20;
 const int alto = 4;

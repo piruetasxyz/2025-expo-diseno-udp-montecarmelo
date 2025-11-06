@@ -43,11 +43,11 @@ class RaspiPantalla:
         # print("Serving on {}".format(self.server.server_address))
         # self.server.serve_forever()
 
-    def mostrarEscena(self, escena):
+    def mostrar(self):
         print("metodo no implementado en clase base")
-    
+
     def convertirComputadorHumano(self, valor):
         return valor + 1
-    
+
     def convertirHumanoComputador(self, valor):
         return valor - 1
