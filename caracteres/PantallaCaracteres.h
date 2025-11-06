@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include "Textos.h"
+
 
 class PantallaCaracteres {
 
@@ -14,11 +14,6 @@ private:
 public:
   // constructor
   PantallaCaracteres(uint8_t direccion, int columnas, int filas): lcd(direccion, columnas, filas) {}
-
-  // Graph(int _count, int _spacing, int _chart_width) :
-  //   count(_count),
-  //   spacing(_spacing),
-  //   width((_chart_width - (_count - 1) * _spacing) / _count) {}
 
   // destructor
   ~PantallaCaracteres();
@@ -54,7 +49,7 @@ public:
 
   int pausa = 10;
 
-  Textos textos;
+  // Cunas cunas;
 
   // LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
   //   direccion,

@@ -1,12 +1,12 @@
-#ifndef TEXTOS_H
-#define TEXTOS_H
+#ifndef CUNAS_H
+#define CUNAS_H
 
 #include <Arduino.h>
 
-class Textos {
+class Cunas {
 public:
-  Textos();
-  ~Textos();
+  Cunas();
+  ~Cunas();
   String textos[3][10] = {
     { "El diseno especulativo ensaya futuros que cuestionan lo existente",
       "De que sirve la interdisciplina en el diseno y por que es valioso incorporarla?",

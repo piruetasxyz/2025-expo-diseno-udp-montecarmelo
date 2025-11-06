@@ -244,11 +244,11 @@ Si tomamos los jumpers de izquierda a derecha, dicen A0, A1, A2, y podemos decir
 | 000     | 0  | 0  | 0  | 0x27      |
 | 001     | 0  | 0  | 1  | 0x23      |
 | 010     | 0  | 1  | 0  | 0x25      |
-| 011     | 0  | 1  | 1  | Dirección |
+| 011     | 0  | 1  | 1  | 0x21      |
 | 100     | 1  | 0  | 0  | 0x26      |
-| 101     | 1  | 0  | 1  | Dirección |
-| 110     | 1  | 1  | 0  | Dirección |
-| 111     | 1  | 1  | 1  | Dirección |
+| 101     | 1  | 0  | 1  | 0x22      |
+| 110     | 1  | 1  | 0  | 0x24      |
+| 111     | 1  | 1  | 1  | 0x20      |
 
 Cada pantalla de caracteres tiene un potenciómetro con el que se regula la intensidad de la luz.
 
