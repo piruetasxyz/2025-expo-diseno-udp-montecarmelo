@@ -5,15 +5,15 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-
-class PantallaCaracteres {
+class PantallaCaracteres
+{
 
 private:
   LiquidCrystal_I2C lcd;
 
 public:
   // constructor
-  PantallaCaracteres(uint8_t direccion, int columnas, int filas): lcd(direccion, columnas, filas) {}
+  PantallaCaracteres(uint8_t direccion, int columnas, int filas) : lcd(direccion, columnas, filas) {}
 
   // destructor
   ~PantallaCaracteres();
@@ -21,8 +21,6 @@ public:
   void configurar(uint8_t direccion);
 
   void cargarTexto(String nuevoTexto);
-
-  void actualizar();
 
   void mostrarMensaje();
 
@@ -48,13 +46,6 @@ public:
   int pos3 = 0;
 
   int pausa = 10;
-
-  // Cunas cunas;
-
-  // LiquidCrystal_I2C lcd = LiquidCrystal_I2C(
-  //   direccion,
-  //   columnas,
-  //   filas);
 };
 
 #endif
