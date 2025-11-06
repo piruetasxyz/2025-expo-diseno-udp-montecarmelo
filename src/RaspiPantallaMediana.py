@@ -13,13 +13,13 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         self.preguntaAnterior = None
         
         print("recuperando ip")
-        if (self.eje == 1):
+        if (self.eje == str(1)):
             print("aqui con eje 1")
             self.direccionIP = medianas["eje-1"][self.numero]
-        elif (self.eje == 2):
+        elif (self.eje == str(2)):
             print("aqui con eje 2")
             self.direccionIP = medianas["eje-2"][self.numero]
-        elif (self.eje == 3):
+        elif (self.eje == str(3)):
             print("aqui con eje 3")
             self.direccionIP = medianas["eje-3"][self.numero]
     
