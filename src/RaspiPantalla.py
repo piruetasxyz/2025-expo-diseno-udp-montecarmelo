@@ -1,7 +1,7 @@
 from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server
 # from pythonosc.osc_server import BlockingOSCUDPServer
-
+# from Direcciones import chicas, medianas, grandes
 
 class RaspiPantalla:
     def __init__(self, eje, numero):
@@ -13,6 +13,7 @@ class RaspiPantalla:
         self.dispatcher = None
         self.maximoPantallas = None
         self.corriendo = True
+        self.direccionIP = None
 
     def buclear(self):
         pass
@@ -35,7 +36,8 @@ class RaspiPantalla:
         self.dispatcher.map("/admin/bucle/*", self.print_handler)
         self.dispatcher.set_default_handler(self.default_handler)
         self.server = osc_server.ThreadingOSCUDPServer(
-            ("192.168.1.200", 1234), self.dispatcher)
+            (self.direccionIP,
+             1234), self.dispatcher)
         self.server.serve_forever()  # Blocks forever
 
         # self.server = osc_server.ThreadingOSCUDPServer(

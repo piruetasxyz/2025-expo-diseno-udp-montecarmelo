@@ -1,5 +1,6 @@
 import RaspiPantalla
 from Preguntas import preguntas
+from Direcciones import medianas
 
 
 class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
@@ -10,6 +11,14 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
        
         self.preguntaActual = preguntas.get(1)
         self.preguntaAnterior = None
+        
+        if (self.eje == 1):
+            self.direccionIP = medianas["eje-1"][self.numero]
+        elif (self.eje == 2):
+            self.direccionIP = medianas["eje-2"][self.numero]
+        elif (self.eje == 3):
+            self.direccionIP = medianas["eje-3"][self.numero]
+    
 
     def mostrarEscena(self, escena):
         print(

@@ -7,7 +7,7 @@
 # donde
 # x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande
 # y = eje, 1, 2, 3
-# z = numero de raspi en ese eje, depende del eje, puede ser entre 0 y 4
+# z = numero de raspi en ese eje, depende del eje, puede ser entre 1 y 4
 
 
 import sys
@@ -21,7 +21,7 @@ if len(sys.argv) != 4:
     print("donde")
     print("x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande")
     print("y = eje, 1, 2, 3")
-    print("z = numero de raspi en ese eje, entre 0 y 4")
+    print("z = numero de raspi en ese eje, entre 1 y 4")
     sys.exit()
 
 else:
