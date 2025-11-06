@@ -293,10 +293,15 @@ stateDiagram
   estadoAleatorio:aleatoreidad
 ```
 
-
 ## Base de datos
 
 ```bash
+# preguntas
+curl -L https://www.dropbox.com/scl/fo/f2ambvsbxbwtf6wc4tobq/AN-NjzJnQLvHv-fL3llbsKo?rlkey=v7toss3tq3gtsc7ysbawpgrgd&dl=1 > preguntas.zip
+```
+
+```bash
+# 
 curl -L "https://dropbox.com/scl/fo/tfw5kolr5j1315hu786pc/AD96AmiWAiCZbJgoPz6h96c?rlkey=hsp57zw9aitt7uvlbi9l3hhbm&st=bud75oq0&dl=1" > dia-01.zip
 ```
 
