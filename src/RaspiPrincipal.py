@@ -1,12 +1,14 @@
 # importar biblioteca
 from pythonosc.udp_client import SimpleUDPClient
+from Direcciones import chicas
 
 
 class RaspiPrincipal:
     def __init__(self, puerto):
         self.puerto = puerto
         self.numeroDeRaspis = 128
-        self.ipsPantallas = ["10.30.123.87"]
+        self.ipsPantallas = chicas.copy()
+
         self.clientes = []
         self.enviarMensajeATodos("/admin/init", 1)
         self.corriendo = True

@@ -1,6 +1,3 @@
-
-
-
 # pantallasChicas muestran respuestas
 chicas = [
     ["minuto 0", "nada"],

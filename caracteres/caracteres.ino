@@ -27,8 +27,8 @@ PantallaCaracteres pantalla4 = PantallaCaracteres(direccion4, ancho, alto);
 
 Cunas cunas;
 
-void setup() {
-
+void setup()
+{
 
   pantalla1.configurar(direccion1);
   pantalla2.configurar(direccion2);
@@ -36,15 +36,20 @@ void setup() {
   pantalla4.configurar(direccion4);
 
   // cunas.textos[eje][numeroArduino]
-  if (numeroArduino == 1) {
+  if (numeroArduino == 1)
+  {
     pantalla1.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 0]);
     pantalla2.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 1]);
     pantalla3.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 2]);
-  } else if (numeroArduino == 2) {
+  }
+  else if (numeroArduino == 2)
+  {
     pantalla1.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 3]);
     pantalla2.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 4]);
     pantalla3.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 5]);
-  } else if (numeroArduino == 3) {
+  }
+  else if (numeroArduino == 3)
+  {
     pantalla1.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 6]);
     pantalla2.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 7]);
     pantalla3.cargarTexto(cunas.textos[eje - 1][numeroArduino - 1 + 8]);
@@ -52,7 +57,8 @@ void setup() {
   }
 }
 
-void loop() {
+void loop()
+{
 
   pantalla1.mostrarMensaje();
   pantalla2.mostrarMensaje();
