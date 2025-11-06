@@ -5,8 +5,8 @@ from pythonosc import osc_server
 
 class RaspiPantalla:
     def __init__(self, eje, numero):
-        self.eje = eje
-        self.numero = numero
+        self.eje = int(eje)
+        self.numero = int(numero)
         self.tamano = None
         self.parser = None
         self.server = None
