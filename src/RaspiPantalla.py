@@ -35,7 +35,7 @@ class RaspiPantalla:
         self.dispatcher.map("/admin/bucle/*", self.print_handler)
         self.dispatcher.set_default_handler(self.default_handler)
         self.server = osc_server.ThreadingOSCUDPServer(
-            ("10.30.123.87", 1234), self.dispatcher)
+            ("192.168.1.200", 1234), self.dispatcher)
         self.server.serve_forever()  # Blocks forever
 
         # self.server = osc_server.ThreadingOSCUDPServer(

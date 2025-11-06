@@ -123,6 +123,7 @@ class Admin:
 
     def crearChica(self, eje, numero):
         self.raspi = RaspiPantallaChica(eje, numero)
+        self.raspi.handler()
         self.buclear()
 
     def crearMediana(self, eje, numero):
