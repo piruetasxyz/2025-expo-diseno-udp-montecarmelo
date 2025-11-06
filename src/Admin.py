@@ -108,6 +108,7 @@ class Admin:
             self.actualizarTiempo()
             if self.detectarMinutoCambio():
                 print("nuevo minuto: " + str(self.ahoraM))
+                print(self.raspi.direccionIP)
                 if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
                     if (self.calcularSiNuevaPregunta()):
                         self.nuevaPregunta()
