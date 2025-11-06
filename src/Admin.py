@@ -31,7 +31,7 @@ class Admin:
         self.corriendo = True
 
         # cada X minutos cambia la pregunta
-        self.mEntrePreguntas = 3
+        self.mEntrePreguntas = 1
         self.mUltimaPregunta = self.ahoraM
         self.preguntaActual = random.randint(1, len(preguntas))
         self.preguntaAnterior = None
