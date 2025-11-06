@@ -297,7 +297,7 @@ stateDiagram
 
 ```bash
 # preguntas
-curl -L https://www.dropbox.com/scl/fo/f2ambvsbxbwtf6wc4tobq/AN-NjzJnQLvHv-fL3llbsKo?rlkey=v7toss3tq3gtsc7ysbawpgrgd&dl=1 > preguntas.zip
+curl -L "https://www.dropbox.com/scl/fo/f2ambvsbxbwtf6wc4tobq/AN-NjzJnQLvHv-fL3llbsKo?rlkey=v7toss3tq3gtsc7ysbawpgrgd&dl=1" > preguntas.zip
 ```
 
 ```bash
