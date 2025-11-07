@@ -12,8 +12,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         self.maximoPantallas = 4
 
         # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla1 = "vlc --fullscreen --qt-fullscreen-screennumber=0 --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla2 = "vlc --fullscreen --qt-fullscreen-screennumber=1 --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla1 = "vlc --fullscreen --qt-minimal-view  --qt-fullscreen-screennumber=0 --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla2 = "vlc --fullscreen --qt-minimal-view  --qt-fullscreen-screennumber=1 --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
