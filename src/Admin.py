@@ -123,6 +123,12 @@ class Admin:
                 if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
                     if (self.calcularSiNuevaPregunta()):
                         self.nuevaPregunta()
+                elif (self.raspi.__class__.__name__ == "RaspiPantallaChica"):
+                    pass
+                elif (self.raspi.__class__.__name__ == "RaspiPantallaMediana"):
+                    pass
+                elif (self.raspi.__class__.__name__ == "RaspiPantallaGrande"):
+                    pass
                 # self.raspi.mostrar()
             if self.detectarHoraCambio():
                 print("nueva hora: " + str(self.ahoraH))

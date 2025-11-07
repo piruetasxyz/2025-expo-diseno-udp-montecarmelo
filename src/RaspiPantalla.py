@@ -50,27 +50,8 @@ class RaspiPantalla:
 
     def handler(self):
 
-        #         //
-        #         dispatcher = Dispatcher()
-        #   dispatcher.map("/filter", print)
-        #   dispatcher.map("/volume", print_volume_handler, "Volume")
-        #   dispatcher.map("/logvolume", print_compute_handler, "Log volume", math.log)
-
-        #   server = osc_server.ThreadingOSCUDPServer(
-        #       (args.ip, args.port), dispatcher)
-        #   print("Serving on {}".format(server.server_address))
-        #   server.serve_forever()
-        #         //
-
         self.dispatcher = Dispatcher()
 
-        # self.dispatcher.map(
-        #      "/paraMedianas/nuevaPregunta/*",
-        #      self.handlerNuevaPregunta)
-        # self.dispatcher.map(
-        #      "/paraChicas/nuevaRespuesta/*",
-        #      self.handlerNuevaRespuesta)
-        # self.dispatcher.map("/admin/bucle/*", self.print_handler)
         self.dispatcher.set_default_handler(self.default_handler)
         self.server = osc_server.ThreadingOSCUDPServer(
             (self.direccionIP,
