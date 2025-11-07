@@ -42,11 +42,13 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         if (address.startswith("/paraChicas/nuevaRespuesta")):
             print("soy handler de la chicaaa")
             if (args is not None):
-                # print(preguntas[args[0]]["respuestas"])
+                print(preguntas[args[0]]["respuestas"])
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
                         self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][0]
                         self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][0]
+                        print(self.numeroRespuesta1)
+                        print(self.numeroRespuesta2)
                     else:
                         self.numeroRespuesta1 = None
                         self.numeroRespuesta2 = None
