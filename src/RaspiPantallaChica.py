@@ -12,8 +12,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         self.maximoPantallas = 4
 
         # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla1 = "vlc --qt-fullscreen-screennumber=0 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla2 = "vlc --qt-fullscreen-screennumber=1 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla1 = "vlc --qt-fullscreen-screennumber='HDM1-1' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla2 = "vlc --qt-fullscreen-screennumber='HDM1-2' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
@@ -74,7 +74,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
-                
+
                 self.comandoTotal = ""
 
                 if (self.comandoPantalla1 is not None):
