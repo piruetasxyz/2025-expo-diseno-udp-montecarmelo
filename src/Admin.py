@@ -37,7 +37,7 @@ class Admin:
         self.preguntaAnterior = None
 
         # las respuestas
-        self.listaRespuestas = preguntas.get(self.preguntaActual).get("respuestas")
+        self.listaRespuestas = preguntas[self.preguntaActual]["respuestas"]
         self.respuestaActual = None
         self.respuestaAnterior = None
 

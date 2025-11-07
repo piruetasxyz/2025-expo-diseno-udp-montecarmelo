@@ -40,7 +40,7 @@ preguntas = {
             ]
         }
     },
-    "3":
+    3:
     {
         "texto": (
             "¿Es posible hablar hoy de un “campo del diseño” autónomo, o "
@@ -60,7 +60,7 @@ preguntas = {
             ]
         }
     },
-    "4":
+    4:
     {
         "texto": (
             "¿De qué manera las prácticas locales transforman nuestra "
@@ -80,7 +80,7 @@ preguntas = {
             ]
         }
     },
-    "5":
+    5:
     {
         "texto": (
             "¿De qué forma las condiciones materiales, sociales y afectivas "
@@ -100,7 +100,7 @@ preguntas = {
             ]
         }
     },
-    "6":
+    6:
     {
         "texto": (
             "¿Cómo se construye una mirada crítica frente a los discursos "
@@ -120,7 +120,7 @@ preguntas = {
             ]
         }
     },
-    "7":
+    7:
     {
         "texto": (
             "¿Puede el diseño funcionar como lenguaje común entre distintas "
@@ -140,7 +140,7 @@ preguntas = {
             ]
         }
     },
-    "8":
+    8:
     {
         "texto": (
             "¿Qué tipos de agencias se atribuyen a la materia, sistemas vivos "
@@ -160,7 +160,7 @@ preguntas = {
             ]
         }
     },
-    "9":
+    9:
     {
         "texto": (
             "¿Cómo cambia la figura del diseñador cuando su tarea no es "
@@ -180,7 +180,7 @@ preguntas = {
             ]
         }
     },
-    "10":
+    10:
     {
         "texto": (
             "¿Qué futuros imagina el diseño contemporáneo y desde qué marcos "
@@ -200,7 +200,7 @@ preguntas = {
             ]
         }
     },
-    "11":
+    11:
     {
         "texto": (
             "¿De qué modo el diseño especulativo abre una reflexión crítica "
@@ -220,7 +220,7 @@ preguntas = {
             ]
         }
     },
-    "12":
+    12:
     {
         "texto": (
             "¿Cómo la crisis —ecológica, tecnológica, social— redefine "
@@ -240,7 +240,7 @@ preguntas = {
             ]
         }
     },
-    "13":
+    13:
     {
         "texto": (
             "¿De qué modo las tecnologías emergentes redefinen el diseño y "
@@ -260,7 +260,7 @@ preguntas = {
             ]
         }
     },
-    "14":
+    14:
     {
         "texto": (
             "¿De qué maneras el diseño puede interrogar críticamente las ?"
@@ -281,7 +281,7 @@ preguntas = {
             ]
         }
     },
-    "15":
+    15:
     {
         "texto": (
             "¿De qué forma el diseño hace visibles las dimensiones políticas, "
@@ -301,7 +301,7 @@ preguntas = {
             ]
         }
     },
-    "16":
+    16:
     {
         "texto": (
             "¿Cómo se redefinen las nociones de materialidad cuando estos son "
@@ -321,7 +321,7 @@ preguntas = {
             ]
         }
     },
-    "17":
+    17:
     {
         "texto": (
             "¿Qué vínculos se pueden establecer entre diseño, técnica "
@@ -341,7 +341,7 @@ preguntas = {
             ]
         }
     },
-    "18":
+    18:
     {
         "texto": (
             "¿De qué maneras las prácticas situadas en América Latina "
@@ -361,7 +361,7 @@ preguntas = {
             ]
         }
     },
-    "19":
+    19:
     {
         "texto": (
             "¿Qué rol cumplen la colaboración, la escucha y la creación en el "
@@ -381,7 +381,7 @@ preguntas = {
             ]
         }
     },
-    "20":
+    20:
     {
         "texto": (
             "¿Qué nuevos roles asume el estudiante desde el aprendizaje "
@@ -401,7 +401,7 @@ preguntas = {
             ]
         }
     },
-    "21":
+    21:
     {
         "texto": (
             "¿Qué transformaciones requiere la academia frente a los modos de "
