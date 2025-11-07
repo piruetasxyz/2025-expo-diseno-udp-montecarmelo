@@ -80,13 +80,15 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 self.comandoTotal = ""
 
                 if (self.comandoPantalla1 is not None):
-                    self.comandoTotal += self.comandoPantalla1 + "& "
-                    # os.system(self.comandoPantalla1)
-                if (self.comandoPantalla2 is not None):
-                    self.comandoTotal += self.comandoPantalla2
-                    os.system(self.comandoPantalla2)
+                    self.comandoTotal += self.comandoPantalla1 + "& " + self.comandoPantalla2
+                    os.system(self.comandoTotal)
+
+                #     # os.system(self.comandoPantalla1)
+                # if (self.comandoPantalla2 is not None):
+                #     self.comandoTotal += self.comandoPantalla2
+                #     os.system(self.comandoPantalla2)
                 # os.system(self.comandoPantalla1 + "& " + self.comandoPantalla2)
-                os.system(self.comandoTotal)
+                # os.system(self.comandoTotal)
             # else:
             #     print("pucha os.system(self.comando) era None")
             # print(f"DEFAULT {address}: {args}")
