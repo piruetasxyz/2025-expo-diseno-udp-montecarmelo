@@ -35,6 +35,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         print("soy handler de la chicaaa")
         if (args is not None):
             print(preguntas[args[0]]["respuestas"])
+            if (self.eje == 1):
+                print(preguntas[args[0]]["respuestas"]["eje-1"])
+            elif (self.eje == 2):
+                print(preguntas[args[0]]["respuestas"]["eje-2"])
+            elif (self.eje == 3):
+                print(preguntas[args[0]]["respuestas"]["eje-3"])
             # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
             # os.system(self.comando)
         # else:
