@@ -34,8 +34,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
     def default_handler(self, address, *args):
         print("soy handler de la chicaaa")
         if (args is not None):
-            print(preguntas[args[0]]["respuestas"])
+            # print(preguntas[args[0]]["respuestas"])
             if (self.eje == 1):
+                if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
+                    self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]["eje-1"][0]) + self.comandoSufijo
+                    os.system(self.comando)
+                # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
                 print(preguntas[args[0]]["respuestas"]["eje-1"])
             elif (self.eje == 2):
                 print(preguntas[args[0]]["respuestas"]["eje-2"])
