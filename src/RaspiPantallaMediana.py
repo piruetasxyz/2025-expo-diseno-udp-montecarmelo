@@ -41,8 +41,8 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
             # print(args[0])
             print(args[0])
             # print(type(args[0]))
-            preguntas.get(args[0])
-            preguntas.get(args[0]["archivo"])
+            print(preguntas[args[0]])
+            # preguntas.get(args[0]["archivo"])
 
             # print(type(args[2]))
             # os.system(self.comando)
