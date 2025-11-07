@@ -129,8 +129,10 @@ class Admin:
 
     def crearMediana(self, eje, numero):
         self.raspi = RaspiPantallaMediana(eje, numero)
+        self.raspi.handler()
         self.buclear()
 
     def crearGrande(self, eje, numero):
         self.raspi = RaspiPantallaGrande(eje, numero)
+        self.raspi.handler()
         self.buclear()
