@@ -37,6 +37,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         print("soy handler de la medianaaa")
         print(args)
         if (self.comando is not None):
+            print(args)
             print(type(args[2]))
             # os.system(self.comando)
         else:
