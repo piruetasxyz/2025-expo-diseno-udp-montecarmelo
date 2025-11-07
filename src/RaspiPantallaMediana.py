@@ -13,7 +13,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         self.preguntaActual = preguntas.get(1)
         self.preguntaAnterior = None
 
-        self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../preguntas/"
+        self.comandoPrefijo = "cvlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../preguntas/"
         self.comandoSufijo = ".mp4'"
         self.listaVideos = list(preguntas.keys())
         print(self.listaVideos)
