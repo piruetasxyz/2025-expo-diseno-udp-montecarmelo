@@ -2,7 +2,6 @@ from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server
 import os
 
-
 # from pythonosc.osc_server import BlockingOSCUDPServer
 # from Direcciones import chicas, medianas, grandes
 
@@ -23,19 +22,15 @@ class RaspiPantalla:
         self.comando = None
         self.listaVideos = None
 
-        # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../preguntas/"
-        # self.comandoSufijo = ".mp4'"
-        # self.listaVideos = ["pregunta-01"]
-
-        # self.comando = self.comandoPrefijo + self.listaVideos[0] + self.comandoSufijo
-
     def handlerNuevaPregunta(self, address, *args):
-        print("soy handler nueva pregunta")
-        print(f"DEFAULT {address}: {args}")
+        pass
+        # print("soy handler nueva pregunta")
+        # print(f"DEFAULT {address}: {args}")
 
     def handlerNuevaRespuesta(self, address, *args):
-        print("soy handler nueva respuesta")
-        print(f"DEFAULT {address}: {args}") 
+        pass
+        # print("soy handler nueva respuesta")
+        # print(f"DEFAULT {address}: {args}") 
 
     def buclear(self):
         pass
@@ -55,17 +50,17 @@ class RaspiPantalla:
 
     def handler(self):
 
-#         //
-#         dispatcher = Dispatcher()
-#   dispatcher.map("/filter", print)
-#   dispatcher.map("/volume", print_volume_handler, "Volume")
-#   dispatcher.map("/logvolume", print_compute_handler, "Log volume", math.log)
+        #         //
+        #         dispatcher = Dispatcher()
+        #   dispatcher.map("/filter", print)
+        #   dispatcher.map("/volume", print_volume_handler, "Volume")
+        #   dispatcher.map("/logvolume", print_compute_handler, "Log volume", math.log)
 
-#   server = osc_server.ThreadingOSCUDPServer(
-#       (args.ip, args.port), dispatcher)
-#   print("Serving on {}".format(server.server_address))
-#   server.serve_forever()
-#         //
+        #   server = osc_server.ThreadingOSCUDPServer(
+        #       (args.ip, args.port), dispatcher)
+        #   print("Serving on {}".format(server.server_address))
+        #   server.serve_forever()
+        #         //
 
         self.dispatcher = Dispatcher()
 
