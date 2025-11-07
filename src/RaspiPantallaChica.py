@@ -44,22 +44,30 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
                         self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][0]
-                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
-                        if (self.numeroRespuesta1 not in faltantes):
+                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][0]
+                    else:
+                        self.numeroRespuesta1 = None
+                        self.numeroRespuesta2 = None 
+                    # if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 1:
+                    #     self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
+                    # else:
+                        # self.numeroRespuesta2 = None
+                        if (self.numeroRespuesta1 is not None and self.numeroRespuesta1 not in faltantes):
                             self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
                         else:
                             self.comandoPantalla1 = None
-                        if (self.numeroRespuesta2 not in faltantes):
+                        if (self.numeroRespuesta2 is not None and self.numeroRespuesta2 not in faltantes):
                             self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
                         else:
                             self.comandoPantalla2 = None
                     # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
-                    print(preguntas[args[0]]["respuestas"]["eje-1"])
+                    # print(preguntas[args[0]]["respuestas"]["eje-1"])
                 elif (self.eje == 2):
                     print(preguntas[args[0]]["respuestas"]["eje-2"])
                 elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
+                
                 if (self.comandoPantalla1 is not None):
                     os.system(self.comandoPantalla1)
                 if (self.comandoPantalla2 is not None):
