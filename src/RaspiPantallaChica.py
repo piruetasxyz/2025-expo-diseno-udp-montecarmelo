@@ -12,10 +12,10 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         self.maximoPantallas = 4
 
         # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        # self.comandoPrefijoPantalla1 = "vlc --qt-fullscreen-screennumber='HDM1-1' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        # self.comandoPrefijoPantalla2 = "vlc --qt-fullscreen-screennumber='HDM1-2' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla1 = "vlc --video-x=1920  --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla2 = "vlc --video-x=0 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla1 = "vlc --qt-fullscreen-screennumber='HDM1-A-1' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla2 = "vlc --qt-fullscreen-screennumber='HDM1-A-2' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla1 = "vlc --video-x=1920  --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
