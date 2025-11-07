@@ -6,7 +6,7 @@ preguntas = {
             "formas de vida, identidad o subjetividad humana?"
         ),
         "existencia": False,
-        "archivo": "01.mp4",
+        "archivo": "01",
         "respuestas": {
             "eje-1": [
                 1, 3, 4, 7
@@ -27,7 +27,7 @@ preguntas = {
             "interdisciplinares?"
         ),
         "existencia": False,
-        "archivo": "02.mp4",
+        "archivo": "02",
         "respuestas": {
             "eje-1": [
                 1, 4, 7, 19, 20
@@ -47,7 +47,7 @@ preguntas = {
             "toda práctica de diseño es inevitablemente interdependiente?"
         ),
         "existencia": False,
-        "archivo": "03.mp4",
+        "archivo": "03",
         "respuestas": {
             "eje-1": [
                 12, 14, 17
@@ -67,7 +67,7 @@ preguntas = {
             "comprensión del diseño como herramienta política y cultural?"
         ),
         "existencia": False,
-        "archivo": "04.mp4",
+        "archivo": "04",
         "respuestas": {
             "eje-1": [
                13, 17, 18, 27, 28
@@ -87,7 +87,7 @@ preguntas = {
             "del territorio se incorporan al proceso proyectual?"
         ),
         "existencia": False,
-        "archivo": "05.mp4",
+        "archivo": "05",
         "respuestas": {
             "eje-1": [
                7, 17
@@ -107,7 +107,7 @@ preguntas = {
             "globales del diseño desde latinoamérica?"
         ),
         "existencia": False,
-        "archivo": "06.mp4",
+        "archivo": "06",
         "respuestas": {
             "eje-1": [
                 24, 25, 27, 28, 30, 31, 32, 33
@@ -127,7 +127,7 @@ preguntas = {
             "disciplinas? ¿Qué riesgos conlleva asumir ese rol?"
         ),
         "existencia": False,
-        "archivo": "07.mp4",
+        "archivo": "07",
         "respuestas": {
             "eje-1": [
                 12, 14, 15
@@ -147,7 +147,7 @@ preguntas = {
             "o inteligencias artificiales dentro del proceso de diseño? "
         ),
         "existencia": False,
-        "archivo": "08.mp4",
+        "archivo": "08",
         "respuestas": {
             "eje-1": [
                8, 9, 21
@@ -167,7 +167,7 @@ preguntas = {
             "producir objetos sino mediar entre saberes, actores y lenguajes?"
         ),
         "existencia": False,
-        "archivo": "09.mp4",
+        "archivo": "09",
         "respuestas": {
             "eje-1": [
                10, 11, 17, 18, 19, 32
@@ -187,7 +187,7 @@ preguntas = {
             "los proyecta?"
         ),
         "existencia": False,
-        "archivo": "10.mp4",
+        "archivo": "10",
         "respuestas": {
             "eje-1": [
                 1, 21
@@ -207,7 +207,7 @@ preguntas = {
             "sobre la tecnología?"
         ),
         "existencia": False,
-        "archivo": "11.mp4",
+        "archivo": "11",
         "respuestas": {
             "eje-1": [
                1, 2, 3
@@ -227,7 +227,7 @@ preguntas = {
             "nuestramanera de pensar los futuros desde el diseño?"
         ),
         "existencia": False,
-        "archivo": "12.mp4",
+        "archivo": "12",
         "respuestas": {
             "eje-1": [
                 4, 21
@@ -247,7 +247,7 @@ preguntas = {
             "sus vínculos con lo humano y lo artificial?"
         ),
         "existencia": False,
-        "archivo": "13.mp4",
+        "archivo": "13",
         "respuestas": {
             "eje-1": [
                 1, 2, 4, 8, 9, 18, 21, 25, 30
@@ -267,7 +267,7 @@ preguntas = {
             "lógicas productivas actuales"
         ),
         "existencia": False,
-        "archivo": "14.mp4",
+        "archivo": "14",
         "respuestas": {
             "eje-1": [
                 3, 10, 11, 21, 27, 28, 30
@@ -288,7 +288,7 @@ preguntas = {
             "éticas y simbólicas que subyacen al desarrollo tecnológico?"
         ),
         "existencia": False,
-        "archivo": "15.mp4",
+        "archivo": "15",
         "respuestas": {
             "eje-1": [
                 11, 28, 30
@@ -308,7 +308,7 @@ preguntas = {
             "datos, flujos, energía o información?"
         ),
         "existencia": False,
-        "archivo": "16.mp4",
+        "archivo": "16",
         "respuestas": {
             "eje-1": [
                8, 9, 10, 25
@@ -328,7 +328,7 @@ preguntas = {
             "y memoria?"
         ),
         "existencia": False,
-        "archivo": "17.mp4",
+        "archivo": "17",
         "respuestas": {
             "eje-1": [
                 10,
@@ -348,7 +348,7 @@ preguntas = {
             "proponen otras ecologías materiales y sociales?"
         ),
         "existencia": False,
-        "archivo": "18.mp4",
+        "archivo": "18",
         "respuestas": {
             "eje-1": [
                 19, 20, 25, 27, 28, 30, 31, 32, 33
@@ -368,7 +368,7 @@ preguntas = {
             "marco institucional de la universidad?"
         ),
         "existencia": False,
-        "archivo": "19.mp4",
+        "archivo": "19",
         "respuestas": {
             "eje-1": [
                 12, 13, 24
@@ -388,7 +388,7 @@ preguntas = {
             "autónomo?"
         ),
         "existencia": False,
-        "archivo": "20.mp4",
+        "archivo": "20",
         "respuestas": {
             "eje-1": [
                6, 12, 19, 20, 24, 34
@@ -408,7 +408,7 @@ preguntas = {
             "aprendizaje y prácticas del diseño contemporáneo?"
         ),
         "existencia": False,
-        "archivo": "21.mp4",
+        "archivo": "21",
         "respuestas": {
             "eje-1": [
                 13, 14, 15, 16, 23, 24
