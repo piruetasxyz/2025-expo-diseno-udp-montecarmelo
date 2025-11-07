@@ -3,11 +3,11 @@
 # usar 3 argumentos numericos
 
 # uso
-# python3 main.py x y z
+# python3 main.py eje tipo numero
 # donde
-# x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande
-# y = eje, 1, 2, 3
-# z = numero de raspi en ese eje, depende del eje, puede ser entre 1 y 4
+# eje = eje, 1, 2, 3
+# tipo = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande
+# numero = numero de raspi en ese eje, depende del eje, puede ser entre 1 y 4
 
 
 import sys
@@ -25,41 +25,41 @@ if len(sys.argv) != 4:
     sys.exit()
 
 else:
-    argumento1 = sys.argv[1]
-    argumento2 = sys.argv[2]
-    argumento3 = sys.argv[3]
+    argumento1Eje = int(sys.argv[1])
+    argumento2Tipo = int(sys.argv[2])
+    argumento3Numero = int(sys.argv[3])
 
     # crear administrador en la raspi
     # si argumento1 es 0, crear cliente raspi principal y buclear
-    if int(argumento1) == 0:
+    if int(argumento2Tipo) == 0:
         admin.crearPrincipal()
         admin.buclear()
         # print("soy raspi servidor")
 
-    elif int(argumento1) == 1:
-        admin.crearChica(argumento2, argumento3)
+    elif int(argumento2Tipo) == 1:
+        admin.crearChica(argumento1Eje, argumento3Numero)
         # raspiChica = RaspiPantallaChica(argumento2, 1)
         # raspiChica.handler()
         # print("soy raspi pantalla chica")
 
-    elif int(argumento1) == 2:
-        admin.crearMediana(argumento2, argumento3)
+    elif int(argumento2Tipo) == 2:
+        admin.crearMediana(argumento1Eje, argumento3Numero)
         #   raspiMediana = RaspiPantallaMediana(argumento2, 1)
         # raspiMediana.handler()
         # print("soy raspi pantalla mediana")
 
-    elif int(argumento1) == 3:
-        admin.crearGrande(argumento2, argumento3)
+    elif int(argumento2Tipo) == 3:
+        admin.crearGrande(argumento1Eje, argumento3Numero)
         # raspiGrande = RaspiPantallaGrande(argumento2, 1)
         # raspiGrande.handler()
         # print("soy raspi pantalla grande")
     else:
         print("mi argumento no tiene sentido")
 
-    if int(argumento1) != 0:
-        if int(argumento2) == 1:
+    if int(argumento2Tipo) != 0:
+        if int(argumento1Eje) == 1:
             print("soy del eje 1")
-        elif int(argumento2) == 2:
+        elif int(argumento1Eje) == 2:
             print("soy del eje 2")
-        elif int(argumento2) == 3:
+        elif int(argumento1Eje) == 3:
             print("soy del eje 3")
