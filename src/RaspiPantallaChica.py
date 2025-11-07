@@ -54,11 +54,11 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     #     self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
                     # else:
                         # self.numeroRespuesta2 = None
-                        if (self.numeroRespuesta1 is not None and self.numeroRespuesta1 not in faltantes):
+                        if (self.numeroRespuesta1 not in faltantes):
                             self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
                         else:
                             self.comandoPantalla1 = None
-                        if (self.numeroRespuesta2 is not None and self.numeroRespuesta2 not in faltantes):
+                        if (self.numeroRespuesta2 not in faltantes):
                             self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
                         else:
                             self.comandoPantalla2 = None
