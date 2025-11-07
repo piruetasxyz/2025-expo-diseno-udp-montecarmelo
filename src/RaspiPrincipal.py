@@ -47,8 +47,8 @@ class RaspiPrincipal:
         print("mostrar en raspiPrincipal")
 
     def enviarMensajeNuevaPregunta(self, preguntaActual):
-        self.enviarMensajeATodos("/paraMedianas/nuevaPregunta", preguntaActual)
-        self.enviarMensajeATodos("/paraChicas/nuevaRespuesta", preguntaActual)
+        self.enviarMensajeATodos("/paraMedianas/nuevaPregunta/", preguntaActual)
+        self.enviarMensajeATodos("/paraChicas/nuevaRespuesta/", preguntaActual)
 
     # def enviarMensajeNuevaRespuesta(self, preguntaActual, respuestaActual):
     #     self.enviarMensajeAtodos("paraChicas/nuevaRespuesta",

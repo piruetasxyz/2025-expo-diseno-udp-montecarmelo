@@ -32,7 +32,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             self.direccionIP = chicas["eje-3"][self.numero]
 
     def default_handler(self, address, *args):
-        if (address.startswith("/paraChicas/nuevaRespuesta/")):
+        if (address.startswith("/paraChicas/nuevaRespuesta")):
             print("soy handler de la chicaaa")
             if (args is not None):
                 # print(preguntas[args[0]]["respuestas"])

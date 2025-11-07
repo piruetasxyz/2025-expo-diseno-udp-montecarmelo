@@ -36,17 +36,18 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
     #     print("soy pantalla mediana y me pidieron nueva pregunta")
 
     def default_handler(self, address, *args):
-        print("soy handler de la medianaaa")
-        if (args is not None):
-            # print(args[0])
+        if (address.startswith("/paraMedianas/nuevaPregunta/")):
+            print("soy handler de la medianaaa")
+            if (args is not None):
+                # print(args[0])
 
-            # print(preguntas[args[0]]["archivo"])
-            # print(type(args[2]))
-            self.comando = self.comandoPrefijo + str(preguntas[args[0]]["archivo"]) + self.comandoSufijo
-            os.system(self.comando)
-        else:
-            print("pucha os.system(self.comando) era None")
-        print(f"DEFAULT {address}: {args}")
+                # print(preguntas[args[0]]["archivo"])
+                # print(type(args[2]))
+                self.comando = self.comandoPrefijo + str(preguntas[args[0]]["archivo"]) + self.comandoSufijo
+                os.system(self.comando)
+            else:
+                print("pucha os.system(self.comando) era None")
+            print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):
         print(
