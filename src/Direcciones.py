@@ -57,7 +57,8 @@ medianas = {
     [
         # la 0 es placeholder
         "0.0.0.0",
-        "192.168.1.101",
+        # esta es eje1 mediana 1
+        "192.168.1.102",
         "0.0.0.0",
     ],
     "eje-2":
