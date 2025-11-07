@@ -48,8 +48,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 print(preguntas[args[0]]["respuestas"])
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
-                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][random.randomint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
-                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randomint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
+                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
+                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
                         # print(self.numeroRespuesta1)
                         # print(self.numeroRespuesta2)
                     else:
