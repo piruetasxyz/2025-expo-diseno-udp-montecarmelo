@@ -8,10 +8,10 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         super().__init__(eje, numero)
         self.tamano = "mediana"
         self.maximoPantallas = 2
-       
+
         self.preguntaActual = preguntas.get(1)
         self.preguntaAnterior = None
-        
+
         # print("recuperando ip")
         if (self.eje == 1):
             # print("aqui con eje 1")
@@ -22,7 +22,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         elif (self.eje == 3):
             # print("aqui con eje 3")
             self.direccionIP = medianas["eje-3"][self.numero]
-    
+
     def mostrarEscena(self, escena):
         print(
             "pantalla mediana, eje " +
