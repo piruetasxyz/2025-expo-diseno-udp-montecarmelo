@@ -17,11 +17,11 @@ admin = Admin()
 
 if len(sys.argv) != 4:
     print("error en argumentos")
-    print("uso: python3 main.py x y z")
+    print("uso: python3 main.py eje tipo numero")
     print("donde")
-    print("x = tipo de raspi, 0=admin, 1=chica, 2=mediana, 3=grande")
-    print("y = eje, 1, 2, 3")
-    print("z = numero de raspi en ese eje, entre 1 y 4")
+    print("eje: 1, 2, 3")
+    print("tipo: 0=admin, 1=chica, 2=mediana, 3=grande")
+    print("numero de raspi en ese eje, entre 1 y 4")
     sys.exit()
 
 else:
