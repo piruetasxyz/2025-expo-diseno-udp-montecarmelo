@@ -1,5 +1,7 @@
 import RaspiPantalla
-import Respuestas
+from Preguntas import preguntas
+from Respuestas import respuestas
+from Direcciones import chicas
 
 
 class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
@@ -7,6 +9,17 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         super().__init__(eje, numero)
         self.tamano = "chica"
         self.maximoPantallas = 4
+
+        # print("recuperando ip")
+        if (self.eje == 1):
+            # print("aqui con eje 1")
+            self.direccionIP = chicas["eje-1"][self.numero]
+        elif (self.eje == 2):
+            # print("aqui con eje 2")
+            self.direccionIP = chicas["eje-2"][self.numero]
+        elif (self.eje == 3):
+            # print("aqui con eje 3")
+            self.direccionIP = chicas["eje-3"][self.numero]
 
     def mostrarEscena(self, escena):
         print(
@@ -16,4 +29,3 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             " de un maximo de " + str(self.maximoPantallas) +
             ", escena: " + str(self.convertirComputadorHumano(escena))
             )
-
