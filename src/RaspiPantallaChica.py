@@ -3,6 +3,7 @@ from Direcciones import chicas
 from Preguntas import preguntas, faltantes
 # from Respuestas import respuestas
 import os
+import random
 
 
 class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
@@ -47,8 +48,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 print(preguntas[args[0]]["respuestas"])
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
-                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][0]
-                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][0]
+                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][random.randomint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
+                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randomint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
                         # print(self.numeroRespuesta1)
                         # print(self.numeroRespuesta2)
                     else:
@@ -77,12 +78,13 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
 
-                self.comandoTotal = ""
+
 
                 if (self.comandoPantalla1 is not None):
-                    self.comandoTotal += self.comandoPantalla1 + "& " + self.comandoPantalla2
-                    os.system(self.comandoTotal)
-
+                     os.system(self.comandoPantalla1)
+                if (self.comandoPantalla2 is not None):
+                     os.system(self.comandoPantalla2)
+            
                 #     # os.system(self.comandoPantalla1)
                 # if (self.comandoPantalla2 is not None):
                 #     self.comandoTotal += self.comandoPantalla2
