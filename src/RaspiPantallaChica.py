@@ -32,28 +32,29 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             self.direccionIP = chicas["eje-3"][self.numero]
 
     def default_handler(self, address, *args):
-        print("soy handler de la chicaaa")
-        if (args is not None):
-            # print(preguntas[args[0]]["respuestas"])
-            if (self.eje == 1):
-                if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
-                    self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][0]
-                    if (self.numeroRespuesta not in faltantes):
-                        self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
-                        # os.system(self.comando)
-                    else:
-                        print("respuesta faltante, no la muestro")
-                # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
-                print(preguntas[args[0]]["respuestas"]["eje-1"])
-            elif (self.eje == 2):
-                print(preguntas[args[0]]["respuestas"]["eje-2"])
-            elif (self.eje == 3):
-                print(preguntas[args[0]]["respuestas"]["eje-3"])
-            # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
-            # os.system(self.comando)
-        # else:
-        #     print("pucha os.system(self.comando) era None")
-        # print(f"DEFAULT {address}: {args}")
+        if (address.startswith("/paraChicas/nuevaRespuesta/")):
+            print("soy handler de la chicaaa")
+            if (args is not None):
+                # print(preguntas[args[0]]["respuestas"])
+                if (self.eje == 1):
+                    if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
+                        self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][0]
+                        if (self.numeroRespuesta not in faltantes):
+                            self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
+                            # os.system(self.comando)
+                        else:
+                            print("respuesta faltante, no la muestro")
+                    # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
+                    print(preguntas[args[0]]["respuestas"]["eje-1"])
+                elif (self.eje == 2):
+                    print(preguntas[args[0]]["respuestas"]["eje-2"])
+                elif (self.eje == 3):
+                    print(preguntas[args[0]]["respuestas"]["eje-3"])
+                # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
+                os.system(self.comando)
+            # else:
+            #     print("pucha os.system(self.comando) era None")
+            # print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):
         print(
