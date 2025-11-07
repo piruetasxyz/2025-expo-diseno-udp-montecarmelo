@@ -9,7 +9,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
     def __init__(self, eje, numero):
         super().__init__(eje, numero)
         self.tamano = "chica"
-        self.maximoPantallas = 4``
+        self.maximoPantallas = 4
 
         # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoPrefijoPantalla1 "vlc --fullscreen --qt-fullscreen-screennumber=0  --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
