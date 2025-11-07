@@ -5,6 +5,7 @@ import os
 # from pythonosc.osc_server import BlockingOSCUDPServer
 # from Direcciones import chicas, medianas, grandes
 
+
 class RaspiPantalla:
     def __init__(self, eje, numero):
         self.eje = int(eje)
@@ -22,15 +23,15 @@ class RaspiPantalla:
         self.comando = None
         self.listaVideos = None
 
-    def handlerNuevaPregunta(self, address, *args):
-        pass
-        # print("soy handler nueva pregunta")
-        # print(f"DEFAULT {address}: {args}")
+    # def handlerNuevaPregunta(self, address, *args):
+    #     pass
+    #     # print("soy handler nueva pregunta")
+    #     # print(f"DEFAULT {address}: {args}")
 
-    def handlerNuevaRespuesta(self, address, *args):
-        pass
-        # print("soy handler nueva respuesta")
-        # print(f"DEFAULT {address}: {args}") 
+    # def handlerNuevaRespuesta(self, address, *args):
+    #     pass
+    #     # print("soy handler nueva respuesta")
+    #     # print(f"DEFAULT {address}: {args}") 
 
     def buclear(self):
         pass
@@ -64,13 +65,13 @@ class RaspiPantalla:
 
         self.dispatcher = Dispatcher()
 
-        self.dispatcher.map(
-             "/paraMedianas/nuevaPregunta/*",
-             self.handlerNuevaPregunta)
-        self.dispatcher.map(
-             "/paraChicas/nuevaRespuesta/*",
-             self.handlerNuevaRespuesta)
-        self.dispatcher.map("/admin/bucle/*", self.print_handler)
+        # self.dispatcher.map(
+        #      "/paraMedianas/nuevaPregunta/*",
+        #      self.handlerNuevaPregunta)
+        # self.dispatcher.map(
+        #      "/paraChicas/nuevaRespuesta/*",
+        #      self.handlerNuevaRespuesta)
+        # self.dispatcher.map("/admin/bucle/*", self.print_handler)
         self.dispatcher.set_default_handler(self.default_handler)
         self.server = osc_server.ThreadingOSCUDPServer(
             (self.direccionIP,
