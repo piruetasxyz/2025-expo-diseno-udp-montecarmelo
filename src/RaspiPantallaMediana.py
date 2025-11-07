@@ -38,7 +38,9 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
     def default_handler(self, address, *args):
         print("soy handler de la medianaaa")
         if (self.comando is not None):
-            print(args)
+            # print(args[0])
+            print(args[0])
+            print(type(args[0]))
             # print(type(args[2]))
             # os.system(self.comando)
         else:
