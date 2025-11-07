@@ -41,7 +41,6 @@ class RaspiPantalla:
 
     def default_handler(self, address, *args):
         pass
-        # print(f"DEFAULT {address}: {args}")
 
     def print_compute_handler(self, unused_addr, args, volume):
         try:
