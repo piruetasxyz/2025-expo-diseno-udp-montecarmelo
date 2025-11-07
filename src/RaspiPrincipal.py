@@ -53,5 +53,3 @@ class RaspiPrincipal:
         self.enviarMensajeAtodos("paraChicas/nuevaRespuesta",
                                  preguntaActual,
                                  respuestaActual)
-
-

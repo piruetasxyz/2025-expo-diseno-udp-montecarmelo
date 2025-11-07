@@ -15,9 +15,11 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
 
         self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../preguntas/"
         self.comandoSufijo = ".mp4'"
-        self.listaVideos = ["pregunta-01"]
+        self.listaVideos = list(preguntas.keys())
+        # self.listaVideos = ["pregunta-01"]
 
         self.comando = self.comandoPrefijo + str(self.listaVideos[0]) + self.comandoSufijo
+        print(self.comando)
 
         print("recuperando ip")
         if (self.eje == 1):
