@@ -1,5 +1,0 @@
-# python-mpv
-
-python-vlc==3.0.21203
-
-pygame==2.6.1
