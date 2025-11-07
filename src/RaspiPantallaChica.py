@@ -40,7 +40,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     self.numeroRespuesta = int(preguntas[args[0]]["respuestas"]["eje-1"][0])
                     if (self.numeroRespuesta not in faltantes):
                         self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
-                         os.system(self.comando)
+                        os.system(self.comando)
                     else:
                         print("respuesta faltante, no la muestro")
                 # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
