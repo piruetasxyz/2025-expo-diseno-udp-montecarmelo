@@ -21,6 +21,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
         self.comandoPantalla1 = None
         self.comandoPantalla2 = None
+        self.numeroRespuesta1 = None
+        self.numeroRespuesta2 = None
 
         # self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
         print(self.comando)
@@ -47,7 +49,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                         self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][0]
                     else:
                         self.numeroRespuesta1 = None
-                        self.numeroRespuesta2 = None 
+                        self.numeroRespuesta2 = None
                     # if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 1:
                     #     self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
                     # else:
