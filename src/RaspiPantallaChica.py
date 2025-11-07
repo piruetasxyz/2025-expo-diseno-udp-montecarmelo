@@ -10,15 +10,15 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         self.tamano = "chica"
         self.maximoPantallas = 4
 
-        # print("recuperando ip")
+        print("recuperando ip")
         if (self.eje == 1):
-            # print("aqui con eje 1")
+            print("aqui con eje 1")
             self.direccionIP = chicas["eje-1"][self.numero]
         elif (self.eje == 2):
-            # print("aqui con eje 2")
+            print("aqui con eje 2")
             self.direccionIP = chicas["eje-2"][self.numero]
         elif (self.eje == 3):
-            # print("aqui con eje 3")
+            print("aqui con eje 3")
             self.direccionIP = chicas["eje-3"][self.numero]
 
     def mostrarEscena(self, escena):
