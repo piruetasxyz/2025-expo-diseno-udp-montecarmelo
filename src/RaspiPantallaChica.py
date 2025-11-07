@@ -1,7 +1,7 @@
 import RaspiPantalla
 from Direcciones import chicas
-from Preguntas import preguntas
-from Respuestas import respuestas
+from Preguntas import preguntas, faltantes
+# from Respuestas import respuestas
 import os
 
 
@@ -13,7 +13,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
         self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoSufijo = ".mp4'"
-        self.listaVideos = list(respuestas.keys())
+        # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
         # self.listaVideos = ["01"]
 
@@ -37,8 +37,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             # print(preguntas[args[0]]["respuestas"])
             if (self.eje == 1):
                 if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
-                    self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]["eje-1"][0]) + self.comandoSufijo
-                    os.system(self.comando)
+                    self.numeroRespuesta = int(preguntas[args[0]]["respuestas"]["eje-1"][0])
+                    if (self.numeroRespuesta not in faltantes):
+                        self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
+                         os.system(self.comando)
+                    else:
+                        print("respuesta faltante, no la muestro")
                 # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
                 print(preguntas[args[0]]["respuestas"]["eje-1"])
             elif (self.eje == 2):
