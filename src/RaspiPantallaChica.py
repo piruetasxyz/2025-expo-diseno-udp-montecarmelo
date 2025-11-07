@@ -83,10 +83,10 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
 
                 if (self.comandoPantalla1 is not None):
-                     os.system(self.comandoPantalla1)
+                     p1 = subprocess.Popen(self.comandoPantalla1, shell=True)
                 if (self.comandoPantalla2 is not None):
-                     os.system(self.comandoPantalla2)
-            
+                     p2 = subprocess.Popen(self.comandoPantalla2, shell=True)
+
                 #     # os.system(self.comandoPantalla1)
                 # if (self.comandoPantalla2 is not None):
                 #     self.comandoTotal += self.comandoPantalla2
