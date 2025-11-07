@@ -7,6 +7,10 @@ class RaspiPantallaGrande(RaspiPantalla.RaspiPantalla):
         self.tamano = "grande"
         self.maximoPantallas = 4
 
+    def default_handler(self, address, *args):
+        pass
+        # print(f"DEFAULT {address}: {args}")
+
     def mostrarEscena(self, escena):
         print(
             "pantalla grande, eje " +

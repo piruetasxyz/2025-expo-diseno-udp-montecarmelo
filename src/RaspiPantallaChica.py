@@ -21,6 +21,10 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             print("aqui con eje 3")
             self.direccionIP = chicas["eje-3"][self.numero]
 
+    def default_handler(self, address, *args):
+        pass
+        # print(f"DEFAULT {address}: {args}")
+
     def mostrarEscena(self, escena):
         print(
             "pantalla chica, eje " + 

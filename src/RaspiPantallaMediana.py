@@ -1,6 +1,7 @@
 import RaspiPantalla
 from Preguntas import preguntas
 from Direcciones import medianas
+import os
 
 
 class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
@@ -23,6 +24,11 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
             print("aqui con eje 3")
             self.direccionIP = medianas["eje-3"][self.numero]
 
+    def default_handler(self, address, *args):
+        pass
+        print("soy handler de la medianaaa")
+        print(f"DEFAULT {address}: {args}")
+
     def mostrarEscena(self, escena):
         print(
             "pantalla mediana, eje " +
@@ -36,7 +42,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         self.mostrarPregunta(preguntaActual, self.eje)
 
     def mostrarPregunta(self, pregunta, eje):
-        
+        os.system(self.comando)
         print(self.preguntaActual["texto"])
 
     def mostrarRespuestas(self, pregunta, eje):
