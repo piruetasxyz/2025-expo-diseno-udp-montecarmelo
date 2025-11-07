@@ -19,6 +19,9 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         print("lista respuestas:", self.listaVideos)
         # self.listaVideos = ["01"]
 
+        self.comandoPantalla1 = None
+        self.comandoPantalla2 = None
+
         # self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
         print(self.comando)
 
@@ -44,10 +47,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                         self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
                         if (self.numeroRespuesta1 not in faltantes):
                             self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
+                        else:
+                            self.comandoPantalla1 = None
                         if (self.numeroRespuesta2 not in faltantes):
                             self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
                         else:
-                            print("respuesta faltante, no la muestro")
+                            self.comandoPantalla2 = None
                     # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
                     print(preguntas[args[0]]["respuestas"]["eje-1"])
                 elif (self.eje == 2):
@@ -55,8 +60,10 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
-                os.system(self.comandoPantalla1)
-                os.system(self.comandoPantalla2)
+                if (self.comandoPantalla1 is not None):
+                    os.system(self.comandoPantalla1)
+                if (self.comandoPantalla2 is not None):
+                    os.system(self.comandoPantalla2)
             # else:
             #     print("pucha os.system(self.comando) era None")
             # print(f"DEFAULT {address}: {args}")
