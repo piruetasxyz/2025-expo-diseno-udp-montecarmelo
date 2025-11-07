@@ -75,6 +75,7 @@ class Admin:
             self.preguntaAnterior = self.preguntaActual
             self.preguntaActual = random.randint(1, len(preguntas))
             self.raspi.enviarMensajeNuevaPregunta(self.preguntaActual)
+            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual)
 
     def nuevaRespuesta(self):
         # elegir nueva respuesta aleatoria

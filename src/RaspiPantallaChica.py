@@ -37,9 +37,9 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             print(preguntas[args[0]]["respuestas"])
             # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
             # os.system(self.comando)
-        else:
-            print("pucha os.system(self.comando) era None")
-        print(f"DEFAULT {address}: {args}")
+        # else:
+        #     print("pucha os.system(self.comando) era None")
+        # print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):
         print(

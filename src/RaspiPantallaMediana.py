@@ -46,7 +46,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
             os.system(self.comando)
         else:
             print("pucha os.system(self.comando) era None")
-        # print(f"DEFAULT {address}: {args}")
+        print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):
         print(
