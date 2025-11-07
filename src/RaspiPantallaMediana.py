@@ -1,6 +1,6 @@
 import RaspiPantalla
-from Preguntas import preguntas
 from Direcciones import medianas
+from Preguntas import preguntas
 import os
 
 

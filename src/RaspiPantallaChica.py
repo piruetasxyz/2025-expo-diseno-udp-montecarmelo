@@ -1,7 +1,8 @@
 import RaspiPantalla
+from Direcciones import chicas
 from Preguntas import preguntas
 from Respuestas import respuestas
-from Direcciones import chicas
+import os
 
 
 class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
@@ -9,6 +10,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         super().__init__(eje, numero)
         self.tamano = "chica"
         self.maximoPantallas = 4
+
+        self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoSufijo = ".mp4'"
+        self.listaVideos = ["respuesta-01"]
+
+        self.comando = self.comandoPrefijo + self.listaVideos[0] + self.comandoSufijo
 
         print("recuperando ip")
         if (self.eje == 1):
@@ -23,7 +30,9 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
     def default_handler(self, address, *args):
         pass
-        # print(f"DEFAULT {address}: {args}")
+        print("soy handler de la chicaaa")
+        os.system(self.comando)
+        print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):
         print(
