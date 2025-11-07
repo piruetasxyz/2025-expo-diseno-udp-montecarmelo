@@ -17,7 +17,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         print("lista respuestas:", self.listaVideos)
         # self.listaVideos = ["01"]
 
-        self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
+        # self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
         print(self.comando)
 
         print("recuperando ip")
@@ -32,10 +32,11 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             self.direccionIP = chicas["eje-3"][self.numero]
 
     def default_handler(self, address, *args):
-        pass
         print("soy handler de la chicaaa")
         if (self.comando is not None):
-            os.system(self.comando)
+            print(preguntas[args[0]]["respuestas"])
+            # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
+            # os.system(self.comando)
         else:
             print("pucha os.system(self.comando) era None")
         print(f"DEFAULT {address}: {args}")
