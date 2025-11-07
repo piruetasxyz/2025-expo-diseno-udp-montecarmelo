@@ -74,14 +74,20 @@ medianas = {
 grandes = {
     "eje-1":
     [
+        # la 0 es placeholder
+        "0.0.0.0",
         "0.0.0.0",
     ],
     "eje-2":
     [
+        # la 0 es placeholder
+        "0.0.0.0",
         "0.0.0.0",
     ],
     "eje-3":
     [
+        # la 0 es placeholder
+        "0.0.0.0",
         "0.0.0.0",
     ],
 }
