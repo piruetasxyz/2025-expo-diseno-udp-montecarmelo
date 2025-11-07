@@ -4,6 +4,7 @@ from Preguntas import preguntas, faltantes
 # from Respuestas import respuestas
 import os
 import random
+import subprocess
 
 
 class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
