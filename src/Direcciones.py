@@ -1,3 +1,6 @@
+
+principal = "192.168.1.103"
+
 # computadores de desarrollo
 dev = [
     # macMiniLab
@@ -15,7 +18,7 @@ dev = [
 # hay 4 pantallas por eje
 chicas = {
     "eje-1":
-    [ 
+    [
         # la 0 es placeholder
         "0.0.0.0",
         # esta es 1

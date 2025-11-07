@@ -1,5 +1,8 @@
 from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server
+import os
+
+
 # from pythonosc.osc_server import BlockingOSCUDPServer
 # from Direcciones import chicas, medianas, grandes
 
@@ -14,6 +17,12 @@ class RaspiPantalla:
         self.maximoPantallas = None
         self.corriendo = True
         self.direccionIP = None
+
+        self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../preguntas/"
+        self.comandoSufijo = ".mp4'"
+        self.listaVideos = ["pregunta-01"]
+
+        self.comando = self.comandoPrefijo + self.listaVideos[0] + self.comandoSufijo
 
     def buclear(self):
         pass

@@ -36,6 +36,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         self.mostrarPregunta(preguntaActual, self.eje)
 
     def mostrarPregunta(self, pregunta, eje):
+        
         print(self.preguntaActual["texto"])
 
     def mostrarRespuestas(self, pregunta, eje):
