@@ -75,10 +75,11 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
                 
-                if (self.comandoPantalla1 is not None):
-                    os.system(self.comandoPantalla1)
-                if (self.comandoPantalla2 is not None):
-                    os.system(self.comandoPantalla2)
+                # if (self.comandoPantalla1 is not None):
+                #     os.system(self.comandoPantalla1)
+                # if (self.comandoPantalla2 is not None):
+                #     os.system(self.comandoPantalla2)
+                os.system(self.comandoPantalla1 + "& " + self.comandoPantalla2)
             # else:
             #     print("pucha os.system(self.comando) era None")
             # print(f"DEFAULT {address}: {args}")
