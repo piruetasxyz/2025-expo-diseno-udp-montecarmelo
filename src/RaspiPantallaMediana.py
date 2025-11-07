@@ -23,13 +23,13 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
 
         print("recuperando ip")
         if (self.eje == 1):
-            print("aqui con eje 1")
+            print("aqui en eje 1")
             self.direccionIP = medianas["eje-1"][self.numero]
         elif (self.eje == 2):
-            print("aqui con eje 2")
+            print("aqui en eje 2")
             self.direccionIP = medianas["eje-2"][self.numero]
         elif (self.eje == 3):
-            print("aqui con eje 3")
+            print("aqui en eje 3")
             self.direccionIP = medianas["eje-3"][self.numero]
 
     # def handlerNuevaPregunta(self, address, *args):
@@ -40,7 +40,10 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         if (self.comando is not None):
             # print(args[0])
             print(args[0])
-            print(type(args[0]))
+            # print(type(args[0]))
+            preguntas.get(args[0])
+            preguntas.get(args[0]["archivo"])
+
             # print(type(args[2]))
             # os.system(self.comando)
         else:
