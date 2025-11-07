@@ -32,6 +32,9 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
             print("aqui con eje 3")
             self.direccionIP = medianas["eje-3"][self.numero]
 
+    def handlerNuevaPregunta(self, address, *args):
+        print("soy pantalla mediana y me pidieron nueva pregunta")
+
     def default_handler(self, address, *args):
         pass
         print("soy handler de la medianaaa")
