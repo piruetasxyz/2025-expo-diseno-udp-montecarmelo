@@ -33,7 +33,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
     def default_handler(self, address, *args):
         print("soy handler de la chicaaa")
-        if (self.comando is not None):
+        if (args is not None):
             print(preguntas[args[0]]["respuestas"])
             # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
             # os.system(self.comando)
