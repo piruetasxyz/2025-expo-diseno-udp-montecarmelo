@@ -17,7 +17,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         print("lista respuestas:", self.listaVideos)
         # self.listaVideos = ["01"]
 
-        self.comando = self.comandoPrefijo + self.listaVideos[0] + self.comandoSufijo
+        self.comando = self.comandoPrefijo + str(self.listaVideos[0]) + self.comandoSufijo
 
         print("recuperando ip")
         if (self.eje == 1):
