@@ -17,9 +17,10 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         # self.comandoSufijo = ".mp4'"
         self.comandoSufijo = ".jpg'"
         self.listaVideos = list(preguntas.keys())
+        print(self.listaVideos)
         # self.listaVideos = ["pregunta-01"]
 
-        self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
+        self.comando = self.comandoPrefijo + str(self.listaVideos[0]) + self.comandoSufijo
         print(self.comando)
 
         print("recuperando ip")
