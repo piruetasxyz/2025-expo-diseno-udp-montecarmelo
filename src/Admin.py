@@ -77,10 +77,10 @@ class Admin:
             self.raspi.enviarMensajeNuevaPregunta(self.preguntaActual)
             self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual)
 
-    def nuevaRespuesta(self):
-        # elegir nueva respuesta aleatoria
-        if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
-            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, self.respuestaActual)
+    # def nuevaRespuesta(self):
+    #     # elegir nueva respuesta aleatoria
+    #     if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+    #         self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, self.respuestaActual)
 
     def detener(self):
         self.corriendo = False

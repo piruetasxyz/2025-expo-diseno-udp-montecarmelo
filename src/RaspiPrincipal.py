@@ -48,8 +48,9 @@ class RaspiPrincipal:
 
     def enviarMensajeNuevaPregunta(self, preguntaActual):
         self.enviarMensajeATodos("/paraMedianas/nuevaPregunta", preguntaActual)
+        self.enviarMensajeATodos("/paraChicas/nuevaPregunta", preguntaActual)
 
-    def enviarMensajeNuevaRespuesta(self, preguntaActual, respuestaActual):
-        self.enviarMensajeAtodos("paraChicas/nuevaRespuesta",
-                                 preguntaActual,
-                                 respuestaActual)
+    # def enviarMensajeNuevaRespuesta(self, preguntaActual, respuestaActual):
+    #     self.enviarMensajeAtodos("paraChicas/nuevaRespuesta",
+    #                              preguntaActual,
+    #                              respuestaActual)
