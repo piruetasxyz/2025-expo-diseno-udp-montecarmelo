@@ -9,9 +9,11 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
     def __init__(self, eje, numero):
         super().__init__(eje, numero)
         self.tamano = "chica"
-        self.maximoPantallas = 4
+        self.maximoPantallas = 4``
 
-        self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla1 "vlc --fullscreen --qt-fullscreen-screennumber=0  --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijoPantalla2 "vlc --fullscreen --qt-fullscreen-screennumber=1 --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
@@ -38,10 +40,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 # print(preguntas[args[0]]["respuestas"])
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
-                        self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][0]
-                        if (self.numeroRespuesta not in faltantes):
-                            self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
-                            # os.system(self.comando)
+                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][0]
+                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
+                        if (self.numeroRespuesta1 not in faltantes):
+                            self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
+                        if (self.numeroRespuesta2 not in faltantes):
+                            self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
                         else:
                             print("respuesta faltante, no la muestro")
                     # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
@@ -51,7 +55,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
-                os.system(self.comando)
+                os.system(self.comandoPantalla1)
+                os.system(self.comandoPantalla2)
             # else:
             #     print("pucha os.system(self.comando) era None")
             # print(f"DEFAULT {address}: {args}")
