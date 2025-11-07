@@ -13,6 +13,12 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         self.preguntaActual = preguntas.get(1)
         self.preguntaAnterior = None
 
+        self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../preguntas/"
+        self.comandoSufijo = ".mp4'"
+        self.listaVideos = ["pregunta-01"]
+
+        self.comando = self.comandoPrefijo + self.listaVideos[0] + self.comandoSufijo
+
         print("recuperando ip")
         if (self.eje == 1):
             print("aqui con eje 1")
@@ -27,7 +33,10 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
     def default_handler(self, address, *args):
         pass
         print("soy handler de la medianaaa")
-        os.system(self.comando)
+        if (self.comando is not None):
+            os.system(self.comando)
+        else:
+            print("pucha os.system(self.comando) era None")
         print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):

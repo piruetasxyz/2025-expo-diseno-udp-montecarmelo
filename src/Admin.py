@@ -36,6 +36,11 @@ class Admin:
         self.preguntaActual = random.randint(1, len(preguntas))
         self.preguntaAnterior = None
 
+        # las respuestas
+        self.listaRespuestas = preguntas.get(self.preguntaActual).get("respuestas")
+        self.respuestaActual = None
+        self.respuestaAnterior = None
+
         # guion
         self.comportamientoRaspisPantallaChica = []
         self.comportamientoRaspisPantallaMediana = []
@@ -70,6 +75,11 @@ class Admin:
             self.preguntaAnterior = self.preguntaActual
             self.preguntaActual = random.randint(1, len(preguntas))
             self.raspi.enviarMensajeNuevaPregunta(self.preguntaActual)
+
+    def nuevaRespuesta(self):
+        # elegir nueva respuesta aleatoria
+        if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, self.respuestaActual)
 
     def detener(self):
         self.corriendo = False

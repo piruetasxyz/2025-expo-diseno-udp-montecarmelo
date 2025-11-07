@@ -13,7 +13,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
         self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         self.comandoSufijo = ".mp4'"
-        self.listaVideos = ["respuesta-01"]
+        self.listaVideos = ["01"]
 
         self.comando = self.comandoPrefijo + self.listaVideos[0] + self.comandoSufijo
 
@@ -31,7 +31,10 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
     def default_handler(self, address, *args):
         pass
         print("soy handler de la chicaaa")
-        os.system(self.comando)
+        if (self.comando is not None):
+            os.system(self.comando)
+        else:
+            print("pucha os.system(self.comando) era None")
         print(f"DEFAULT {address}: {args}")
 
     def mostrarEscena(self, escena):
