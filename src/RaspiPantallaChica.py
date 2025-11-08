@@ -56,9 +56,12 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
                         self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
-                        self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
-                        print(self.comando)
-                        os.system(self.comando)
+                        if self.numeroRespuesta not in faltantes:
+                            self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
+                            print(self.comando)
+                            os.system(self.comando)
+                        else:
+                            print("pucha no tengo el video")
                     # print(preguntas[args[0]]["respuestas"]["eje-1"])
                 elif (self.eje == 2):
                     print(preguntas[args[0]]["respuestas"]["eje-2"])
