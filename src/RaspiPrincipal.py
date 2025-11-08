@@ -1,6 +1,7 @@
 # importar biblioteca
 from pythonosc.udp_client import SimpleUDPClient
-from Direcciones import chicas, medianas, dev, principal
+# from Direcciones import chicas, medianas, dev, principal
+from Direcciones import chicas, medianas, principal
 
 
 class RaspiPrincipal:

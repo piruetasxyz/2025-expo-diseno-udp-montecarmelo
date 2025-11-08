@@ -6,7 +6,7 @@ from RaspiPrincipal import RaspiPrincipal
 from RaspiPantallaChica import RaspiPantallaChica
 from RaspiPantallaMediana import RaspiPantallaMediana
 from RaspiPantallaGrande import RaspiPantallaGrande
-import Guion
+# import Guion
 from Preguntas import preguntas
 
 
@@ -63,7 +63,6 @@ class Admin:
 
     def calcularSiNuevaPregunta(self):
         if (self.ahoraM - self.mUltimaPregunta) >= self.mEntrePreguntas:
-            
             return True
         else:
             return False

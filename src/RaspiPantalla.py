@@ -31,7 +31,7 @@ class RaspiPantalla:
     # def handlerNuevaRespuesta(self, address, *args):
     #     pass
     #     # print("soy handler nueva respuesta")
-    #     # print(f"DEFAULT {address}: {args}") 
+    #     # print(f"DEFAULT {address}: {args}")
 
     def buclear(self):
         pass
