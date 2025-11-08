@@ -56,28 +56,6 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
                         self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
-                        # self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
-                        # self.numeroRespuesta2 = self.numeroRespuesta1
-                        # print(self.numeroRespuesta1)
-                        # print(self.numeroRespuesta2)
-                    # else:
-                        # self.numeroRespuesta1 = None
-                        # self.numeroRespuesta2 = None
-                    # if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 1:
-                    #     self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
-                    # else:
-                        # self.numeroRespuesta2 = None
-
-                    # if (self.numeroRespuesta1 not in faltantes):
-                    #     self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
-                    #     print("comandoPantalla1: " + self.comandoPantalla1)
-                    # else:
-                    #     self.comandoPantalla1 = None
-                    # if (self.numeroRespuesta2 not in faltantes):
-                    #     self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
-                    #     print("comandoPantalla2: " + self.comandoPantalla2)
-                    # else:
-                    #     self.comandoPantalla2 = None
                         self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
                         print(self.comando)
                         os.system(self.comando)
