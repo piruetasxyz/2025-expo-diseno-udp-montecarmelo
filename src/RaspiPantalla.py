@@ -24,7 +24,7 @@ class RaspiPantalla:
         self.listaVideos = None
 
         # probabilidades
-        self.probChicas = 0.5
+        self.probChicas = 0.8
         # self.probMedianas = 0.3
         self.probGrandes = 0.2
 

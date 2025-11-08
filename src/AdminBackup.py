@@ -6,7 +6,6 @@ from RaspiPrincipal import RaspiPrincipal
 from RaspiPantallaChica import RaspiPantallaChica
 from RaspiPantallaMediana import RaspiPantallaMediana
 from RaspiPantallaGrande import RaspiPantallaGrande
-from RaspiPantallaAlvarejoHorizontal import RaspiPantallaAlvarejo
 # import Guion
 from Preguntas import preguntas
 
@@ -43,6 +42,11 @@ class Admin:
         self.listaRespuestas = preguntas[self.preguntaActual]["respuestas"]
         self.respuestaActual = None
         self.respuestaAnterior = None
+
+        # guion
+        self.comportamientoRaspisPantallaChica = []
+        self.comportamientoRaspisPantallaMediana = []
+        self.comportamientoRaspisPantallaGrande = []
 
         # configuracion del sistema
         self.servidores = []
@@ -145,14 +149,26 @@ class Admin:
                 if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
                     if (self.calcularSiNuevaPregunta()):
                         self.nuevaPregunta()
+                elif (self.raspi.__class__.__name__ == "RaspiPantallaChica"):
+                    pass
+                elif (self.raspi.__class__.__name__ == "RaspiPantallaMediana"):
+                    pass
+                elif (self.raspi.__class__.__name__ == "RaspiPantallaGrande"):
+                    pass
+                # self.raspi.mostrar()
+            if self.calcularSiNuevaRespuesta():
+                if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+                    if (self.calcularSiNuevaRespuesta()):
+                        self.nuevaRespuesta()
+                else:
+                    pass
+            if self.detectarHoraCambio():
+                print("nueva hora: " + str(self.ahoraH))
+            # self.cliente.enviarMensajeATodos("/admin/bucle", 1)
+        # self.detener()
 
     def crearPrincipal(self):
         self.raspi = RaspiPrincipal(self.puertoPrincipalEnviar)
-        self.buclear()
-
-    def crearAlvarejo(self, isHorizontal):
-        self.raspi = RaspiPantallaAlvarejo(eje, isHorizontal)
-        self.raspi.handler()
         self.buclear()
 
     def crearChica(self, eje, numero):
