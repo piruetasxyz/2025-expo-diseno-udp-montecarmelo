@@ -51,8 +51,6 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
     def default_handler(self, address, *args):
         print(address)
-        # if (address.startswith("/paraChicas/nuevaRespuesta")):
-        # if (address.startswith("/paraChicas/nuevaRespuesta")):
         self.auxiliar = "/paraChicas/" + str(self.eje) + "/" + str(self.numero) + "/"
         if (address.startswith(self.auxiliar)):
             print("soy handler de la chicaa")
@@ -63,8 +61,9 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                         self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
                         if self.numeroRespuesta not in faltantes:
                             self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
-                            print(self.comando)
-                            os.system(self.comando)
+                            if (random.random() < self.probChicas):
+                                print(self.comando)
+                                os.system(self.comando)
                         else:
                             print("pucha no tengo el video")
                     # print(preguntas[args[0]]["respuestas"]["eje-1"])

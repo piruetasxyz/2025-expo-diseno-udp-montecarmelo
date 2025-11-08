@@ -48,11 +48,6 @@ class Admin:
         self.comportamientoRaspisPantallaMediana = []
         self.comportamientoRaspisPantallaGrande = []
 
-        # probabilidades
-        # self.probabilidadMostrarPantallasChicas = 0.5
-        # self.probabilidadMostrarPantallasMedianas = 0.3
-        # self.probabilidadMostrarPantallasGrandes = 0.2
-
         # configuracion del sistema
         self.servidores = []
         self.numeroPantallasChicas = 10

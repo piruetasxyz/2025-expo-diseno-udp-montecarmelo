@@ -23,6 +23,11 @@ class RaspiPantalla:
         self.comando = None
         self.listaVideos = None
 
+        # probabilidades
+        self.probChicas = 0.5
+        # self.probMedianas = 0.3
+        self.probGrandes = 0.2
+
     # def handlerNuevaPregunta(self, address, *args):
     #     pass
     #     # print("soy handler nueva pregunta")
