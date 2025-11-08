@@ -103,7 +103,7 @@ grandes = {
         # la 0 es placeholder
         "0.0.0.0",
         # eje1 grande 1
-        "0.0.0.0",
+        "192.168.1.111",
         # la 2 es placeholder
         "0.0.0.0",
         # la 3 es placeholder
