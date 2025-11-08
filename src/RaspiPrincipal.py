@@ -1,7 +1,7 @@
 # importar biblioteca
 from pythonosc.udp_client import SimpleUDPClient
 # from Direcciones import chicas, medianas, dev, principal
-from Direcciones import chicas, medianas, principal
+from Direcciones import chicas, medianas, grandes, principal
 
 
 class RaspiPrincipal:
@@ -18,6 +18,11 @@ class RaspiPrincipal:
 
         for eje in medianas:
             for ip in medianas[eje]:
+                if ip != "0.0.0.0":
+                    self.ipsPantallas.append(ip)
+
+        for eje in grandes:
+            for ip in grandes[eje]:
                 if ip != "0.0.0.0":
                     self.ipsPantallas.append(ip)
         self.clientes = []
@@ -56,4 +61,3 @@ class RaspiPrincipal:
 
     def enviarMensajeNuevoRefresco(self):
         self.enviarMensajeATodos("/paraGrandes/refrescos/", 0)
-
