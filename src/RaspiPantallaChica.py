@@ -38,7 +38,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             "vlc", "--no-one-instance", "--no-playlist-enqueue",
             "--qt-minimal-view", "--no-sub-autodetect-file",
             "--no-video-title-show", "--fullscreen",
-            "--video-x=1920", "--video-y=0"  # adjust for your second monitor
+            "--video-x=0", "--video-y=1920"  # adjust for your second monitor
         ]
 
         # Folder and suffix for videos
