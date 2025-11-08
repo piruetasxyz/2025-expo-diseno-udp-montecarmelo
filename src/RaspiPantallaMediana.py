@@ -44,7 +44,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
                 # print(preguntas[args[0]]["archivo"])
                 # print(type(args[2]))
                 self.comando = self.comandoPrefijo + str(preguntas[args[0]]["archivo"]) + self.comandoSufijo
-                # os.system(self.comando)
+                os.system(self.comando)
             else:
                 print("pucha os.system(self.comando) era None")
             print(f"DEFAULT {address}: {args}")
