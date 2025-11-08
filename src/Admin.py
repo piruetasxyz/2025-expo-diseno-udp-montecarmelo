@@ -28,7 +28,6 @@ class Admin:
         self.raspi = None
         self.puertoPrincipalEnviar = 1234
         self.puertoPantallasRecibir = 1234
-        self.corriendo = True
 
         # cada X minutos cambia la pregunta
         self.mEntrePreguntas = 1
@@ -47,19 +46,13 @@ class Admin:
         self.comportamientoRaspisPantallaGrande = []
 
         # probabilidades
-        self.probabilidadMostrarPantallasChicas = 0.5
-        self.probabilidadMostrarPantallasMedianas = 0.3
-        self.probabilidadMostrarPantallasGrandes = 0.2
+        # self.probabilidadMostrarPantallasChicas = 0.5
+        # self.probabilidadMostrarPantallasMedianas = 0.3
+        # self.probabilidadMostrarPantallasGrandes = 0.2
 
         # configuracion del sistema
         self.servidores = []
         self.numeroPantallasChicas = 10
-
-        self.refresco = [
-            "desierto",
-            "cielo",
-            "bosque",
-        ]
 
     def calcularSiNuevaPregunta(self):
         if (self.ahoraM - self.mUltimaPregunta) >= self.mEntrePreguntas:
@@ -114,10 +107,13 @@ class Admin:
 
     def buclear(self):
         print(self.raspi.__class__.__name__)
+        if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+            self.nuevaPregunta()
         while self.corriendo:
             self.actualizarTiempo()
             if self.detectarMinutoCambio():
                 print("nuevo minuto: " + str(self.ahoraM))
+            if self.calcularSiNuevaPregunta():
                 print(self.raspi.direccionIP)
                 if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
                     if (self.calcularSiNuevaPregunta()):
