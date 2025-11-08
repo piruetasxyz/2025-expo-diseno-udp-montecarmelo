@@ -68,7 +68,6 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
             print("aqui con eje 3")
             self.direccionIP = chicas["eje-3"][self.numero]
 
-
     def default_handler(self, address, *args):
         if (address.startswith("/paraChicas/nuevaRespuesta")):
             print("soy handler de la chicaaa")
@@ -94,10 +93,14 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                         path1 = os.path.join(self.carpeta_videos, f"{self.numeroRespuesta1}{self.comandoSufijo}")
                         print("Pantalla 1 →", path1)
                         subprocess.Popen(self.comandoPrefijoPantalla1 + [path1])
+                    else:
+                        print("Pantalla 1 → respuesta faltante")
                     if (self.numeroRespuesta2 not in faltantes):
                         path2 = os.path.join(self.carpeta_videos, f"{self.numeroRespuesta2}{self.comandoSufijo}")
                         print("Pantalla 2 →", path2)
                         subprocess.Popen(self.comandoPrefijoPantalla2 + [path2])
+                    else:
+                        print("Pantalla 2 → respuesta faltante")
 
                     # --------------------------
                     # OLD: os.system / string commands (commented out)
@@ -121,7 +124,6 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     print(preguntas[args[0]]["respuestas"]["eje-2"])
                 elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
-
 
     def mostrarEscena(self, escena):
         print(
