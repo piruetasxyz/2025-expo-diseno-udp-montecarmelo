@@ -21,7 +21,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=1920 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show  './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
-        print("lista respuestas:", self.listaVideos)
+        # self.listaVideos = Nones
+        # print("lista respuestas:", self.listaVideos)
         # self.listaVideos = ["01"]
 
         # self.comandoPantalla1 = None
@@ -50,7 +51,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
 
     def default_handler(self, address, *args):
         # if (address.startswith("/paraChicas/nuevaRespuesta")):
-        if (address.startswith("/paraChicas/")):
+        # if (address.startswith("/paraChicas/nuevaRespuesta")):
+        if (address.startswith("/paraChicas/" + str(eje) + "/" + str(pantalla) + "/")):
             print("soy handler de la chicaa")
             if (args is not None):
                 print(preguntas[args[0]]["respuestas"])
