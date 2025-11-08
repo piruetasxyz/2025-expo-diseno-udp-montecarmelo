@@ -27,26 +27,30 @@ chicas = {
         # "192.168.1.205",
         # esta es 2
         "192.168.1.108",
-        # "0.0.0.0",
-        # "0.0.0.0",
+        # esta es 3
+        "0.0.0.0",
     ],
     "eje-2":
     [
         # la 0 es placeholder
         "0.0.0.0",
+        # esta es 1
         "0.0.0.0",
+        # esta es 2
         "0.0.0.0",
-        # "0.0.0.0",
-        # "0.0.0.0",
+        # esta es 3
+        "0.0.0.0",
     ],
     "eje-3":
     [
         # la 0 es placeholder
         "0.0.0.0",
+        # esta es 1
         "0.0.0.0",
+        # esta es 2
         "0.0.0.0",
-        # "0.0.0.0",
-        # "0.0.0.0",
+        # esta es 3
+        "0.0.0.0",
     ],
 }
 
@@ -59,18 +63,33 @@ medianas = {
     [
         # la 0 es placeholder
         "0.0.0.0",
-        # esta es eje1 mediana 1
+        # eje1 mediana 1
         "192.168.1.102",
+        # eje1 mediana 2
+        "0.0.0.0",
+        # eje1 mediana 3
         "0.0.0.0",
     ],
     "eje-2":
     [
+        # la 0 es placeholder
         "0.0.0.0",
+        # eje1 mediana 1
+        "192.168.1.102",
+        # eje1 mediana 2
+        "0.0.0.0",
+        # eje1 mediana 3
         "0.0.0.0",
     ],
     "eje-3":
     [
+        # la 0 es placeholder
         "0.0.0.0",
+        # eje1 mediana 1
+        "192.168.1.102",
+        # eje1 mediana 2
+        "0.0.0.0",
+        # eje1 mediana 3
         "0.0.0.0",
     ],
 }
@@ -83,18 +102,33 @@ grandes = {
     [
         # la 0 es placeholder
         "0.0.0.0",
+        # eje1 grande 1
+        "0.0.0.0",
+        # la 2 es placeholder
+        "0.0.0.0",
+        # la 3 es placeholder
         "0.0.0.0",
     ],
     "eje-2":
     [
         # la 0 es placeholder
         "0.0.0.0",
+        # eje1 grande 2
+        "0.0.0.0",
+        # la 2 es placeholder
+        "0.0.0.0",
+        # la 3 es placeholder
         "0.0.0.0",
     ],
     "eje-3":
     [
         # la 0 es placeholder
         "0.0.0.0",
+        # eje3 grande 1
+        "0.0.0.0",
+        # la 2 es placeholder
+        "0.0.0.0",
+        # la 3 es placeholder
         "0.0.0.0",
     ],
 }

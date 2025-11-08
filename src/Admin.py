@@ -31,7 +31,8 @@ class Admin:
 
         # cada X minutos cambia la pregunta
         self.mEntrePreguntas = 5
-        self.mEntreRespuestas = 0.5
+        self.mEntreRespuestas = 0.1
+        self.sEntreRespuestas = 60 * self.mEntreRespuestas
         self.mUltimaPregunta = self.ahoraM
         self.mUltimaRespuesta = self.ahoraM
         self.preguntaActual = random.randint(1, len(preguntas))
@@ -63,27 +64,39 @@ class Admin:
             return False
 
     def calcularSiNuevaRespuesta(self):
-        if (self.ahoraM - self.mUltimaRespuesta) >= self.mEntreRespuestas:
-            return True
-        else:
-            return False
+        # mismo minuto
+        if (self.ahoraM == self.mUltimaPregunta):
+            # si en mismo minuto, diferencia entre ahora SsUltimaPregunta y es mayor que rango
+            if abs(self.ahoraS - self.sUltimaPregunta) >= self.sEntreRespuestas:
+                return True
+            else:
+                return False
 
     def nuevaPregunta(self):
         # elegir nueva pregunta aleatoria
         if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
             self.mUltimaPregunta = self.ahoraM
+            self.sUltimaPregunta = self.ahoraS
             self.preguntaAnterior = self.preguntaActual
             # decidir pregunta aleatoria y enviarla
             self.preguntaActual = random.randint(1, len(preguntas))
             self.raspi.enviarMensajeNuevaPregunta(self.preguntaActual)
-            # print("nueva pregunta??")
             # self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual)
 
     def nuevaRespuesta(self):
         # elegir nueva respuesta aleatoria
         if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+            print("parece que nueva respuesta?")
             self.mUltimaRespuesta = self.ahoraM
-            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, random.randint(1, 3), random.randint(1, 4))
+            self.sUltimaRespuesta = self.ahoraS
+            # AFINAR: enviar solamente a alguna
+            # self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, random.randint(1, 3), random.randint(1, 3))
+            # AFINAR: enviar a eje1
+            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, 1, random.randint(1, 3))
+            # AFINAR: enviar a eje2
+            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, 2, random.randint(1, 3))
+            # AFINAR: enviar a eje3
+            self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, 3, random.randint(1, 3))
 
     def detener(self):
         self.corriendo = False
@@ -137,11 +150,12 @@ class Admin:
                 elif (self.raspi.__class__.__name__ == "RaspiPantallaGrande"):
                     pass
                 # self.raspi.mostrar()
-            # if self.calcularSiNuevaRespuesta():
-            #     if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
-            #         self.nuevaPregunta()
-            #     else:
-            #         pass
+            if self.calcularSiNuevaRespuesta():
+                if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
+                    if (self.calcularSiNuevaRespuesta()):
+                        self.nuevaRespuesta()
+                else:
+                    pass
             if self.detectarHoraCambio():
                 print("nueva hora: " + str(self.ahoraH))
             # self.cliente.enviarMensajeATodos("/admin/bucle", 1)

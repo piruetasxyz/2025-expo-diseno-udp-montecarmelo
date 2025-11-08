@@ -50,6 +50,6 @@ class RaspiPrincipal:
         # self.enviarMensajeATodos("/paraChicas/nuevaRespuesta/", preguntaActual)
 
     def enviarMensajeNuevaRespuesta(self, preguntaActual, eje, pantalla):
-        self.comandoTemp = "paraChicas/" + str(eje) + "/" + str(pantalla) + "/", preguntaActual
-        self.enviarMensajeATodos(self.comandoTemp)
+        self.comandoTemp = "paraChicas/" + str(eje) + "/" + str(pantalla) + "/"
+        self.enviarMensajeATodos(self.comandoTemp, preguntaActual)
         print(self.comandoTemp)
