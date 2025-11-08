@@ -17,8 +17,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         # self.comandoPrefijoPantalla2 = "vlc --no-one-instance --qt-fullscreen-screennumber='7' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         # self.comandoPrefijoPantalla1 = "vlc --video-x=0--video-y=0  --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=3000 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla1 = "vlc --video-x=0 --video-y=0 --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show './../respuestas/"
-        self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=1928 --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show  './../respuestas/"
+        self.comandoPrefijoPantalla1 = "vlc --video-x=0 --video-y=0 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show './../respuestas/"
+        self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=1920 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show  './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
@@ -51,7 +51,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
                         self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
-                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
+                        # self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
+                        self.numeroRespuesta2 = self.numeroRespuesta1
                         # print(self.numeroRespuesta1)
                         # print(self.numeroRespuesta2)
                     else:
