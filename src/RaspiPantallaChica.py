@@ -79,6 +79,8 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     # else:
                     #     self.comandoPantalla2 = None
                         self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
+                        print(self.comando)
+                        os.system(self.comando)
                     # print(preguntas[args[0]]["respuestas"]["eje-1"])
                 elif (self.eje == 2):
                     print(preguntas[args[0]]["respuestas"]["eje-2"])
@@ -86,14 +88,14 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
 
-                if (self.comandoPantalla1 is not None):
-                    os.system(self.comandoPantalla1)
+                # if (self.comandoPantalla1 is not None):
+                    # os.system(self.comandoPantalla1)
                     #      p1 = subprocess.Popen(self.comandoPantalla1, shell=True)
                     # if (self.comandoPantalla2 is not None):
                     #      p2 = subprocess.Popen(self.comandoPantalla2, shell=True)
-                if (self.comandoPantalla2 is not None):
+                # if (self.comandoPantalla2 is not None):
                     # self.comandoTotal += self.comandoPantalla2
-                    os.system(self.comandoPantalla2)
+                    # os.system(self.comandoPantalla2)
                 # os.system(self.comandoPantalla1 + "& " + self.comandoPantalla2)
                 # os.system(self.comandoTotal)
             # else:
