@@ -30,7 +30,7 @@ class Admin:
         self.puertoPantallasRecibir = 1234
 
         # cada X minutos cambia la pregunta
-        self.mEntrePreguntas = 5
+        self.mEntrePreguntas = 1
         self.mEntreRespuestas = 0.1
         self.sEntreRespuestas = 60 * self.mEntreRespuestas
         self.mUltimaPregunta = self.ahoraM
