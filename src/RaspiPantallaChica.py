@@ -1,10 +1,10 @@
 import RaspiPantalla
 from Direcciones import chicas
 from Preguntas import preguntas, faltantes
+# from Respuestas import respuestas
 import os
 import random
 import subprocess
-import re
 
 
 class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
@@ -14,122 +14,120 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         self.maximoPantallas = 4
 
         # --------------------------
-        # Detect monitors and positions
+        # OLD CODE (commented out — now ignored)
         # --------------------------
-        self.monitores = self.detectar_monitores()
-        print("Monitores detectados:", self.monitores)
-
-        # Define geometry strings for MPV
-        if len(self.monitores) >= 2:
-            geom1 = self.monitores[0]["geometry"]
-            geom2 = self.monitores[1]["geometry"]
-        elif len(self.monitores) == 1:
-            geom1 = self.monitores[0]["geometry"]
-            geom2 = "1920x1080+1920+0"  # fallback for single display
-        else:
-            geom1 = "1920x1080+0+0"
-            geom2 = "1920x1080+1920+0"
+        # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla1 = "vlc --no-one-instance --qt-fullscreen-screennumber='2' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla2 = "vlc --no-one-instance --qt-fullscreen-screennumber='7' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla1 = "vlc --video-x=0--video-y=0  --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=3000 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        # self.comandoPrefijoPantalla1 = "vlc --video-x=0 --video-y=0 --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show './../respuestas/"
+        # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=3000 --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show  './../respuestas/"
 
         # --------------------------
-        # MPV base command prefixes
+        # NEW: clean, safe VLC commands as lists
         # --------------------------
         self.comandoPrefijoPantalla1 = [
-            "mpv", "--no-terminal", "--fs", "--no-border", "--quiet",
-            f"--geometry={geom1}"
-        ]
-        self.comandoPrefijoPantalla2 = [
-            "mpv", "--no-terminal", "--fs", "--no-border", "--quiet",
-            f"--geometry={geom2}"
+            "vlc", "--no-one-instance", "--no-playlist-enqueue",
+            "--qt-minimal-view", "--no-sub-autodetect-file",
+            "--no-video-title-show", "--fullscreen",
+            "--video-x=0", "--video-y=0"
         ]
 
+        self.comandoPrefijoPantalla2 = [
+            "vlc", "--no-one-instance", "--no-playlist-enqueue",
+            "--qt-minimal-view", "--no-sub-autodetect-file",
+            "--no-video-title-show", "--fullscreen",
+            "--video-x=1920", "--video-y=0"  # adjust for your second monitor
+        ]
+
+        # Folder and suffix for videos
         self.carpeta_videos = os.path.join(os.path.dirname(__file__), "../respuestas/")
         self.comandoSufijo = ".mp4"
 
-        # Set IP mapping
-        if self.eje == 1:
+        # self.listaVideos = list(respuestas.keys())
+        # print("lista respuestas:", self.listaVideos)
+        # self.listaVideos = ["01"]
+
+        self.comandoPantalla1 = None
+        self.comandoPantalla2 = None
+        self.numeroRespuesta1 = None
+        self.numeroRespuesta2 = None
+
+        # self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
+        # print(self.comando)
+
+        print("recuperando ip")
+        if (self.eje == 1):
+            print("aqui con eje 1")
             self.direccionIP = chicas["eje-1"][self.numero]
-        elif self.eje == 2:
+        elif (self.eje == 2):
+            print("aqui con eje 2")
             self.direccionIP = chicas["eje-2"][self.numero]
-        elif self.eje == 3:
+        elif (self.eje == 3):
+            print("aqui con eje 3")
             self.direccionIP = chicas["eje-3"][self.numero]
 
-    # --------------------------
-    # Detect connected monitors with geometry
-    # --------------------------
-    def detectar_monitores(self):
-        """Detect connected monitors and their geometry using xrandr."""
-        monitores = []
-        try:
-            salida = subprocess.check_output(["xrandr"]).decode("utf-8")
-            # Example match: HDMI-1 connected 1920x1080+0+0
-            patron = re.compile(r"(\S+) connected.*?(\d+)x(\d+)\+(\d+)\+(\d+)")
-            for nombre, ancho, alto, x, y in patron.findall(salida):
-                geometry = f"{ancho}x{alto}+{x}+{y}"
-                monitores.append({
-                    "nombre": nombre,
-                    "x": int(x),
-                    "y": int(y),
-                    "ancho": int(ancho),
-                    "alto": int(alto),
-                    "geometry": geometry
-                })
-            if not monitores:
-                # fallback in case xrandr fails
-                monitores = [
-                    {"nombre": "HDMI-1", "geometry": "1920x1080+0+0"},
-                    {"nombre": "HDMI-2", "geometry": "1920x1080+1920+0"},
-                ]
-        except Exception as e:
-            print("Error detectando monitores:", e)
-            monitores = [
-                {"nombre": "HDMI-1", "geometry": "1920x1080+0+0"},
-                {"nombre": "HDMI-2", "geometry": "1920x1080+1920+0"},
-            ]
-        return monitores
 
-    # --------------------------
-    # OSC message handler
-    # --------------------------
     def default_handler(self, address, *args):
-        if address.startswith("/paraChicas/nuevaRespuesta"):
-            print("Handler de chica")
-            if args is not None:
+        if (address.startswith("/paraChicas/nuevaRespuesta")):
+            print("soy handler de la chicaaa")
+            if (args is not None):
                 print(preguntas[args[0]]["respuestas"])
-
-                if self.eje == 1:
-                    respuestas_eje = preguntas[args[0]]["respuestas"]["eje-1"]
-                    if len(respuestas_eje) > 0:
-                        numeroRespuesta1 = random.choice(respuestas_eje)
-                        numeroRespuesta2 = random.choice(respuestas_eje)
+                if (self.eje == 1):
+                    if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
+                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"]) - 1)]
+                        self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"]) - 1)]
                     else:
-                        numeroRespuesta1 = None
-                        numeroRespuesta2 = None
+                        self.numeroRespuesta1 = None
+                        self.numeroRespuesta2 = None
+
+                    # if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 1:
+                    #     self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
+                    # else:
+                    #     self.numeroRespuesta2 = None
 
                     # --------------------------
-                    # Launch MPV videos
+                    # NEW: build file paths and run VLC subprocesses
                     # --------------------------
-                    if numeroRespuesta1 and numeroRespuesta1 not in faltantes:
-                        path1 = os.path.join(self.carpeta_videos, f"{numeroRespuesta1}{self.comandoSufijo}")
+                    if (self.numeroRespuesta1 not in faltantes):
+                        path1 = os.path.join(self.carpeta_videos, f"{self.numeroRespuesta1}{self.comandoSufijo}")
                         print("Pantalla 1 →", path1)
                         subprocess.Popen(self.comandoPrefijoPantalla1 + [path1])
-
-                    if numeroRespuesta2 and numeroRespuesta2 not in faltantes:
-                        path2 = os.path.join(self.carpeta_videos, f"{numeroRespuesta2}{self.comandoSufijo}")
+                    if (self.numeroRespuesta2 not in faltantes):
+                        path2 = os.path.join(self.carpeta_videos, f"{self.numeroRespuesta2}{self.comandoSufijo}")
                         print("Pantalla 2 →", path2)
                         subprocess.Popen(self.comandoPrefijoPantalla2 + [path2])
 
-                elif self.eje == 2:
+                    # --------------------------
+                    # OLD: os.system / string commands (commented out)
+                    # --------------------------
+                    # if (self.numeroRespuesta1 not in faltantes):
+                    #     self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
+                    #     print("comandoPantalla1: " + self.comandoPantalla1)
+                    # else:
+                    #     self.comandoPantalla1 = None
+                    # if (self.numeroRespuesta2 not in faltantes):
+                    #     self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
+                    #     print("comandoPantalla2: " + self.comandoPantalla2)
+                    # else:
+                    #     self.comandoPantalla2 = None
+                    # if (self.comandoPantalla1 is not None):
+                    #      p1 = subprocess.Popen(self.comandoPantalla1, shell=True)
+                    # if (self.comandoPantalla2 is not None):
+                    #      p2 = subprocess.Popen(self.comandoPantalla2, shell=True)
+
+                elif (self.eje == 2):
                     print(preguntas[args[0]]["respuestas"]["eje-2"])
-                elif self.eje == 3:
+                elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
 
-    # --------------------------
-    # Utility
-    # --------------------------
+
     def mostrarEscena(self, escena):
         print(
-            f"Pantalla chica, eje {self.convertirComputadorHumano(self.eje)}, "
-            f"numero {self.convertirComputadorHumano(self.numero)} "
-            f"de un maximo de {self.maximoPantallas}, escena: "
-            f"{self.convertirComputadorHumano(escena)}"
+            "pantalla chica, eje " + 
+            str(self.convertirComputadorHumano(self.eje)) +
+            ", numero " + str(self.convertirComputadorHumano(self.numero)) +
+            " de un maximo de " + str(self.maximoPantallas) +
+            ", escena: " + str(self.convertirComputadorHumano(escena))
         )
