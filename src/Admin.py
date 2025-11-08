@@ -68,6 +68,9 @@ class Admin:
         else:
             return False
 
+    def nuevoRefresco(self):
+        self.raspi.enviarMensajeNuevoRefresco()
+
     def nuevaPregunta(self):
         # elegir nueva pregunta aleatoria
         if (self.raspi.__class__.__name__ == "RaspiPrincipal"):
@@ -93,6 +96,7 @@ class Admin:
             self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, 2, random.randint(1, 3))
             # AFINAR: enviar a eje3
             self.raspi.enviarMensajeNuevaRespuesta(self.preguntaActual, 3, random.randint(1, 3))
+
 
     def detener(self):
         self.corriendo = False
@@ -129,6 +133,7 @@ class Admin:
         print(self.raspi.__class__.__name__)
         if self.corriendo is False and self.raspi.__class__.__name__ == "RaspiPrincipal":
             self.nuevaPregunta()
+            self.nuevoRefresco()
             self.corriendo = True
         while self.corriendo:
             self.actualizarTiempo()

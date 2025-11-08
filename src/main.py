@@ -44,7 +44,7 @@ else:
 
     elif int(argumento2Tipo) == 2:
         admin.crearMediana(argumento1Eje, argumento3Numero)
-        #   raspiMediana = RaspiPantallaMediana(argumento2, 1)
+        # raspiMediana = RaspiPantallaMediana(argumento2, 1)
         # raspiMediana.handler()
         # print("soy raspi pantalla mediana")
 
