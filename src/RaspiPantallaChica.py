@@ -12,68 +12,73 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         self.tamano = "chica"
         self.maximoPantallas = 4
 
-        # self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
+        self.comandoPrefijo = "vlc --fullscreen --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         # self.comandoPrefijoPantalla1 = "vlc --no-one-instance --qt-fullscreen-screennumber='2' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         # self.comandoPrefijoPantalla2 = "vlc --no-one-instance --qt-fullscreen-screennumber='7' --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         # self.comandoPrefijoPantalla1 = "vlc --video-x=0--video-y=0  --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
         # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=3000 --qt-minimal-view   --no-sub-autodetect-file --no-video-title-show --play-and-exit './../respuestas/"
-        self.comandoPrefijoPantalla1 = "vlc --video-x=0 --video-y=0 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show './../respuestas/"
-        self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=1920 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show  './../respuestas/"
+        # self.comandoPrefijoPantalla1 = "vlc --video-x=0 --video-y=0 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show './../respuestas/"
+        # self.comandoPrefijoPantalla2 = "vlc --video-x=0 --video-y=1920 --fullscreen --no-one-instance --qt-minimal-view --no-sub-autodetect-file --no-video-title-show  './../respuestas/"
         self.comandoSufijo = ".mp4'"
         # self.listaVideos = list(respuestas.keys())
         print("lista respuestas:", self.listaVideos)
         # self.listaVideos = ["01"]
 
-        self.comandoPantalla1 = None
-        self.comandoPantalla2 = None
-        self.numeroRespuesta1 = None
-        self.numeroRespuesta2 = None
+        # self.comandoPantalla1 = None
+        # self.comandoPantalla2 = None
+        # self.numeroRespuesta1 = None
+        # self.numeroRespuesta2 = None
+
+        self.comando = None
 
         # self.comando = self.comandoPrefijo + str(self.listaVideos[0].archivo) + self.comandoSufijo
         # print(self.comando)
 
-        print("recuperando ip")
+        # print("recuperando ip")
         if (self.eje == 1):
             print("aqui con eje 1")
+            print("pantalla chica: " + str(self.numero))
             self.direccionIP = chicas["eje-1"][self.numero]
         elif (self.eje == 2):
             print("aqui con eje 2")
+            print("pantalla chica: " + str(self.numero))
             self.direccionIP = chicas["eje-2"][self.numero]
         elif (self.eje == 3):
             print("aqui con eje 3")
+            print("pantalla chica: " + str(self.numero))
             self.direccionIP = chicas["eje-3"][self.numero]
 
     def default_handler(self, address, *args):
         if (address.startswith("/paraChicas/nuevaRespuesta")):
-            print("soy handler de la chicaaa")
+            print("soy handler de la chicaa")
             if (args is not None):
                 print(preguntas[args[0]]["respuestas"])
                 if (self.eje == 1):
                     if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 0:
-                        self.numeroRespuesta1 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
+                        self.numeroRespuesta = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
                         # self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][random.randint(0, len(preguntas[args[0]]["respuestas"]["eje-1"])-1)]
-                        self.numeroRespuesta2 = self.numeroRespuesta1
+                        # self.numeroRespuesta2 = self.numeroRespuesta1
                         # print(self.numeroRespuesta1)
                         # print(self.numeroRespuesta2)
-                    else:
-                        self.numeroRespuesta1 = None
-                        self.numeroRespuesta2 = None
+                    # else:
+                        # self.numeroRespuesta1 = None
+                        # self.numeroRespuesta2 = None
                     # if len(preguntas[args[0]]["respuestas"]["eje-1"]) > 1:
                     #     self.numeroRespuesta2 = preguntas[args[0]]["respuestas"]["eje-1"][1]
                     # else:
                         # self.numeroRespuesta2 = None
 
-                    if (self.numeroRespuesta1 not in faltantes):
-                        self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
-                        print("comandoPantalla1: " + self.comandoPantalla1)
-                    else:
-                        self.comandoPantalla1 = None
-                    if (self.numeroRespuesta2 not in faltantes):
-                        self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
-                        print("comandoPantalla2: " + self.comandoPantalla2)
-                    else:
-                        self.comandoPantalla2 = None
-                    # self.comando = self.comandoPrefijo + str(preguntas[args[0]]["respuestas"]) + self.comandoSufijo
+                    # if (self.numeroRespuesta1 not in faltantes):
+                    #     self.comandoPantalla1 = self.comandoPrefijoPantalla1 + str(self.numeroRespuesta1) + self.comandoSufijo
+                    #     print("comandoPantalla1: " + self.comandoPantalla1)
+                    # else:
+                    #     self.comandoPantalla1 = None
+                    # if (self.numeroRespuesta2 not in faltantes):
+                    #     self.comandoPantalla2 = self.comandoPrefijoPantalla2 + str(self.numeroRespuesta2) + self.comandoSufijo
+                    #     print("comandoPantalla2: " + self.comandoPantalla2)
+                    # else:
+                    #     self.comandoPantalla2 = None
+                        self.comando = self.comandoPrefijo + str(self.numeroRespuesta) + self.comandoSufijo
                     # print(preguntas[args[0]]["respuestas"]["eje-1"])
                 elif (self.eje == 2):
                     print(preguntas[args[0]]["respuestas"]["eje-2"])
