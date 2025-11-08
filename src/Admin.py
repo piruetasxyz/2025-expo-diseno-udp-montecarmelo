@@ -65,9 +65,9 @@ class Admin:
 
     def calcularSiNuevaRespuesta(self):
         # mismo minuto
-        if (self.ahoraM == self.mUltimaPregunta):
+        if (self.ahoraM == self.mUltimaRespuesta):
             # si en mismo minuto, diferencia entre ahora SsUltimaPregunta y es mayor que rango
-            if abs(self.ahoraS - self.sUltimaPregunta) >= self.sEntreRespuestas:
+            if abs(self.ahoraS - self.mUltimaRespuesta) >= self.sEntreRespuestas:
                 return True
             else:
                 return False
