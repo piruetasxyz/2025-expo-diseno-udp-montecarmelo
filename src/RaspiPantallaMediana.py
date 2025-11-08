@@ -44,7 +44,7 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
                 # print(preguntas[args[0]]["archivo"])
                 # print(type(args[2]))
                 self.comando = self.comandoPrefijo + str(preguntas[args[0]]["archivo"]) + self.comandoSufijo
-                os.system(self.comando)
+                # os.system(self.comando)
             else:
                 print("pucha os.system(self.comando) era None")
             print(f"DEFAULT {address}: {args}")
@@ -65,18 +65,3 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         os.system(self.comando)
         print(self.preguntaActual["texto"])
 
-    def mostrarRespuestas(self, pregunta, eje):
-        # self.pregunta = Preguntas.preguntas.get(pregunta, "pucha")
-        if (eje == 1):
-            print("respuestas eje-1:")
-        for respuesta in self.pregunta["respuestas"]["eje-1"]:
-            if respuesta != 0:
-                print(respuesta + ", ")
-        print("posibles respuestas eje-2:")
-        for respuesta in self.pregunta["respuestas"]["eje-2"]:
-            if respuesta != 0:
-                print(respuesta + ", ")
-        print("posibles respuestas eje-3:")
-        for respuesta in self.pregunta["respuestas"]["eje-3"]:
-            if respuesta != 0:
-                print(respuesta + ", ")

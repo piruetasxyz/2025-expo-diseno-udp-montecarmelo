@@ -20,13 +20,11 @@ class RaspiPrincipal:
             for ip in medianas[eje]:
                 if ip != "0.0.0.0":
                     self.ipsPantallas.append(ip)
- 
         self.clientes = []
         self.enviarMensajeATodos("/admin/init", 1)
         self.corriendo = True
 
         for ip in self.ipsPantallas:
-            # cliente = SimpleUDPClient(ip, self.puerto)
             self.clientes.append(SimpleUDPClient(ip, self.puerto))
 
     def enviarMensaje(self, cliente, etiqueta, valor):
@@ -49,9 +47,9 @@ class RaspiPrincipal:
 
     def enviarMensajeNuevaPregunta(self, preguntaActual):
         self.enviarMensajeATodos("/paraMedianas/nuevaPregunta/", preguntaActual)
-        self.enviarMensajeATodos("/paraChicas/nuevaRespuesta/", preguntaActual)
+        # self.enviarMensajeATodos("/paraChicas/nuevaRespuesta/", preguntaActual)
 
-    # def enviarMensajeNuevaRespuesta(self, preguntaActual, respuestaActual):
-    #     self.enviarMensajeAtodos("paraChicas/nuevaRespuesta",
-    #                              preguntaActual,
-    #                              respuestaActual)
+    def enviarMensajeNuevaRespuesta(self, preguntaActual, eje, pantalla):
+        self.comandoTemp = "paraChicas/" + str(eje) + "/" + str(pantalla) + "/", preguntaActual
+        self.enviarMensajeATodos(self.comandoTemp)
+        print(self.comandoTemp)

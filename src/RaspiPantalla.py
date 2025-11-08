@@ -33,8 +33,8 @@ class RaspiPantalla:
     #     # print("soy handler nueva respuesta")
     #     # print(f"DEFAULT {address}: {args}")
 
-    def buclear(self):
-        pass
+    # def buclear(self):
+    #     pass
 
     def print_handler(self, unused_addr, args):
         print(f"{unused_addr}: {args}")
