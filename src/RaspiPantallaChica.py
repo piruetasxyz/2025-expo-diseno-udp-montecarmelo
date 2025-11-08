@@ -53,6 +53,7 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
         print(address)
         # if (address.startswith("/paraChicas/nuevaRespuesta")):
         # if (address.startswith("/paraChicas/nuevaRespuesta")):
+        print("/paraChicas/" + str(self.eje) + "/" + str(self.numero) + "/")
         if (address.startswith("/paraChicas/" + str(self.eje) + "/" + str(self.numero) + "/")):
             print("soy handler de la chicaa")
             if (args is not None):
