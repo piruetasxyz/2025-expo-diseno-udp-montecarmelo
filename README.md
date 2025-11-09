@@ -2,6 +2,8 @@
 
 ## Índice
 
+- [Contenidos en general](#contenidos-en-general)
+- [Bases de datos]
 - [pantallas de caracteres](#pantallas-de-caracteres)
 
 ## Contenidos en general
@@ -295,6 +297,36 @@ stateDiagram
 
 ## Base de datos
 
+Organizadas en 4 pendrives
+
+### Carpeta ejes
+
+- `eje-1.mp4`
+- `eje-2.mp4`
+- `eje-3.mp4`
+
+## Carpeta generativas
+
+subcarpetas:
+
+- horizontal-1-arica
+- horizontal-2-antofagasta
+- horizontal-3-valpo
+- horizontal-4-aysen
+- horizontal-5-magallanes
+- vertical-1-arica
+- vertical-2-antofagasta
+- vertical-4-aysen
+- vertical-5-magallanes
+
+en cada subcarpeta hay 20 videos, desde 0.mov a 19.mov
+
+### Videos de preguntas
+
+### Videos de respuestas
+
+- `001.mp4` a `098.mp4`, faltan algunos
+
 ```bash
 # preguntas
 curl -L "https://www.dropbox.com/scl/fo/f2ambvsbxbwtf6wc4tobq/AN-NjzJnQLvHv-fL3llbsKo?rlkey=v7toss3tq3gtsc7ysbawpgrgd&dl=1" > preguntas.zip
@@ -364,6 +396,72 @@ sudo systemctl restart expo.service
 # revisar el estado
 systemctl status expo.service
 ```
+
+## Configuración computadoras
+
+Hay Raspberry Pi 5, de 8GB y de 4 GB de de RAM.
+
+Cada raspi está conectada a 1 o 2 pantallas.
+
+Hay 3 grupos de raspis, 1 por cada eje, más una raspi principal.
+
+## Configuración LAN
+
+LAN: local area network
+
+Las computadoras tienen toda la IP 192.168.1.x
+
+donde x indica qué computadora es
+
+Aquí está la lista con sus pantallas
+
+| IP           | eje | tipo      | pantallas | orientación | contenidos |
+| ------------ | --- | --------- | --------- | ----------- | ---------- |
+| 192.168.1.11 | 1   | chica 1   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.12 | 1   | chica 2   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.13 | 1   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
+| 192.168.1.14 | 1   | mediana 2 | 1x 32in   | vertical    | ejes       |
+| 192.168.1.15 | 1   | grande    | 1x 43in   | horizontal  | generativo |
+| 192.168.1.21 | 1   | chica 1   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.22 | 1   | chica 2   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.23 | 1   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
+| 192.168.1.24 | 1   | mediana 2 | 1x 32in   | vertical    | ejes       |
+| 192.168.1.25 | 1   | grande    | 1x 43in   | horizontal  | generativo |
+| 192.168.1.31 | 1   | chica 1   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.32 | 1   | chica 2   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.33 | 1   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
+| 192.168.1.34 | 1   | mediana 2 | 1x 32in   | vertical    | ejes       |
+| 192.168.1.35 | 1   | grande    | 1x 43in   | horizontal  | generativo |
+| 192.168.1.40 | 1   | principal | nada      | nada        | clientes   |
+
+aparte están las siguientes IP asignadas para computadores dev y de pruebas:
+
+- `192.168.1.50`: macboook aaron
+- `192.168.1.51`: ipad aaron
+- `192.168.1.52`: macbook mateo
+- `192.168.1.53`: macbook janis
+
+- `192.168.1.x`: eje 1 raspi chica / respuesta A, 2x pantallas, vertical
+- `192.168.1.x`: eje X raspi chica / respuesta B, 2x pantallas, vertical
+- `192.168.1.x`: eje X raspi grande / generativo, 2
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
+- `192.168.1.x`: eje X
 
 ## Créditos
 
