@@ -422,17 +422,17 @@ Aquí está la lista con sus pantallas
 | 192.168.1.13 | 1   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
 | 192.168.1.14 | 1   | mediana 2 | 1x 32in   | vertical    | ejes       |
 | 192.168.1.15 | 1   | grande    | 1x 43in   | horizontal  | generativo |
-| 192.168.1.21 | 1   | chica 1   | 2x 15in   | vertical    | respuestas |
-| 192.168.1.22 | 1   | chica 2   | 2x 15in   | vertical    | respuestas |
-| 192.168.1.23 | 1   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
-| 192.168.1.24 | 1   | mediana 2 | 1x 32in   | vertical    | ejes       |
-| 192.168.1.25 | 1   | grande    | 1x 43in   | horizontal  | generativo |
-| 192.168.1.31 | 1   | chica 1   | 2x 15in   | vertical    | respuestas |
-| 192.168.1.32 | 1   | chica 2   | 2x 15in   | vertical    | respuestas |
-| 192.168.1.33 | 1   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
-| 192.168.1.34 | 1   | mediana 2 | 1x 32in   | vertical    | ejes       |
-| 192.168.1.35 | 1   | grande    | 1x 43in   | horizontal  | generativo |
-| 192.168.1.40 | 1   | principal | nada      | nada        | clientes   |
+| 192.168.1.21 | 2   | chica 1   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.22 | 2   | chica 2   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.23 | 2   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
+| 192.168.1.24 | 2   | mediana 2 | 1x 32in   | vertical    | ejes       |
+| 192.168.1.25 | 2   | grande    | 1x 43in   | horizontal  | generativo |
+| 192.168.1.31 | 3   | chica 1   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.32 | 3   | chica 2   | 2x 15in   | vertical    | respuestas |
+| 192.168.1.33 | 3   | mediana 1 | 1x 32in   | horizontal  | preguntas  |
+| 192.168.1.34 | 3   | mediana 2 | 1x 32in   | vertical    | ejes       |
+| 192.168.1.35 | 3   | grande    | 1x 43in   | horizontal  | generativo |
+| 192.168.1.40 | 3   | principal | nada      | nada        | clientes   |
 
 aparte están las siguientes IP asignadas para computadores dev y de pruebas:
 
@@ -441,27 +441,9 @@ aparte están las siguientes IP asignadas para computadores dev y de pruebas:
 - `192.168.1.52`: macbook mateo
 - `192.168.1.53`: macbook janis
 
-- `192.168.1.x`: eje 1 raspi chica / respuesta A, 2x pantallas, vertical
-- `192.168.1.x`: eje X raspi chica / respuesta B, 2x pantallas, vertical
-- `192.168.1.x`: eje X raspi grande / generativo, 2
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
-- `192.168.1.x`: eje X
+## Testeo con OSC
+
+en ipad tenemos la app TouchOSC con la siguiente app:
 
 ## Créditos
 
