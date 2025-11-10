@@ -17,8 +17,6 @@ from Direcciones import direcciones
 clientes = []
 
 
-
-
 def obtenerNetwork():
     # obtener el nombre de la red wifi
     return subprocess.run(["iwgetid", "-r"], capture_output=True, text=True).stdout.strip()
@@ -76,18 +74,6 @@ def activate_venv(principal=False):
     print(f"Virtual environment activated: {venv_path}")
 
 
-def default_handler(address, *args):
-    # detectar si address es para chicas, medianas o grandes
-    if (address.startswith(str("/paraChicas/"))):
-        print("mensaje para chicas")
-    elif (address.startswith(str("/paraMedianas/"))):
-        print("mensaje para medianas")
-    elif (address.startswith(str("/paraGrandes/"))):
-        print("mensaje para grandes")
-    elif (address.startswith(str("/desdeAdmin/"))):
-        print("mensaje desde admin")
-
-
 def handlerPantallas(direccion, *args):
     if args.startswith(str("/admin/init/")):
         print("inicializando pantalla...")
@@ -112,7 +98,7 @@ def iniciar(ip):
     if direcciones[ip]["eje"] == 0:
         for ip in direcciones.keys():
             clientes.append(SimpleUDPClient(ip, 1234))
-        enviarMensajeTodos("/admin/init", 1)
+        enviarMensajeTodos("/admin/init/", 1)
         pass
     # si eres raspi con pantalla, haz esto otro
     else:
@@ -121,17 +107,12 @@ def iniciar(ip):
         
         # si eres pantalla chica
         if direcciones[ip]["tipoPantalla"] == 1:
-            print("handler pantalla chica")
             dispatcher.set_default_handler(handlerChicas)
         elif direcciones[ip]["tipoPantalla"] == 2:
-            print("handler pantalla mediana")
             dispatcher.set_default_handler(handlerMedianas)
         elif (direcciones[ip]["tipoPantalla"]) == 3:
-            print("handler pantalla grande")
             dispatcher.set_default_handler(handlerGrandes)
 
-
-        # dispatcher.set_default_handler(handlerPantallas(direcciones[ip]))
         server = osc_server.ThreadingOSCUDPServer(
             (ip,
              1234), dispatcher)
@@ -139,7 +120,9 @@ def iniciar(ip):
 
 
 def handlerChicas(address, *args):
-    print(address)
+    if address.startsWith("/mostrarGenerativas"):
+        print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
+        os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
 
 
 def handlerMedianas(address, *args):
