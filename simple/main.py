@@ -17,7 +17,7 @@ from Direcciones import direcciones
 
 def obtenerNetwork():
     # obtener el nombre de la red wifi
-    return subprocess.run(["iwgetid", "-r"], capture_output=True, text=True)
+    return subprocess.run(["iwgetid", "-r"], capture_output=True, text=True).stdout.strip()
 
 
 def obtenerIP():
@@ -31,7 +31,7 @@ def obtenerIP():
 def activate_venv():
     """
     Activate a Python virtual environment inside the current script.
-    
+ 
     Args:
         venv_path (str): Path to the virtual environment folder.
                          e.g., "source/env"
@@ -41,16 +41,16 @@ def activate_venv():
     venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
 
     python_version = f"python{sys.version_info.major}.{sys.version_info.minor}"
-    
+
     # Build path to site-packages in the venv
     site_packages = os.path.join(venv_path, "lib", python_version, "site-packages")
-    
+
     if not os.path.isdir(site_packages):
         raise FileNotFoundError(f"Cannot find site-packages at: {site_packages}")
-    
+
     # Add venv's site-packages to sys.path
     site.addsitedir(site_packages)
-    
+
     # Optionally, adjust sys.executable (useful in some cases)
     sys.executable = os.path.join(venv_path, "bin", "python")
 
