@@ -155,6 +155,7 @@ def iniciar(ip):
             print("agregarClientes con ip: " + direccion)
             clientes.append(SimpleUDPClient(direccion, 1234))
         enviarMensajeTodos("/admin/init/", 1, clientes)
+        enviarMensajeTodos(" /medianas/mostrarEjes/", 1, clientes)
 
         while True:
             enviarMensajeTodos("/mostrarGenerativas/", 1, clientes)
@@ -168,8 +169,14 @@ def iniciar(ip):
         # si eres pantalla chica
         if direcciones[ip]["tipoPantalla"] == 1:
             dispatcher.set_default_handler(handlerChicas)
+        # si es una pantalla de 32 pulgadas
         elif direcciones[ip]["tipoPantalla"] == 2:
-            dispatcher.set_default_handler(handlerMedianas)
+            # si es la mediana 1, es horizontal y muestra pregunta
+            if direcciones[ip]["numero"] == 1:
+                dispatcher.set_default_handler(handlerMedianas1Horizontal)
+            # si es la mediana 2, es vertical y muestra eje
+            elif direcciones[ip]["numero"] == 2:
+                dispatcher.set_default_handler(handlerMedianas2Vertical)
         elif (direcciones[ip]["tipoPantalla"]) == 3:
             dispatcher.set_default_handler(handlerGrandes)
 
@@ -190,10 +197,16 @@ def handlerChicas(address, *args):
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
-def handlerMedianas(address, *args):
-    print(address)
+def handlerMedianas1Horizontal(address, *args):
     pass
 
+
+def handlerMedianas2Vertical(address, *args):
+    print(address)
+    if address.startswith("/medianas/mostrarEjes/"):
+        comando = direcciones[miIP]["comandoPrefijo"] + "'/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
+        print(archivo)
+        os.system(comando)
 
 def handlerGrandes(address, *args):
     print(address)
