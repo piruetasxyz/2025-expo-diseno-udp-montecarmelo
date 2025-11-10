@@ -208,6 +208,7 @@ def handlerMedianas2Vertical(address, *args):
         print(comando)
         os.system(comando)
 
+
 def handlerGrandes(address, *args):
     print(address)
     pass
