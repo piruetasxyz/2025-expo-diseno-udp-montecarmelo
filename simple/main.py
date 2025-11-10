@@ -2,12 +2,13 @@
 import socket
 import os
 import time
-import venv
+# import venv
+import subprocess
+import site
+import sys
 
 # importar modulos instalados
-from pythonosc.dispatcher import Dispatcher
-from pythonosc import osc_server
-from pythonosc.udp_client import SimpleUDPClient
+
 
 # importar modulos propios
 from Preguntas import preguntas
@@ -27,12 +28,45 @@ def obtenerIP():
     return miIP
 
 
+def activate_venv():
+    """
+    Activate a Python virtual environment inside the current script.
+    
+    Args:
+        venv_path (str): Path to the virtual environment folder.
+                         e.g., "source/env"
+    """
+    # Determine Python version
+
+    venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+
+    python_version = f"python{sys.version_info.major}.{sys.version_info.minor}"
+    
+    # Build path to site-packages in the venv
+    site_packages = os.path.join(venv_path, "lib", python_version, "site-packages")
+    
+    if not os.path.isdir(site_packages):
+        raise FileNotFoundError(f"Cannot find site-packages at: {site_packages}")
+    
+    # Add venv's site-packages to sys.path
+    site.addsitedir(site_packages)
+    
+    # Optionally, adjust sys.executable (useful in some cases)
+    sys.executable = os.path.join(venv_path, "bin", "python")
+
+    print(f"Virtual environment activated: {venv_path}")
+
+
 def activarVirtualEnv():
-    os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/")
-    os.system("source env/bin/activate")
-    venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
-    venv.create(venvDir, with_pip=True)
-    venvPython = os.path.join(venvDir, "bin", "python3")
+    # venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+    # os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/")
+    # venvPython = os.path.join(venvDir, "bin", "python3")
+    # subprocess.run([venvPython, "-m", "pip", "install", "--upgrade", "pip"])
+    # subprocess.run([venvPython, "-m", "pip", "install", "-r", "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/requirements.txt"])
+
+    # os.system("source env/bin/activate")
+    # venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+    # venv.create(venvDir, with_pip=True)
 
 
 def enviarMensaje(ip, puerto, etiqueta, valor):
@@ -74,9 +108,15 @@ while obtenerNetwork() != "TP-LINK_A9A4":
     print("no estoy en la red TP-LINK_A9A4, esperando...")
     time.sleep(5)
 
+activate_venv()
+
+from pythonosc.dispatcher import Dispatcher
+from pythonosc import osc_server
+from pythonosc.udp_client import SimpleUDPClient
+
 miIP = obtenerIP()
 print("mi IP es: " + str(obtenerIP()))
-activarVirtualEnv()
+
 
 if (miIP in direcciones):
     print("mi direccion esta en el diccionario de direcciones")
