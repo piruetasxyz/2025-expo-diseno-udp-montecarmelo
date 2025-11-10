@@ -1,4 +1,7 @@
+# importar modulos de python
 import os
+import socket
+import time
 
 
 def obtenerNetwork():
