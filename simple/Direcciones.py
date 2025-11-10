@@ -4,7 +4,7 @@ direcciones = {
         "eje": 1,
         "tipoPantalla": 1,
         "numero": 1,
-        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../respuestas/",
+        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijo": ".mp4'",
         "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
         "comandoSufijoGenerativa": ".mov'",
