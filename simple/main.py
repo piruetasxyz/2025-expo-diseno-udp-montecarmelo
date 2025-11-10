@@ -78,6 +78,8 @@ def handlerPantallas(direccion):
 
 
 def iniciar(ip):
+    print("dentro de iniciar(ip)")
+    print(direcciones[ip])
     # si eres raspi principal
     if 0 != direcciones[ip]["eje"]:
         pass
@@ -90,7 +92,6 @@ def iniciar(ip):
             (ip,
              1234), dispatcher)
         server.serve_forever()
-
 
 
 # while obtenerNetwork() != "TP-LINK_A9A4":
