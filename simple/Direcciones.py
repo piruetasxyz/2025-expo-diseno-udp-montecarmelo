@@ -6,7 +6,7 @@ direcciones = {
         "numero": 1,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.12": {
@@ -16,7 +16,7 @@ direcciones = {
         "numero": 2,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../respuestas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.13": {
@@ -26,7 +26,7 @@ direcciones = {
         "numero": 1,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../preguntas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.14": {
@@ -36,7 +36,7 @@ direcciones = {
         "numero": 2,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../ejes/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.15": {
@@ -44,9 +44,9 @@ direcciones = {
         "eje": 1,
         "tipoPantalla": 3,
         "numero": 1,
-        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.21": {
@@ -56,7 +56,7 @@ direcciones = {
         "numero": 1,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../respuestas/",
         "comandoSufijo": ".mov'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.22": {
@@ -66,7 +66,7 @@ direcciones = {
         "numero": 2,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../respuestas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.23": {
@@ -76,7 +76,7 @@ direcciones = {
         "numero": 1,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../preguntas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.24": {
@@ -86,7 +86,7 @@ direcciones = {
         "numero": 2,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../ejes/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.25": {
@@ -94,9 +94,9 @@ direcciones = {
         "eje": 2,
         "tipoPantalla": 3,
         "numero": 1,
-        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijo": ".mov'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.31": {
@@ -106,7 +106,7 @@ direcciones = {
         "numero": 1,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../respuestas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.32": {
@@ -116,7 +116,7 @@ direcciones = {
         "numero": 2,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../respuestas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.33": {
@@ -126,7 +126,7 @@ direcciones = {
         "numero": 1,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../preguntas/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.34": {
@@ -136,7 +136,7 @@ direcciones = {
         "numero": 2,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../ejes/",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.35": {
@@ -144,9 +144,9 @@ direcciones = {
         "eje": 3,
         "tipoPantalla": 3,
         "numero": 1,
-        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijo": ".mov'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit './../../generativas/",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --no-play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.50": {

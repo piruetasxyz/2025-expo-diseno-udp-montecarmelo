@@ -172,9 +172,10 @@ def handlerChicas(address, *args):
     if address.startswith("/mostrarGenerativas/"):
         subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
         print(subCarpeta)
+        archivo = random_file_in_subfolder(subCarpeta)
 
-        print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoSufijoGenerativa"])
-        os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoSufijoGenerativa"])
+        print(direcciones[miIP]["comandoGenerativa"] + archivo + direcciones[miIP]["comandoSufijoGenerativa"])
+        os.system(direcciones[miIP]["comandoGenerativa"] + archivo + direcciones[miIP]["comandoSufijoGenerativa"])
 
 
 def handlerMedianas(address, *args):
