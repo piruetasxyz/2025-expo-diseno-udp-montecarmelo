@@ -2,6 +2,7 @@
 import socket
 import os
 import time
+import venv
 
 # importar modulos instalados
 from pythonosc.dispatcher import Dispatcher
@@ -27,8 +28,11 @@ def obtenerIP():
 
 
 def activarVirtualEnv():
-    os.chdir("/home/pi/2025-expo-diseno-udp-montecarmelo/simple")
-    os.system("source venv/bin/activate")
+    os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/")
+    os.system("source env/bin/activate")
+    venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+    venv.create(venvDir, with_pip=True)
+    venvPython = os.path.join(venvDir, "bin", "python3")
 
 
 def enviarMensaje(ip, puerto, etiqueta, valor):
