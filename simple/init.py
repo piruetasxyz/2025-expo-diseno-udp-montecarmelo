@@ -20,7 +20,7 @@ def obtenerIP():
 def gitPull():
 
     # ir al directorio del proyecto
-    os.chdir("/home/" + os.system("whoami") + "/2025-expo-diseno-udp-montecarmelo/")
+    os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/")
     try:
         # hacer git pul
         os.system("git pull")
@@ -29,7 +29,7 @@ def gitPull():
 
 
 def crearVirtualEnv():
-    os.chdir("/home/" + os.system("whoami") + "/2025-expo-diseno-udp-montecarmelo/simple/")
+    os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/")
     os.system("python3 -m venv venv")
     os.system("source venv/bin/activate")
     try:
