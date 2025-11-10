@@ -86,7 +86,10 @@ def random_file_in_subfolder(base_path):
 def enviarMensajeTodos(etiqueta, valor, clientes):
     for cliente in clientes:
         print(cliente)
-        enviarMensaje(cliente, etiqueta, valor)
+        try:
+            enviarMensaje(cliente, etiqueta, valor)
+        except Exception as e:
+            print("Error al enviar mensaje a " + str(cliente) + ": " + str(e))
 
 
 def enviarMensaje(cliente, etiqueta, valor):
@@ -152,8 +155,10 @@ def iniciar(ip):
     if direcciones[ip]["eje"] == 0:
         clientes = []
         for direccion in direcciones.keys():
-            print("agregarClientes con ip: " + direccion)
-            clientes.append(SimpleUDPClient(direccion, 1234))
+            if (direccion["eje" != 0]):
+                print("agregarClientes con ip: " + direccion)
+                clientes.append(SimpleUDPClient(direccion, 1234))
+        print(clientes)
         enviarMensajeTodos("/admin/init/", 1, clientes)
         enviarMensajeTodos("/medianas/mostrarEjes/", 1, clientes)
 
@@ -218,10 +223,6 @@ def handlerGrandes(address, *args):
         print(archivo)
         print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
-
-   
-    pass
-
 
 # while obtenerNetwork() != "TP-LINK_A9A4":
 #     print("no estoy en la red TP-LINK_A9A4, esperando...")
