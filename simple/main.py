@@ -79,12 +79,13 @@ def handlerPantallas(direccion):
 
 def iniciar(ip):
     print("dentro de iniciar(ip)")
-    print(direcciones[ip])
+    print(direcciones[ip]["eje"])
     # si eres raspi principal
     if 0 != direcciones[ip]["eje"]:
         pass
     # si eres raspi con pantalla, haz esto otro
     else:
+        print("dispatcher!")
         dispatcher = Dispatcher()
 
         dispatcher.set_default_handler(handlerPantallas(direcciones[ip]))
