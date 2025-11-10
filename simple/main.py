@@ -204,7 +204,7 @@ def handlerMedianas1Horizontal(address, *args):
 def handlerMedianas2Vertical(address, *args):
     print(address)
     if address.startswith("/medianas/mostrarEjes/"):
-        comando = direcciones[miIP]["comandoPrefijo"] + "'/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
+        comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
         print(comando)
         os.system(comando)
 
