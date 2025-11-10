@@ -102,9 +102,9 @@ def iniciar(ip):
             clientes.append(SimpleUDPClient(direccion, 1234))
         enviarMensajeTodos("/admin/init/", 1, clientes)
 
-        # while True:
-        #     enviarMensajeTodos("/mostrarGenerativas/", 1, clientes)
-        #     time.sleep(5)
+        while True:
+            enviarMensajeTodos("/mostrarGenerativas/", 1, clientes)
+            time.sleep(5)
 
     # si eres raspi con pantalla, haz esto otro
     else:
@@ -128,8 +128,8 @@ def iniciar(ip):
 def handlerChicas(address, *args):
     print(address)
     if address.startswith("/mostrarGenerativas/"):
-        print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
-        os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
+        print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoSufijoGenerativa"])
+        os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoSufijoGenerativa"])
 
 
 def handlerMedianas(address, *args):
