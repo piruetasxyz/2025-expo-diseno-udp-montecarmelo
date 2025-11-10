@@ -215,7 +215,7 @@ def handlerGrandes(address, *args):
         subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
         print(subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
-
+        print(archivo)
         print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
