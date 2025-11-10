@@ -46,6 +46,19 @@ def gitPull(ip):
         print(f"Error al hacer git pull: {e}")
 
 
+def random_subfolder(path):
+    # List all entries in the directory
+    entries = os.listdir(path)
+    
+    # Keep only subfolders
+    subfolders = [f for f in entries if os.path.isdir(os.path.join(path, f))]
+    
+    if not subfolders:
+        raise ValueError("No subfolders found in the given path.")
+    
+    # Pick one randomly
+    return os.path.join(path, random.choice(subfolders))
+
 def crearVirtualEnv(ip):
     try:
         venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"

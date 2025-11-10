@@ -9,12 +9,16 @@ import random
 
 # importar modulos instalados
 
-clientes = []
+
 
 # importar modulos propios
 from Preguntas import preguntas
+from Datos import datos
 from Direcciones import direcciones
 
+
+# variables globales
+clientes = []
 
 def obtenerNetwork():
     # obtener el nombre de la red wifi
@@ -27,6 +31,44 @@ def obtenerIP():
     miIP = s.getsockname()[0]
     s.close()
     return miIP
+
+
+def random_subfolder(path):
+    # List all entries in the directory
+    entries = os.listdir(path)
+
+    # Keep only subfolders
+    subfolders = [f for f in entries if os.path.isdir(os.path.join(path, f))]
+
+    if not subfolders:
+        raise ValueError("No subfolders found in the given path.")
+
+    # Pick one randomly
+    return os.path.join(path, random.choice(subfolders))
+
+
+def random_file_in_subfolder(base_path):
+    # List all subfolders
+    subfolders = [f for f in os.listdir(base_path)
+                  if os.path.isdir(os.path.join(base_path, f))]
+
+    if not subfolders:
+        raise ValueError("No subfolders found in the given path.")
+
+    # Pick a random subfolder
+    chosen_subfolder = random.choice(subfolders)
+    subfolder_path = os.path.join(base_path, chosen_subfolder)
+
+    # List files inside that subfolder
+    files = [f for f in os.listdir(subfolder_path)
+             if os.path.isfile(os.path.join(subfolder_path, f))]
+
+    if not files:
+        raise ValueError(f"No files found in subfolder: {chosen_subfolder}")
+
+    # Pick a random file
+    random_file = random.choice(files)
+    return os.path.join(subfolder_path, random_file)
 
 
 def enviarMensajeTodos(etiqueta, valor, clientes):
@@ -128,6 +170,9 @@ def iniciar(ip):
 def handlerChicas(address, *args):
     print(address)
     if address.startswith("/mostrarGenerativas/"):
+        subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
+        print(subCarpeta)
+
         print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoSufijoGenerativa"])
         os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoSufijoGenerativa"])
 
