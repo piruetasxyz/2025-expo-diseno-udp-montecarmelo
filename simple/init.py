@@ -4,6 +4,7 @@ import socket
 import subprocess
 import time
 import venv
+from Direcciones import direcciones
 
 
 def obtenerIP():
@@ -14,24 +15,38 @@ def obtenerIP():
     return miIP
 
 
-def chmodear():
-    # cambiar permisos de los archivos del proyecto
-    os.system("chmod +x /home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/vlc_on_screen.sh")
-    os.system("chmod +x /home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/dual_vlc.sh")
-
-
-def gitPull():
-
-    # ir al directorio del proyecto
-    os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/")
+def chmodear(ip):
     try:
+        # cambiar permisos de los archivos del proyecto
+        # if direcciones[ip]["eje"] != 0:
+        os.system("chmod +x /home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/vlc_on_screen.sh")
+    except Exception as e:
+        print(f"Error al chmodear vlc_on_screen.sh: {e}")
+    try:
+        os.system("chmod +x /Users/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/dual_vlc.sh")
+    except Exception as e:
+        print(f"Error al chmodear dual_vlc.sh: {e}")
+
+def gitPull(ip):
+    try:
+        # if direcciones[direcciones[ip]]["eje"] != 0:
+        # ir al directorio del proyecto
+        os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/")
+        # hacer git pul
+        os.system("git pull")
+    except Exception as e:
+        print(f"Error al hacer git pull: {e}")
+
+    try:
+        # ir al directorio del proyecto
+        os.chdir("/Users/" + os.getlogin() + "/github/2025-expo-diseno-udp-montecarmelo/")
         # hacer git pul
         os.system("git pull")
     except Exception as e:
         print(f"Error al hacer git pull: {e}")
 
 
-def crearVirtualEnv():
+def crearVirtualEnv(ip):
     try:
         venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
         venv.create(venvDir, with_pip=True)
@@ -40,10 +55,18 @@ def crearVirtualEnv():
         subprocess.run([venvPython, "-m", "pip", "install", "-r", "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/requirements.txt"])
     except Exception as e:
         print(f"Error al instalar dependencias: {e}")
+    try:
+        venvDir = "/Users/" + os.getlogin() + "/github/2025-expo-diseno-udp-montecarmelo/simple/env"
+        venv.create(venvDir, with_pip=True)
+        venvPython = os.path.join(venvDir, "bin", "python3")
+        subprocess.run([venvPython, "-m", "pip", "install", "--upgrade", "pip"])
+        subprocess.run([venvPython, "-m", "pip", "install", "-r", "/Users/" + os.getlogin() + "/github/2025-expo-diseno-udp-montecarmelo/simple/requirements.txt"])
+    except Exception as e:
+        print(f"Error al instalar dependencias: {e}")
 
 
-chmodear()
 miIP = obtenerIP()
+chmodear(miIP)
 print("mi IP es: " + str(obtenerIP()))
-gitPull()
-crearVirtualEnv()
+gitPull(miIP)
+crearVirtualEnv(miIP)
