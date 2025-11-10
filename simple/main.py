@@ -155,7 +155,7 @@ def iniciar(ip):
             print("agregarClientes con ip: " + direccion)
             clientes.append(SimpleUDPClient(direccion, 1234))
         enviarMensajeTodos("/admin/init/", 1, clientes)
-        enviarMensajeTodos(" /medianas/mostrarEjes/", 1, clientes)
+        enviarMensajeTodos("/medianas/mostrarEjes/", 1, clientes)
 
         while True:
             enviarMensajeTodos("/mostrarGenerativas/", 1, clientes)
