@@ -186,8 +186,8 @@ def handlerChicas(address, *args):
         print(subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
 
-        print(direcciones[miIP]["comandoGenerativa"] + archivo
-        os.system(direcciones[miIP]["comandoGenerativa"] + archivo
+        print(direcciones[miIP]["comandoGenerativa"] + archivo)
+        os.system(direcciones[miIP]["comandoGenerativa"] + archivo)
 
 
 def handlerMedianas(address, *args):
