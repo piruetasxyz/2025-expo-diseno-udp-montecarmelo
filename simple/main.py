@@ -17,7 +17,7 @@ from Direcciones import direcciones
 
 def obtenerNetwork():
     # obtener el nombre de la red wifi
-    return os.system("iwgetid -r")
+    return subprocess.run(["iwgetid", "-r"], capture_output=True, text=True)
 
 
 def obtenerIP():
