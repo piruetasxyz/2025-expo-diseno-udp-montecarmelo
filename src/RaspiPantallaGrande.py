@@ -10,10 +10,8 @@ class RaspiPantallaGrande(RaspiPantalla.RaspiPantalla):
         self.tamano = "grande"
         self.maximoPantallas = 4
 
-        self.comandoPrefijo = "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit './../refrescos/01_arica_horizontal/"
+        self.comandoPrefijo = "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit './../generativas/horizontal-1-arica/"
         self.comandoSufijo = ".mov'"
-        # self.listaVideos = list(preguntas.keys())
-        print(self.listaVideos)
 
         print("recuperando ip")
         if (self.eje == 1):
@@ -27,9 +25,9 @@ class RaspiPantallaGrande(RaspiPantalla.RaspiPantalla):
             self.direccionIP = grandes["eje-3"][self.numero]
 
     def default_handler(self, address, *args):
-        if (address.startswith("/paraGrandes/refrescos/")):
+        if (address.startswith("/paraGrandes/generativas/")):
             print("soy handler de la grande")
-            self.comando = self.comandoPrefijo + str("1_I_ARICA_HORIZONTAL") + self.comandoSufijo
+            self.comando = self.comandoPrefijo + str(0) + self.comandoSufijo
             os.system(self.comando)
         else:
             print("pucha os.system(self.comando) era None")

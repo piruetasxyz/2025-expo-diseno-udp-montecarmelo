@@ -55,11 +55,3 @@ else:
         # print("soy raspi pantalla grande")
     else:
         print("mi argumento no tiene sentido")
-
-    # if int(argumento2Tipo) != 0:
-    #     if int(argumento1Eje) == 1:
-    #         print("soy del eje 1")
-    #     elif int(argumento1Eje) == 2:
-    #         print("soy del eje 2")
-    #     elif int(argumento1Eje) == 3:
-    #         print("soy del eje 3")

@@ -60,4 +60,4 @@ class RaspiPrincipal:
         print(self.comandoTemp)
 
     def enviarMensajeNuevoRefresco(self):
-        self.enviarMensajeATodos("/paraGrandes/refrescos/", 0)
+        self.enviarMensajeATodos("/paraGrandes/generativas/", 0)
