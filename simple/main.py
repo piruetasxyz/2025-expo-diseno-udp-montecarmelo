@@ -57,17 +57,6 @@ def activate_venv():
     print(f"Virtual environment activated: {venv_path}")
 
 
-def activarVirtualEnv():
-    # venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
-    # os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/")
-    # venvPython = os.path.join(venvDir, "bin", "python3")
-    # subprocess.run([venvPython, "-m", "pip", "install", "--upgrade", "pip"])
-    # subprocess.run([venvPython, "-m", "pip", "install", "-r", "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/requirements.txt"])
-
-    # os.system("source env/bin/activate")
-    # venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
-    # venv.create(venvDir, with_pip=True)
-
 
 def enviarMensaje(ip, puerto, etiqueta, valor):
     pass
