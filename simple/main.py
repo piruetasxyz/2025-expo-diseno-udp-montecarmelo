@@ -81,7 +81,7 @@ def iniciar(ip):
     print("dentro de iniciar(ip)")
     print(direcciones[ip]["eje"])
     # si eres raspi principal
-    if 0 != direcciones[ip]["eje"]:
+    if 0 == direcciones[ip]["eje"]:
         pass
     # si eres raspi con pantalla, haz esto otro
     else:
