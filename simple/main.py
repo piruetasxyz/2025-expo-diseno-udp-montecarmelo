@@ -79,7 +79,7 @@ def handlerPantallas(direccion):
 
 def iniciar(ip):
     # si eres raspi principal
-    if 0 != direcciones[ip][eje]:
+    if 0 != direcciones[ip]["eje"]:
         pass
     # si eres raspi con pantalla, haz esto otro
     else:
