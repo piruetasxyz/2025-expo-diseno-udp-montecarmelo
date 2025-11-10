@@ -120,7 +120,7 @@ def iniciar(ip):
 
 
 def handlerChicas(address, *args):
-    if address.startsWith("/mostrarGenerativas"):
+    if address.startswith("/mostrarGenerativas"):
         print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
         os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
 
