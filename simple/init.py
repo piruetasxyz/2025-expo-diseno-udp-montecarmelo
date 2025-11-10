@@ -14,6 +14,11 @@ def obtenerIP():
     return miIP
 
 
+def chmodear():
+    # cambiar permisos de los archivos del proyecto
+    os.system("chmod +x /home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/vlc_on_screen.sh")
+
+
 def gitPull():
 
     # ir al directorio del proyecto
@@ -36,7 +41,7 @@ def crearVirtualEnv():
         print(f"Error al instalar dependencias: {e}")
 
 
-print(obtenerNetwork())
+chmodear()
 miIP = obtenerIP()
 print("mi IP es: " + str(obtenerIP()))
 gitPull()
