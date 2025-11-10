@@ -78,10 +78,9 @@ def handlerPantallas(direccion):
         os.path.join("/home/" + os.getlogin() + "/respuestas/", f))]
     if files:
         archivo_aleatorio = random.choice(archivos)
-        print(archivo_aleatorio)
+        comando = direccion["comandoPrefijo"] + archivo_aleatorio
+        os.system(comando)
 
-    # comando = direccion["comandoPrefijo"] + "001" + direccion["comandoSufijo"]
-    # os.system(comando)
 
 
 def iniciar(ip):
