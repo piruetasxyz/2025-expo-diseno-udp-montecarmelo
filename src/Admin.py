@@ -6,7 +6,6 @@ from RaspiPrincipal import RaspiPrincipal
 from RaspiPantallaChica import RaspiPantallaChica
 from RaspiPantallaMediana import RaspiPantallaMediana
 from RaspiPantallaGrande import RaspiPantallaGrande
-from RaspiPantallaAlvarejoHorizontal import RaspiPantallaAlvarejo
 # import Guion
 from Preguntas import preguntas
 
@@ -148,11 +147,6 @@ class Admin:
 
     def crearPrincipal(self):
         self.raspi = RaspiPrincipal(self.puertoPrincipalEnviar)
-        self.buclear()
-
-    def crearAlvarejo(self, isHorizontal):
-        self.raspi = RaspiPantallaAlvarejo(eje, isHorizontal)
-        self.raspi.handler()
         self.buclear()
 
     def crearChica(self, eje, numero):
