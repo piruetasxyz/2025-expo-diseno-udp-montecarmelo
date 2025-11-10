@@ -10,7 +10,7 @@ class RaspiPantallaGrande(RaspiPantalla.RaspiPantalla):
         self.tamano = "grande"
         self.maximoPantallas = 4
 
-        self.comandoPrefijo = "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit './../generativas/horizontal-1-arica/"
+        self.comandoPrefijo = "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit './../../generativas/horizontal-1-arica/"
         self.comandoSufijo = ".mov'"
 
         print("recuperando ip")
