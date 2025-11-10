@@ -57,7 +57,6 @@ def activate_venv():
     print(f"Virtual environment activated: {venv_path}")
 
 
-
 def enviarMensaje(ip, puerto, etiqueta, valor):
     pass
 
@@ -93,8 +92,11 @@ def iniciar(ip):
         server.serve_forever()
 
 
+
 while obtenerNetwork() != "TP-LINK_A9A4":
     print("no estoy en la red TP-LINK_A9A4, esperando...")
+    print(type(obtenerNetwork()))
+    print(type("TP-LINK_A9A4"))
     time.sleep(5)
 
 activate_venv()
