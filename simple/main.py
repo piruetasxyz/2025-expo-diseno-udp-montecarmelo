@@ -120,13 +120,13 @@ def iniciar(ip):
         dispatcher = Dispatcher()
         
         # si eres pantalla chica
-        if direcciones["ip"]["tipoPantalla"] == 1:
+        if direcciones[ip]["tipoPantalla"] == 1:
             print("handler pantalla chica")
             dispatcher.set_default_handler(handlerChicas)
-        elif direcciones["ip"]["tipoPantalla"] == 2:
+        elif direcciones[ip]["tipoPantalla"] == 2:
             print("handler pantalla mediana")
             dispatcher.set_default_handler(handlerMedianas)
-        elif (direcciones["ip"]["tipoPantalla"]) == 3:
+        elif (direcciones[ip]["tipoPantalla"]) == 3:
             print("handler pantalla grande")
             dispatcher.set_default_handler(handlerGrandes)
 
