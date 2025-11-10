@@ -81,8 +81,9 @@ def handlerPantallas(direccion):
         ]
     if archivos:
         archivo_aleatorio = random.choice(archivos)
-        comando = direccion["comandoPrefijo"] + archivo_aleatorio + "'"
-        os.system(comando)
+        # comando = direccion["comandoPrefijo"] + archivo_aleatorio + "'"
+        os.system('./vlc_on_screen.sh ' +  archivo_aleatorio + ' ' + 1)
+        # os.system(comando)
 
 
 
