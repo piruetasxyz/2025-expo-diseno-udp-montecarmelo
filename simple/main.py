@@ -73,10 +73,9 @@ def default_handler(raspi, address, *args):
 
 def handlerPantallas(direccion):
     # video aleatorio dentro de la carpeta correspondiente
-    files = os.listdir("/home/" + os.getlogin() + "/respuestas/")
     archivos = [f for f in files if os.path.isfile(
-        os.path.join("/home/" + os.getlogin() + "/respuestas/", f))]
-    if files:
+        os.path.join("/home/" + os.getlogin() + "/respuestas/", f) and if not f.startswith('.'))]
+    if archivos:
         archivo_aleatorio = random.choice(archivos)
         comando = direccion["comandoPrefijo"] + archivo_aleatorio + "'"
         os.system(comando)
