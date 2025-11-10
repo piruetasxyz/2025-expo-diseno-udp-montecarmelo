@@ -22,18 +22,10 @@ class RaspiPantallaMediana(RaspiPantalla.RaspiPantalla):
         # print(self.comando)
 
         print("recuperando ip")
-        if (self.eje == 1):
-            print("aqui en eje 1")
-            self.direccionIP = medianas["eje-1"][self.numero]
-        elif (self.eje == 2):
-            print("aqui en eje 2")
-            self.direccionIP = medianas["eje-2"][self.numero]
-        elif (self.eje == 3):
-            print("aqui en eje 3")
-            self.direccionIP = medianas["eje-3"][self.numero]
-
-    # def handlerNuevaPregunta(self, address, *args):
-    #     print("soy pantalla mediana y me pidieron nueva pregunta")
+        tmpeje = "eje-"+str(self.eje)
+        # if (self.eje == 1):
+        print("aqui en eje 1")
+        self.direccionIP = medianas[tmpeje][self.numero]
 
     def default_handler(self, address, *args):
         if (address.startswith("/paraMedianas/nuevaPregunta/")):
