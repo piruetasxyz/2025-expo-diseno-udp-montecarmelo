@@ -95,8 +95,8 @@ def iniciar(ip):
 
 while obtenerNetwork() != "TP-LINK_A9A4":
     print("no estoy en la red TP-LINK_A9A4, esperando...")
-    print(obtenerNetwork())
-    print(type("TP-LINK_A9A4"))
+    print(len(obtenerNetwork()))
+    print(len("TP-LINK_A9A4"))
     time.sleep(5)
 
 activate_venv()
