@@ -17,6 +17,7 @@ def obtenerIP():
 def chmodear():
     # cambiar permisos de los archivos del proyecto
     os.system("chmod +x /home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/vlc_on_screen.sh")
+    os.system("chmod +x /home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/dual_vlc.sh")
 
 
 def gitPull():

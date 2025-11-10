@@ -82,8 +82,7 @@ def handlerPantallas(direccion):
     if archivos:
         archivo_aleatorio = random.choice(archivos)
         # el mismo archivo en ambas pantallas
-        os.system('./vlc_on_screen.sh ' + archivo_aleatorio + ' ' + str(1))
-        os.system('./vlc_on_screen.sh ' + archivo_aleatorio + ' ' + str(2))
+        os.system('./dual_vlc.sh ' + archivo_aleatorio + ' ' + archivo_aleatorio)
         # os.system(comando)
 
 
