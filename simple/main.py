@@ -112,7 +112,7 @@ print("mi IP es: " + str(obtenerIP()))
 if (miIP in direcciones):
     print("mi direccion esta en el diccionario de direcciones")
     print("soy: " + str(direcciones[miIP]["descripcion"]))
-    iniciar(direcciones[miIP]["eje"], direcciones[miIP]["tipoPantalla"], direcciones[miIP]["numero"])
+    iniciar(miIP)
 
 else:
     print("mi direccion NO esta en el diccionario de direcciones")
