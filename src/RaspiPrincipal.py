@@ -26,7 +26,7 @@ class RaspiPrincipal:
                 if ip != "0.0.0.0":
                     self.ipsPantallas.append(ip)
         self.clientes = []
-        self.enviarMensajeATodos("/admin/init", 1)
+        self.enviarMensajeATodos("/admin/init/", 1)
         self.corriendo = True
 
         for ip in self.ipsPantallas:

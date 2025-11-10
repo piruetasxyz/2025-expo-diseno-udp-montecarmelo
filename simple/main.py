@@ -78,6 +78,8 @@ def default_handler(raspi, address, *args):
         print("mensaje para medianas")
     elif (address.startswith(str("/paraGrandes/"))):
         print("mensaje para grandes")
+    elif (address.startswith(str("/desdeAdmin/"))):
+        print("mensaje desde admin")
 
 
 def handlerPantallas(direccion):
