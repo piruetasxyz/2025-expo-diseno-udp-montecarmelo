@@ -9,12 +9,11 @@ import random
 
 # importar modulos instalados
 
+clientes = []
 
 # importar modulos propios
 from Preguntas import preguntas
 from Direcciones import direcciones
-
-clientes = []
 
 
 def obtenerNetwork():
@@ -30,8 +29,9 @@ def obtenerIP():
     return miIP
 
 
-def enviarMensajeTodos(etiqueta, valor):
+def enviarMensajeTodos(etiqueta, valor, clientes):
     for cliente in clientes:
+        print(cliente)
         enviarMensaje(cliente, etiqueta, valor)
 
 
@@ -96,10 +96,16 @@ def handlerPantallas(direccion, *args):
 def iniciar(ip):
     # si eres raspi principal
     if direcciones[ip]["eje"] == 0:
-        for ip in direcciones.keys():
-            clientes.append(SimpleUDPClient(ip, 1234))
-        enviarMensajeTodos("/admin/init/", 1)
-        pass
+        clientes = []
+        for direccion in direcciones.keys():
+            print("agregarClientes con ip: " + direccion)
+            clientes.append(SimpleUDPClient(direccion, 1234))
+        enviarMensajeTodos("/admin/init/", 1, clientes)
+
+        # while True:
+        #     enviarMensajeTodos("/mostrarGenerativas/", 1, clientes)
+        #     time.sleep(5)
+
     # si eres raspi con pantalla, haz esto otro
     else:
         print("dispatcher!")
@@ -120,7 +126,8 @@ def iniciar(ip):
 
 
 def handlerChicas(address, *args):
-    if address.startswith("/mostrarGenerativas"):
+    print(address)
+    if address.startswith("/mostrarGenerativas/"):
         print(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
         os.system(direcciones[miIP]["comandoGenerativa"] + "01" + direcciones[miIP]["comandoGenerativaSufijo"])
 
