@@ -76,7 +76,7 @@ def activate_venv(principal=False):
     print(f"Virtual environment activated: {venv_path}")
 
 
-def default_handler(raspi, address, *args):
+def default_handler(address, *args):
     # detectar si address es para chicas, medianas o grandes
     if (address.startswith(str("/paraChicas/"))):
         print("mensaje para chicas")
@@ -88,8 +88,8 @@ def default_handler(raspi, address, *args):
         print("mensaje desde admin")
 
 
-def handlerPantallas(direccion):
-    if direccion.startswith(str("/admin/init/")):
+def handlerPantallas(direccion, *args):
+    if args.startswith(str("/admin/init/")):
         print("inicializando pantalla...")
     else:
         # video aleatorio dentro de la carpeta correspondiente
@@ -107,10 +107,9 @@ def handlerPantallas(direccion):
                 # os.system(comando)
 
 
-
 def iniciar(ip):
     # si eres raspi principal
-    if 0 == direcciones[ip]["eje"]:
+    if direcciones[ip]["eje"] == 0:
         for ip in direcciones.keys():
             clientes.append(SimpleUDPClient(ip, 1234))
         enviarMensajeTodos("/admin/init", 1)
@@ -119,12 +118,38 @@ def iniciar(ip):
     else:
         print("dispatcher!")
         dispatcher = Dispatcher()
+        
+        # si eres pantalla chica
+        if direcciones["ip"]["tipoPantalla"] == 1:
+            print("handler pantalla chica")
+            dispatcher.set_default_handler(handlerChicas)
+        elif direcciones["ip"]["tipoPantalla"] == 2:
+            print("handler pantalla mediana")
+            dispatcher.set_default_handler(handlerMedianas)
+        elif (direcciones["ip"]["tipoPantalla"]) == 3:
+            print("handler pantalla grande")
+            dispatcher.set_default_handler(handlerGrandes)
 
-        dispatcher.set_default_handler(handlerPantallas(direcciones[ip]))
+
+        # dispatcher.set_default_handler(handlerPantallas(direcciones[ip]))
         server = osc_server.ThreadingOSCUDPServer(
             (ip,
              1234), dispatcher)
         server.serve_forever()
+
+
+def handlerChicas(address, *args):
+    print(address)
+
+
+def handlerMedianas(address, *args):
+    print(address)
+    pass
+
+
+def handlerGrandes(address, *args):
+    print(address)
+    pass
 
 
 # while obtenerNetwork() != "TP-LINK_A9A4":
