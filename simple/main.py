@@ -28,6 +28,15 @@ def obtenerIP():
     return miIP
 
 
+def enviarMensajeTodos(etiqueta, valor):
+    for ip in direcciones.keys():
+        enviarMensaje(ip, 1234, etiqueta, valor)
+
+
+def enviarMensaje(cliente, etiqueta, valor):
+    cliente.send_message(etiqueta, valor)
+
+
 def activate_venv():
     """
     Activate a Python virtual environment inside the current script.
@@ -72,26 +81,29 @@ def default_handler(raspi, address, *args):
 
 
 def handlerPantallas(direccion):
-    # video aleatorio dentro de la carpeta correspondiente
-    carpeta = "/home/" + os.getlogin() + "/respuestas/"
-    archivos = [
-        os.path.join(carpeta, f)
-        for f in os.listdir(carpeta)
-        if not f.startswith('.')
-        ]
-    if archivos:
-        archivo_aleatorio = random.choice(archivos)
-        # el mismo archivo en ambas pantallas
-        os.system('./dual_vlc.sh ' + archivo_aleatorio + ' ' + archivo_aleatorio)
-        # os.system(comando)
+    if direccion.startswith(str("/admin/init/")):
+        print("inicializando pantalla...")
+    else:
+        # video aleatorio dentro de la carpeta correspondiente
+        if direccion["tipoPantalla"] == 1:
+            carpeta = "/home/" + os.getlogin() + "/respuestas/"
+            archivos = [
+                os.path.join(carpeta, f)
+                for f in os.listdir(carpeta)
+                if not f.startswith('.')
+                ]
+            if archivos:
+                archivo_aleatorio = random.choice(archivos)
+                # el mismo archivo en ambas pantallas
+                os.system('./dual_vlc.sh ' + archivo_aleatorio + ' ' + archivo_aleatorio)
+                # os.system(comando)
 
 
 
 def iniciar(ip):
-    print("dentro de iniciar(ip)")
-    print(direcciones[ip]["eje"])
     # si eres raspi principal
     if 0 == direcciones[ip]["eje"]:
+        enviarMensajeTodos("/admin/init", 1)
         pass
     # si eres raspi con pantalla, haz esto otro
     else:
