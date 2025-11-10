@@ -36,7 +36,7 @@ def crearVirtualEnv():
         venv.create(venvDir, with_pip=True)
         venvPython = os.path.join(venvDir, "bin", "python3")
         subprocess.run([venvPython, "-m", "pip", "install", "--upgrade", "pip"])
-        subprocess.run([venvPython, "-m", "pip", "install", "-r", "requirements.txt"])
+        subprocess.run([venvPython, "-m", "pip", "install", "-r", "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/requirements.txt"])
     except Exception as e:
         print(f"Error al instalar dependencias: {e}")
 
