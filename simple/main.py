@@ -47,6 +47,18 @@ def random_subfolder(path):
     return os.path.join(path, random.choice(subfolders))
 
 
+def random_file_in_folder(folder_path):
+    # Get all files (ignore subfolders)
+    files = [f for f in os.listdir(folder_path)
+             if os.path.isfile(os.path.join(folder_path, f))]
+
+    if not files:
+        raise ValueError("No files found in the folder.")
+
+    # Choose one randomly
+    return os.path.join(folder_path, random.choice(files))
+
+
 def random_file_in_subfolder(base_path):
     # List all subfolders
     subfolders = [f for f in os.listdir(base_path)
@@ -172,7 +184,7 @@ def handlerChicas(address, *args):
     if address.startswith("/mostrarGenerativas/"):
         subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
         print(subCarpeta)
-        archivo = random_file_in_subfolder(subCarpeta)
+        archivo = random_file_in_folder(subCarpeta)
 
         print(direcciones[miIP]["comandoGenerativa"] + archivo + direcciones[miIP]["comandoSufijoGenerativa"])
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + direcciones[miIP]["comandoSufijoGenerativa"])
