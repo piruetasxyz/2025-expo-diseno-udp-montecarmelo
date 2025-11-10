@@ -2,10 +2,10 @@
 import socket
 import os
 import time
-# import venv
 import subprocess
 import site
 import sys
+import random
 
 # importar modulos instalados
 
@@ -72,9 +72,16 @@ def default_handler(raspi, address, *args):
 
 
 def handlerPantallas(direccion):
-    comando = ""
-    comando = direccion["comandoPrefijo"] + "001" + direccion["comandoSufijo"]
-    os.system(comando)
+    # video aleatorio dentro de la carpeta correspondiente
+    files = os.listdir("/home/" + os.getlogin() + "/respuestas/")
+    archivos = [f for f in files if os.path.isfile(
+        os.path.join("/home/" + os.getlogin() + "/respuestas/", f))]
+    if files:
+        archivo_aleatorio = random.choice(archivos)
+        print(archivo_aleatorio)
+
+    # comando = direccion["comandoPrefijo"] + "001" + direccion["comandoSufijo"]
+    # os.system(comando)
 
 
 def iniciar(ip):
