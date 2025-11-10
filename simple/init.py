@@ -29,7 +29,7 @@ def gitPull():
 
 
 def crearVirtualEnv():
-    os.chdir("/home/pi/2025-expo-diseno-udp-montecarmelo/simple")
+    os.chdir("./")
     os.system("python3 -m venv venv")
     os.system("source venv/bin/activate")
     try:
