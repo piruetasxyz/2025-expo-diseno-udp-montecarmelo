@@ -14,6 +14,10 @@ import random
 from Preguntas import preguntas
 from Direcciones import direcciones
 
+clientes = []
+
+
+
 
 def obtenerNetwork():
     # obtener el nombre de la red wifi
@@ -29,15 +33,15 @@ def obtenerIP():
 
 
 def enviarMensajeTodos(etiqueta, valor):
-    for ip in direcciones.keys():
-        enviarMensaje(ip, 1234, etiqueta, valor)
+    for cliente in clientes:
+        enviarMensaje(cliente, etiqueta, valor)
 
 
 def enviarMensaje(cliente, etiqueta, valor):
     cliente.send_message(etiqueta, valor)
 
 
-def activate_venv():
+def activate_venv(principal=False):
     """
     Activate a Python virtual environment inside the current script.
  
@@ -45,10 +49,16 @@ def activate_venv():
         venv_path (str): Path to the virtual environment folder.
                          e.g., "source/env"
     """
+
+    venv_path = None
+
+    if principal:
+        venv_path = "/Users/" + os.getlogin() + "/github/2025-expo-diseno-udp-montecarmelo/simple/env"
+    else:
+
+        venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+   
     # Determine Python version
-
-    venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
-
     python_version = f"python{sys.version_info.major}.{sys.version_info.minor}"
 
     # Build path to site-packages in the venv
@@ -64,10 +74,6 @@ def activate_venv():
     sys.executable = os.path.join(venv_path, "bin", "python")
 
     print(f"Virtual environment activated: {venv_path}")
-
-
-def enviarMensaje(ip, puerto, etiqueta, valor):
-    pass
 
 
 def default_handler(raspi, address, *args):
@@ -105,6 +111,8 @@ def handlerPantallas(direccion):
 def iniciar(ip):
     # si eres raspi principal
     if 0 == direcciones[ip]["eje"]:
+        for ip in direcciones.keys():
+            clientes.append(SimpleUDPClient(ip, 1234))
         enviarMensajeTodos("/admin/init", 1)
         pass
     # si eres raspi con pantalla, haz esto otro
@@ -125,17 +133,22 @@ def iniciar(ip):
 #     print(len("TP-LINK_A9A4"))
 #     time.sleep(5)
 
-activate_venv()
+miIP = obtenerIP()
+print("mi IP es: " + str(obtenerIP()))
+
+if miIP in direcciones.keys() and direcciones[miIP]["eje"] == 0:
+    print("soy principal")
+    activate_venv(principal=True)
+else:
+    print("no soy principal")
+    activate_venv()
 
 from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server
 from pythonosc.udp_client import SimpleUDPClient
 
-miIP = obtenerIP()
-print("mi IP es: " + str(obtenerIP()))
 
-
-if (miIP in direcciones):
+if (miIP in direcciones.keys()):
     print("mi direccion esta en el diccionario de direcciones")
     print("soy: " + str(direcciones[miIP]["descripcion"]))
     iniciar(miIP)
