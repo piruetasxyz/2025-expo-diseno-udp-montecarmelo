@@ -38,9 +38,10 @@ def crearVirtualEnv():
     except Exception as e:
         print(f"Error al instalar dependencias: {e}")
 
-while obtenerNetwork() != "TP-LINK_A9A4":
-    print("no estoy en la red TP-LINK_A9A4, esperando...")
-    time.sleep(5)
+
+# while obtenerNetwork() != "TP-LINK_A9A4":
+#     print("no estoy en la red TP-LINK_A9A4, esperando...")
+#     time.sleep(5)
 
 miIP = obtenerIP()
 
