@@ -1,7 +1,10 @@
 # importar modulos de python
 import os
 import socket
+import subprocess
 import time
+import venv
+
 
 
 def obtenerNetwork():
@@ -29,12 +32,12 @@ def gitPull():
 
 
 def crearVirtualEnv():
-    os.chdir("/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/")
-    os.system("python3 -m venv venv")
-    os.system("source venv/bin/activate")
     try:
-        os.system("pip3 install --upgrade pip")
-        os.system("pip3 install -r requirements.txt")
+        venvDir = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+        venv.create(venvDir, with_pip=True)
+        venvPython = os.path.join(venvDir, "bin", "python3")
+        subprocess.run([venvPython, "-m", "pip", "install", "--upgrade", "pip"])
+        subprocess.run(venvPython, "-m", "pip", "install", "-r", "requirements.txt")
     except Exception as e:
         print(f"Error al instalar dependencias: {e}")
 
