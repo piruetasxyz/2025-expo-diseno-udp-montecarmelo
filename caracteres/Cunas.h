@@ -40,7 +40,6 @@ public:
       "Disenar tecnologias desde el sur global es clave para pensar otros futuros",
       "Como podriamos, desde el diseno, proponer nuevas maneras de entender la tecnologia?",
       "La tecnologia no es neutra, es politica" }
-
   };
 };
 
