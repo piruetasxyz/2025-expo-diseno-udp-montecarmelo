@@ -211,6 +211,15 @@ def handlerMedianas2Vertical(address, *args):
 
 def handlerGrandes(address, *args):
     print(address)
+    if address.startswith("/mostrarGenerativas/"):
+        subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
+        print(subCarpeta)
+        archivo = random_file_in_folder(subCarpeta)
+
+        print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+
+   
     pass
 
 
