@@ -6,11 +6,6 @@ import time
 import venv
 
 
-def obtenerNetwork():
-    # obtener el nombre de la red wifi
-    return os.system("iwgetid -r")
-
-
 def obtenerIP():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))
