@@ -72,26 +72,3 @@ class RaspiPantallaChica(RaspiPantalla.RaspiPantalla):
                 elif (self.eje == 3):
                     print(preguntas[args[0]]["respuestas"]["eje-3"])
                 # self.comando = self.comandoPrefijo + str(respuestas[args[0]]["archivo"]) + self.comandoSufijo
-
-                # if (self.comandoPantalla1 is not None):
-                    # os.system(self.comandoPantalla1)
-                    #      p1 = subprocess.Popen(self.comandoPantalla1, shell=True)
-                    # if (self.comandoPantalla2 is not None):
-                    #      p2 = subprocess.Popen(self.comandoPantalla2, shell=True)
-                # if (self.comandoPantalla2 is not None):
-                    # self.comandoTotal += self.comandoPantalla2
-                    # os.system(self.comandoPantalla2)
-                # os.system(self.comandoPantalla1 + "& " + self.comandoPantalla2)
-                # os.system(self.comandoTotal)
-            # else:
-            #     print("pucha os.system(self.comando) era None")
-            # print(f"DEFAULT {address}: {args}")
-
-    def mostrarEscena(self, escena):
-        print(
-            "pantalla chica, eje " + 
-            str(self.convertirComputadorHumano(self.eje)) +
-            ", numero " + str(self.convertirComputadorHumano(self.numero)) +
-            " de un maximo de " + str(self.maximoPantallas) +
-            ", escena: " + str(self.convertirComputadorHumano(escena))
-            )

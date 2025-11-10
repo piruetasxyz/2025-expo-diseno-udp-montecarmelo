@@ -4,11 +4,14 @@ import os
 import time
 
 # importar modulos instalados
-import python-osc
+from pythonosc.dispatcher import Dispatcher
+from pythonosc import osc_server
+from pythonosc.udp_client import SimpleUDPClient
 
 # importar modulos propios
 from Preguntas import preguntas
 from Direcciones import direcciones
+
 
 def obtenerNetwork():
     # obtener el nombre de la red wifi
@@ -23,67 +26,58 @@ def obtenerIP():
     return miIP
 
 
-def gitPull():
-
-    # ir al directorio del proyecto
-    os.chdir("/home/pi/2025-expo-diseno-udp-montecarmelo")
-    try:
-        # hacer git pul
-        os.system("git pull")
-    except Exception as e:
-        print(f"Error al hacer git pull: {e}")
-
-def crearVirtualEnv():
-    os.chdir("/home/pi/2025-expo-diseno-udp-montecarmelo/simple")
-    os.system("python3 -m venv venv")
-    os.system("source venv/bin/activate")
-    try:
-        os.system("pip3 install --upgrade pip")
-        os.system("pip3 install -r requirements.txt")
-    except Exception as e:
-        print(f"Error al instalar dependencias: {e}")
-
-
 def activarVirtualEnv():
     os.chdir("/home/pi/2025-expo-diseno-udp-montecarmelo/simple")
     os.system("source venv/bin/activate")
+
 
 def enviarMensaje(ip, puerto, etiqueta, valor):
     pass
 
 
-def iniciar(eje, tipoPantalla, numero):
-    if (tipoPantalla == 0):
+def default_handler(raspi, address, *args):
+    # detectar si address es para chicas, medianas o grandes
+    if (address.startswith(str("/paraChicas/"))):
+        print("mensaje para chicas")
+    elif (address.startswith(str("/paraMedianas/"))):
+        print("mensaje para medianas")
+    elif (address.startswith(str("/paraGrandes/"))):
+        print("mensaje para grandes")
 
 
+def handlerPantallas(direccion):
+    comando = ""
+    comando = direccion["comandoPrefijo"] + "001" + direccion["comandoSufijo"]
+    os.system(comando)
 
-        # os.system("python3 main.py {} {} {}".format(eje, tipoPantalla, numero))
-    elif (tipoPantalla == 1):
 
+def iniciar(ip):
+    # si eres raspi principal
+    if 0 != direcciones[ip][eje]:
+        pass
+    # si eres raspi con pantalla, haz esto otro
+    else:
+        dispatcher = Dispatcher()
 
-        # os.system("python3 main.py {} {} {}".format(eje, tipoPantalla, numero))
-    elif (tipoPantalla == 2):
-        # os.system("python3 main.py {} {} {}".format(eje, tipoPantalla, numero))
-    elif (tipoPantalla == 3):
-        # os.system("python3 main.py {} {} {}".format(eje, tipoPantalla, numero))
+        dispatcher.set_default_handler(handlerPantallas(direcciones[ip]))
+        server = osc_server.ThreadingOSCUDPServer(
+            (ip,
+             1234), dispatcher)
+        server.serve_forever()
+
 
 while obtenerNetwork() != "TP-LINK_A9A4":
     print("no estoy en la red TP-LINK_A9A4, esperando...")
     time.sleep(5)
 
 miIP = obtenerIP()
-
 print("mi IP es: " + str(obtenerIP()))
-gitPull()
-crearVirtualEnv()
 activarVirtualEnv()
 
 if (miIP in direcciones):
     print("mi direccion esta en el diccionario de direcciones")
     print("soy: " + str(direcciones[miIP]["descripcion"]))
     iniciar(direcciones[miIP]["eje"], direcciones[miIP]["tipoPantalla"], direcciones[miIP]["numero"])
-
-
 
 else:
     print("mi direccion NO esta en el diccionario de direcciones")
