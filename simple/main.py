@@ -206,92 +206,62 @@ def iniciar(ip):
             time.sleep(10 * pizca)
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
             # 020s = 00m20s
-            
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 030s = 00m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 040s = 00m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 050s = 00m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 060s = 01m
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 070s = 01m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 080s = 01m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 090s = 01m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 100s = 01m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 110s = 01m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 120s = 02m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 130s = 02m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 140s = 02m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 150s = 02m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 160s = 02m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 170s = 02m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 180s = 03m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 190s = 03m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 200s = 03m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 210s = 03m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 220s = 03m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 230s = 03m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 240s = 04m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 250s = 04m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 260s = 04m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 270s = 04m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 280s = 04m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 290s = 04m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 300s = 05m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 310s = 05m10s
             # MEDIANAS vertical mostrar ejes
@@ -302,95 +272,65 @@ def iniciar(ip):
             enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
             time.sleep(10 * pizca)
             # 320s = 05m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 330s = 05m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 340s = 05m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 350s = 05m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 360s = 06m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 370s = 06m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 380s = 06m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 390s = 06m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 400s = 06m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 410s = 06m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 420s = 07m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 430s = 07m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 440s = 07m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 450s = 07m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 460s = 07m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 470s = 07m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 480s = 08m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 490s = 08m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 500s = 08m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 510s = 08m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 520s = 08m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 530s = 08m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 540s = 09m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 550s = 09m10s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 560s = 09m20s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 570s = 09m30s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 580s = 09m40s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 590s = 09m50s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 600s = 10m00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # FIN DE CICLO
             # 00s
-            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             # enviarMensajeTodos("/medianas/mostrarGenerativas/", 1, clientes)
             # enviarMensajeTodos("/chicas/mostrarGenerativas/", 1, clientes)
             # # 10s
@@ -437,10 +377,10 @@ def handlerChicas(address, *args):
     print(address)
     if address.startswith("/chicas/mostrarRespuestas/"):
         print("mostrarRespuestas")
-    
     elif address.startswith("/chicas/mostrarGenerativas/"):
         region = args[0]
-        subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
+        carpetaV = generativas[region][1]
+        subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaV
         print("subcarpeta: " + subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
         print("archivo: " + archivo)
@@ -509,8 +449,6 @@ def handlerGrandes(address, *args):
 #     print(len(obtenerNetwork()))
 #     print(len("TP-LINK_A9A4"))
 #     time.sleep(5)
-
-
 
 miIP = obtenerIP()
 print("mi IP es: " + str(obtenerIP()))
