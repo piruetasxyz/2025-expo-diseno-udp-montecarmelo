@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dual_vlc.sh — Play two videos on two different displays with two VLC instances (Raspberry Pi / Linux, X11)
+# dual_vlc_preguntas.sh — Play two videos on two different displays with two VLC instances (Raspberry Pi / Linux, X11)
 
 set -euo pipefail
 
@@ -70,6 +70,7 @@ COMMON_OPTS=(
   --no-embedded-video
   --no-one-instance
   --quiet
+  --filter
 )
 
 # Launch first video on monitor 1

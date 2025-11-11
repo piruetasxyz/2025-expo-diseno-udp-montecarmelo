@@ -401,8 +401,8 @@ def handlerChicas(address, *args):
         print("subcarpeta: " + subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
         print("archivo: " + archivo)
-        print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
-        os.system('./dual_vlc.sh ' + archivo + ' ' + archivo)
+        os.system('./dual_vlc_preguntas.sh ' + archivo + ' ' + archivo)
+        # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         # os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
