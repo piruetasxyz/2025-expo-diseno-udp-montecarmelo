@@ -311,9 +311,9 @@ def handlerChicas(address, *args):
     print(address)
     if address.startswith("/mostrarGenerativas/"):
         subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
-        print(subCarpeta)
+        print("subcarpeta: " + subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
-
+        print("archivo: " + archivo)
         print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
@@ -359,11 +359,17 @@ miIP = obtenerIP()
 print("mi IP es: " + str(obtenerIP()))
 
 if miIP in direcciones.keys() and direcciones[miIP]["eje"] == 0:
-    print("soy principal")
-    activate_venv(principal=True)
+    try:
+        print("soy principal")
+        activate_venv(principal=True)
+    except Exception as e:
+        print("error", e)
 else:
-    print("no soy principal")
-    activate_venv()
+    try:
+        print("no soy principal")
+        activate_venv()
+    except Exception as e:
+        print("error", e)
 
 # from pythonosc.dispatcher import Dispatcher
 # from pythonosc import osc_server
