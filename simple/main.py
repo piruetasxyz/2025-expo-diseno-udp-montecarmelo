@@ -395,7 +395,7 @@ def handlerChicas(address, *args):
             pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria + ".mp4"
             print("respuestasPosiblesDelEje:", respuestasPosibles)
             print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
-            os.system('./dual_vlc_preguntas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
+            os.system('./dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
             
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
@@ -407,7 +407,7 @@ def handlerChicas(address, *args):
         print("subcarpeta: " + subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
         print("archivo: " + archivo)
-        os.system('./dual_vlc_preguntas.sh ' + archivo + ' ' + archivo)
+        os.system('./dual_vlc_generativas.sh ' + archivo + ' ' + archivo)
         # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         # os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
