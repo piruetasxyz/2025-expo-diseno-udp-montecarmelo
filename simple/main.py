@@ -501,8 +501,9 @@ def handlerGrandes(address, *args):
             # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
             os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         elif address.startswith("/grandes/mostrarTextos/"):
+            print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
             comando = direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"]
-            print("comando", comando)
+
             os.system(comando)
 
     # else:
