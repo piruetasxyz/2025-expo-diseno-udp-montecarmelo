@@ -179,6 +179,7 @@ def iniciar(ip):
             # 000s = 00m00s
             # TODAS GENERATIVAS
             enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            enviarMensajeTodos("/medianas/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 010s = 00m10s
             enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
@@ -435,7 +436,7 @@ def handlerMedianas1Horizontal(address, *args):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/preguntas/" + num + ".mp4'"
         # print("comando", comando)
         os.system(comando)
-    elif address.startswith("/grandes/mostrarGenerativas/"):   
+    elif address.startswith("/medianas/mostrarGenerativas/"):   
         carpetaHRandom = random.choice(generativasH)
         subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaHRandom
         print(subCarpeta)
@@ -450,7 +451,7 @@ def handlerMedianas2Vertical(address, *args):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
         print(comando)
         os.system(comando)
-    elif address.startswith("/grandes/mostrarGenerativas/"):  
+    elif address.startswith("/medianas/mostrarGenerativas/"):  
         carpetaVRandom = random.choice(generativasV)
         subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaVRandom
         print(subCarpeta)
