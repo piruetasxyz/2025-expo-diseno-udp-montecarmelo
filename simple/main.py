@@ -183,6 +183,8 @@ def iniciar(ip):
             # 010s = 00m10s
             enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
+            pregunta1 = random_file_in_folder("/home/" + os.getlogin() + "/preguntas/")
+            enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
             time.sleep(10 * pizca)
             # 020s = 00m20s
             enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
@@ -419,6 +421,10 @@ def handlerChicas(address, *args):
 
 
 def handlerMedianas1Horizontal(address, *args):
+    print(address)
+    if address.startswith("/medianas/horizontal/mostrarPreguntas/"):
+        print("estos son los argumentos, cual sera?:" + args)
+        # comando = direcciones[miIP]["comandoPrefijo"] + args[1]
     pass
 
 
