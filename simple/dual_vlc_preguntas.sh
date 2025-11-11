@@ -70,6 +70,7 @@ COMMON_OPTS_0=(
   --no-embedded-video
   --no-one-instance
   --quiet
+  --volume 512
   --video-filter=transform --transform-type=90
 )
 
@@ -80,6 +81,7 @@ COMMON_OPTS_1=(
   --quiet
   --no-audio
   --video-filter=transform --transform-type=90
+  
 )
 
 # Launch first video on monitor 1
