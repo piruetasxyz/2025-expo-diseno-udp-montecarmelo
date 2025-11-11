@@ -435,6 +435,13 @@ def handlerMedianas1Horizontal(address, *args):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/preguntas/" + num + ".mp4'"
         # print("comando", comando)
         os.system(comando)
+    elif address.startswith("/grandes/mostrarGenerativas/"):   
+        carpetaHRandom = random.choice(generativasH)
+        subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaHRandom
+        print(subCarpeta)
+        archivo = random_file_in_folder(subCarpeta)
+        print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
 def handlerMedianas2Vertical(address, *args):
@@ -443,6 +450,13 @@ def handlerMedianas2Vertical(address, *args):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
         print(comando)
         os.system(comando)
+    elif address.startswith("/grandes/mostrarGenerativas/"):  
+        carpetaVRandom = random.choice(generativasV)
+        subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaVRandom
+        print(subCarpeta)
+        archivo = random_file_in_folder(subCarpeta)
+        print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
 # pantallas grandes, son 3, una por eje
@@ -468,6 +482,7 @@ def handlerGrandes(address, *args):
 #     print(len(obtenerNetwork()))
 #     print(len("TP-LINK_A9A4"))
 #     time.sleep(5)
+
 
 
 miIP = obtenerIP()
