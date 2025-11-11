@@ -70,7 +70,7 @@ COMMON_OPTS=(
   --no-embedded-video
   --no-one-instance
   --quiet
-  --filter
+  --video-filter=transform --transform-type=90
 )
 
 # Launch first video on monitor 1
