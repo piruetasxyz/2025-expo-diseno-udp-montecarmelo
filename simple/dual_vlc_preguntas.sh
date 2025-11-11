@@ -70,7 +70,6 @@ COMMON_OPTS_0=(
   --no-embedded-video
   --no-one-instance
   --quiet
-  --volume 512
   --video-filter=transform --transform-type=90
 )
 
