@@ -431,7 +431,7 @@ def handlerChicas(address, *args):
             preguntaActual = preguntas[args[0]]
             # respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(direcciones[miIP]["eje"])]
             # PANA
-             respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(1)]
+            respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(1)]
             respuestaAleatoria = random.choice(respuestasPosibles)
             pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria + ".mp4"
             print("respuestasPosiblesDelEje:", respuestasPosibles)
