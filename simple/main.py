@@ -8,8 +8,9 @@ import sys
 import random
 
 # importar modulos instalados
-
-
+from pythonosc.dispatcher import Dispatcher
+from pythonosc import osc_server
+from pythonosc.udp_client import SimpleUDPClient
 
 # importar modulos propios
 from Preguntas import preguntas
@@ -17,8 +18,24 @@ from Datos import datos
 from Direcciones import direcciones
 
 
+
 # variables globales
 clientes = []
+pizca = 1.01
+generativasH = [
+    "horizontal-1-arica/",
+    "horizontal-2-antofagasta/",
+    "horizontal-3-valpo/",
+    "horizontal-4-aysen/",
+    "horizontal-5-magallanes/"
+    ]
+generativasV = [
+    "vertical-1-arica/",
+    "vertical-2-antofagasta/",
+    "vertical-3-valpo/",
+    "vertical-4-aysen/",
+    "vertical-5-magallanes/"     
+]
 
 def obtenerNetwork():
     # obtener el nombre de la red wifi
@@ -97,13 +114,6 @@ def enviarMensaje(cliente, etiqueta, valor):
 
 
 def activate_venv(principal=False):
-    """
-    Activate a Python virtual environment inside the current script.
- 
-    Args:
-        venv_path (str): Path to the virtual environment folder.
-                         e.g., "source/env"
-    """
 
     venv_path = None
 
@@ -112,7 +122,6 @@ def activate_venv(principal=False):
     else:
 
         venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
-   
     # Determine Python version
     python_version = f"python{sys.version_info.major}.{sys.version_info.minor}"
 
@@ -151,7 +160,7 @@ def handlerPantallas(direccion, *args):
 
 
 def iniciar(ip):
-    # si eres raspi principal
+    # RASPI PRINCIPAL
     if direcciones[ip]["eje"] == 0:
         clientes = []
         for direccion in direcciones.keys():
@@ -161,16 +170,123 @@ def iniciar(ip):
         print(clientes)
         enviarMensajeTodos("/admin/init/", 1, clientes)
         enviarMensajeTodos("/medianas/mostrarEjes/", 1, clientes)
+        # pausa de 2 segundos antes de empezar el cicllo
+        time.sleep(2 * pizca)
 
         while True:
-            enviarMensajeTodos("/mostrarGenerativas/", 1, clientes)
-            time.sleep(5)
+            # 000s = 00m00s
+            # TODAS GENERATIVAS
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 010s = 00m10s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 020s = 00m20s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 030s = 00m30s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 040s = 00m40s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 050s = 00m50s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 060s = 01m
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 070s = 01m10s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 080s = 01m20s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 090s = 01m30s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 100s = 01m40s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 110s = 01m50s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 120s = 02m00s
+            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            time.sleep(10 * pizca)
+            # 130s = 02m10s
+            # 140s = 02m20s
+            # 150s = 02m30s
+            # 160s = 02m40s
+            # 170s = 02m50s
+            # 180s = 03m00s
+            # 190s = 03m10s
+            # 200s = 03m20s
+            # 210s = 03m30s
+            # 220s = 03m40s
+            # 230s = 03m50s
+            # 240s = 04m00s
+            # 250s = 04m10s
+            # 260s = 04m20s
+            # 270s = 04m30s
+            # 280s = 04m40s
+            # 290s = 04m50s
+            # 300s = 05m00s
+            # 310s = 05m10s
+            # 320s = 05m20s
+            # 330s = 05m30s
+            # 340s = 05m40s
+            # 350s = 05m50s
+            # 360s = 06m00s
+            # 370s = 06m10s
+            # 380s = 06m20s
+            # 390s = 06m30s
+            # 400s = 06m40s
+            # 410s = 06m50s
+            # 420s = 07m00s
+            # 430s = 07m10s
+            # 440s = 07m20s
+            # 450s = 07m30s
+            # 460s = 07m40s
+            # 470s = 07m50s
+            # 480s = 08m00s
+            # 490s = 08m10s
+            # 500s = 08m20s
+            # 510s = 08m30s
+            # 520s = 08m40s
+            # 530s = 08m50s
+            # 540s = 09m00s
+            # 550s = 09m10s
+            # 560s = 09m20s
+            # 570s = 09m30s
+            # 580s = 09m40s
+            # 590s = 09m50s
+            # 600s = 10m00s
+             # FIN DE CICLO
+            # 00s
+            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            # enviarMensajeTodos("/medianas/mostrarGenerativas/", 1, clientes)
+            # enviarMensajeTodos("/chicas/mostrarGenerativas/", 1, clientes)
+            # # 10s
+            # # todas pausan por 10 segundos
+            # time.sleep(10 * pizca)
+            # # elegimos la primera pregunta aleatoria
+            # # las grandes siguen mostrando generativas
+
+            # # las medianas horizontales muestran pregunta
+            # # las medianas verticales muestran eje
+            # # las chicas muestran respuestas aleatorias
+            # # esto pasa por 5 minutos
+            # time.sleep(5 * 60 * pizca)
+            # # elegimos una segunda pregunta aleatoria
+            # # esto pasa por 5 minutos
+            # time.sleep(5 * 60 * pizca)
 
     # si eres raspi con pantalla, haz esto otro
     else:
         print("dispatcher!")
         dispatcher = Dispatcher()
-        
+
         # si eres pantalla chica
         if direcciones[ip]["tipoPantalla"] == 1:
             dispatcher.set_default_handler(handlerChicas)
@@ -214,21 +330,30 @@ def handlerMedianas2Vertical(address, *args):
         os.system(comando)
 
 
+# pantallas grandes, son 3, una por eje
 def handlerGrandes(address, *args):
     print(address)
-    if address.startswith("/mostrarGenerativas/"):
-        subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
-        print(subCarpeta)
-        archivo = random_file_in_folder(subCarpeta)
-        print(archivo)
-        print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
-        os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+    if address.startswith("/grandes/"):
+        print("llega un mensaje a grande")
+        if address.startswith("/grandes/mostrarGenerativas/"):   
+            carpetaHRandom = random.choice(generativasH)
+            subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaHRandom
+            print(subCarpeta)
+            archivo = random_file_in_folder(subCarpeta)
+            print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+            os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+
+    # else:
+        # print("mensaje no reconocido en grande")
+    # if address.startswith("/mostrarGenerativas/"):
+    #     subCarpeta = None
 
 # while obtenerNetwork() != "TP-LINK_A9A4":
 #     print("no estoy en la red TP-LINK_A9A4, esperando...")
 #     print(len(obtenerNetwork()))
 #     print(len("TP-LINK_A9A4"))
 #     time.sleep(5)
+
 
 miIP = obtenerIP()
 print("mi IP es: " + str(obtenerIP()))
@@ -240,9 +365,9 @@ else:
     print("no soy principal")
     activate_venv()
 
-from pythonosc.dispatcher import Dispatcher
-from pythonosc import osc_server
-from pythonosc.udp_client import SimpleUDPClient
+# from pythonosc.dispatcher import Dispatcher
+# from pythonosc import osc_server
+# from pythonosc.udp_client import SimpleUDPClient
 
 
 if (miIP in direcciones.keys()):
