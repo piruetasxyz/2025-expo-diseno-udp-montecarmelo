@@ -65,7 +65,7 @@ VLC_BIN="cvlc"
 #  --video-x/--video-y   : initial window position (top-left of the target monitor)
 #  --width/--height      : initial size (helps some WMs choose the right screen)
 #  --no-one-instance     : allow multiple instances
-COMMON_OPTS=(
+COMMON_OPTS_0=(
   --no-video-title-show
   --no-embedded-video
   --no-one-instance
@@ -73,8 +73,17 @@ COMMON_OPTS=(
   --video-filter=transform --transform-type=90
 )
 
+COMMON_OPTS_1=(
+  --no-video-title-show
+  --no-embedded-video
+  --no-one-instance
+  --quiet
+  --no-audio
+  --video-filter=transform --transform-type=90
+)
+
 # Launch first video on monitor 1
-"$VLC_BIN" "${COMMON_OPTS[@]}" \
+"$VLC_BIN" "${COMMON_OPTS_0[@]}" \
   --video-x "$X1" --video-y "$Y1" --width "$W1" --height "$H1" \
   --fullscreen \
   --play-and-exit \
@@ -83,7 +92,7 @@ COMMON_OPTS=(
 PID1=$!
 
 # Launch second video on monitor 2
-"$VLC_BIN" "${COMMON_OPTS[@]}" \
+"$VLC_BIN" "${COMMON_OPTS_1[@]}" \
   --video-x "$X2" --video-y "$Y2" --width "$W2" --height "$H2" \
   --fullscreen \
   --play-and-exit \
