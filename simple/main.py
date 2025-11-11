@@ -191,7 +191,7 @@ def iniciar(ip):
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
             enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
             enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
-            enviarMensajeTodos("/grandes/mostrarTextos/", pregunta1, clientes)
+            enviarMensajeTodos("/grandes/mostrarTextos/", 1, clientes)
             time.sleep(10 * pizca)
             # 020s = 00m20s
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
@@ -490,7 +490,7 @@ def handlerMedianas2Vertical(address, *args):
 # pantallas grandes, son 3, una por eje
 def handlerGrandes(address, *args):
     print(address)
-    if address.startswith("/grandes/mostrarGenerativas"):
+    if address.startswith("/grandes/mostrarGenerativas/"):
         print("llega un mensaje a grande")
         if address.startswith("/grandes/mostrarGenerativas/"):
             region = args[0]
