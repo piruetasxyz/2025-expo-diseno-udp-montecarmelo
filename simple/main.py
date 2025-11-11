@@ -425,7 +425,8 @@ def handlerChicas(address, *args):
     print(address)
     if address.startswith("/chicas/mostrarRespuestas/"):
         # randomizar
-        if (random.random() < probabilidadRespuesta):
+        # if (random.random() < probabilidadRespuesta):
+        if True:
             print("voy a tratar de mostrar una respuesta")
             # buscar respuestas correspondientes
             # respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(direcciones[miIP]["eje"])]
@@ -437,8 +438,11 @@ def handlerChicas(address, *args):
             pathRespuestaAleatoria = "'" + random_file_in_folder("/home/" + os.getlogin() + "/respuestas/") + "'"
             print("respuestasPosiblesDelEje:", respuestasPosibles)
             print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
-            os.system('./dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
-            
+            # comando para osSystem
+            elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
+            print("elCOMANDO:", elCOMANDO)
+            os.system(elCOMANDO)
+   
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
 
