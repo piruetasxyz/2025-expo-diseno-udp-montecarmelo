@@ -1,6 +1,16 @@
 #include "PantallaCaracteres.h"
 #include "Cunas.h"
 
+// 11 OK
+// 12 
+// 13 OK
+// 21 OK
+// 22 OK
+// 23 OK
+// 31 OK
+// 32 OK
+// 33 OK
+
 // eje puede ser 1, 2, 3
 // numeroArduino puede ser 1, 2, 3
 
@@ -9,8 +19,8 @@
 // pantalla 3 tiene soldada A1
 // pantalla 4 tiene soldada A2
 
-const int eje = 3;
-const int numeroArduino = 3;
+const int eje = 1;
+const int numeroArduino = 2;
 
 const uint8_t direccion1 = 0x27;
 const uint8_t direccion2 = 0x26;
@@ -29,9 +39,6 @@ Cunas cunas;
 
 void setup() {
 
-  Serial.begin(9600);
-  Serial.println("hola");
-
   pantalla1.configurar(direccion1);
   pantalla2.configurar(direccion2);
   pantalla3.configurar(direccion3);
@@ -45,7 +52,6 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("pucha");
   pantalla1.mostrarMensaje();
   pantalla2.mostrarMensaje();
   pantalla3.mostrarMensaje();
