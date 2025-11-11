@@ -428,12 +428,13 @@ def handlerChicas(address, *args):
         if (random.random() < probabilidadRespuesta):
             print("voy a tratar de mostrar una respuesta")
             # buscar respuestas correspondientes
-            preguntaActual = preguntas[args[0]]
             # respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(direcciones[miIP]["eje"])]
             # PANA
             respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(1)]
             respuestaAleatoria = random.choice(respuestasPosibles)
-            pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria + ".mp4"
+            # pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria + ".mp4"
+            # OTRA PANA
+            pathRespuestaAleatoria = random_file_in_folder("/home/" + os.getlogin() + "/respuestas/")
             print("respuestasPosiblesDelEje:", respuestasPosibles)
             print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
             os.system('./dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
