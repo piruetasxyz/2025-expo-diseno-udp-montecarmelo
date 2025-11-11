@@ -485,11 +485,12 @@ def handlerGrandes(address, *args):
     if address.startswith("/grandes/mostrarGenerativas"):
         print("llega un mensaje a grande")
         if address.startswith("/grandes/mostrarGenerativas/"):
-            carpetaHRandom = random.choice(generativasH)
-            subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaHRandom
+            region = args[0]
+            carpetaH = generativas[region][0]
+            subCarpeta = "/home/" + os.getlogin() + "/generativas/" + carpetaH
             print(subCarpeta)
             archivo = random_file_in_folder(subCarpeta)
-            print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+            # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
             os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
     # else:
