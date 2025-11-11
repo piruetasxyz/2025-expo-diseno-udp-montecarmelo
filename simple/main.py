@@ -424,9 +424,8 @@ def handlerChicas(address, *args):
 def handlerMedianas1Horizontal(address, *args):
     print(address)
     if address.startswith("/medianas/horizontal/mostrarPreguntas/"):
-        print("args[0]:" + args[0])
-        print("args[1]:" + args[1])
-        print("args[2]:" + args[2])
+        print("args[0]:" + str(args[0]))
+        print("args[1]:" + str(args[1]))
         # comando = direcciones[miIP]["comandoPrefijo"] + args[1]
 
 
