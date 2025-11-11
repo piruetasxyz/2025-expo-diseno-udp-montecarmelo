@@ -20,7 +20,7 @@ from Direcciones import direcciones
 # variables globales
 clientes = []
 pizca = 1.01
-probabilidadRespuesta = 0.50
+probabilidadRespuesta = 0.30
 
 generativas = {
     "arica": ["horizontal-1-arica/",
