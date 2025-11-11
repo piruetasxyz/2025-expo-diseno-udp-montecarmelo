@@ -190,6 +190,7 @@ def iniciar(ip):
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
             enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
             enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
+            enviarMensajeTodos("/grandes/mostrarTextos/", pregunta1, clientes)
             time.sleep(10 * pizca)
             # 020s = 00m20s
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
@@ -501,6 +502,9 @@ def handlerGrandes(address, *args):
             archivo = random_file_in_folder(subCarpeta)
             # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
             os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        elif address.startswith("/grandes/mostrarTextos/"):
+            comando = direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"]
+            os.system(comando)
 
     # else:
         # print("mensaje no reconocido en grande")

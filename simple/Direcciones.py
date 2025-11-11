@@ -119,6 +119,8 @@ direcciones = {
         "comandoSufijo": ".mp4'",
         "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --video-filter=transform --transform-type=90 --play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
+        "comandoTexto": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
+        "comandoSufijoTexto": "'.mov'",
     },
     "192.168.1.32": {
         "descripcion": "eje 3 chica 2",
