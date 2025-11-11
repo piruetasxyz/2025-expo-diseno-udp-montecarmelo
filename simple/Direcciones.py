@@ -95,7 +95,7 @@ direcciones = {
         "angulo": 90,
         "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --video-filter=transform --transform-type=90 --play-and-exit '",
         "comandoSufijo": ".mp4'",
-        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --video-filter=transform --transform-type=90 --play-and-exit '",
+        "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --video-filter=transform --transform-type=270 --play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
     },
     "192.168.1.25": {
