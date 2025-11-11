@@ -204,7 +204,9 @@ def iniciar(ip):
             pregunta1 = random.randint(1, 21)
             enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
             time.sleep(10 * pizca)
+            enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
             # 020s = 00m20s
+            
             # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             # 030s = 00m30s
@@ -433,7 +435,11 @@ def iniciar(ip):
 
 def handlerChicas(address, *args):
     print(address)
-    if address.startswith("/mostrarGenerativas/"):
+    if address.startswith("/chicas/mostrarRespuestas/"):
+        print("mostrarRespuestas")
+    
+    elif address.startswith("/chicas/mostrarGenerativas/"):
+        region = args[0]
         subCarpeta = random_subfolder("/home/" + os.getlogin() + "/generativas/")
         print("subcarpeta: " + subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
