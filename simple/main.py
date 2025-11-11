@@ -393,8 +393,10 @@ def handlerChicas(address, *args):
             respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(direcciones[miIP]["eje"])]
             respuestaAleatoria = random.choice(respuestasPosibles)
             pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria
-            os.system('./dual_vlc_preguntas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
             print("respuestasPosiblesDelEje:", respuestasPosibles)
+            print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
+            # os.system('./dual_vlc_preguntas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
+            
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
 
