@@ -426,8 +426,10 @@ def handlerMedianas1Horizontal(address, *args):
     # prints args
     print("args:", args)
     if address.startswith("/medianas/horizontal/mostrarPreguntas/"):
-        print("args[0]:" + str(args[0]))
-        print("args[1]:" + str(args[1]))
+        #  pad it with one 0 if its less than 10
+        num = str(args[0]).zfill(2)
+        comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/preguntas/" + num + ".mp4'"
+        print("comando", comando)
         # comando = direcciones[miIP]["comandoPrefijo"] + args[1]
 
 
