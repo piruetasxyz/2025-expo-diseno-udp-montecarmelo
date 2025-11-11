@@ -434,7 +434,7 @@ def handlerChicas(address, *args):
             respuestaAleatoria = random.choice(respuestasPosibles)
             # pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria + ".mp4"
             # OTRA PANA
-            pathRespuestaAleatoria = "'" + random_file_in_folder("/home/" + os.getlogin() + "/respuestas/" + "'"
+            pathRespuestaAleatoria = "'" + random_file_in_folder("/home/" + os.getlogin() + "/respuestas/") + "'"
             print("respuestasPosiblesDelEje:", respuestasPosibles)
             print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
             os.system('./dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria)
