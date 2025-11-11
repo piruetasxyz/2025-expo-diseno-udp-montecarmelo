@@ -429,8 +429,8 @@ def handlerMedianas1Horizontal(address, *args):
         #  pad it with one 0 if its less than 10
         num = str(args[0]).zfill(2)
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/preguntas/" + num + ".mp4'"
-        print("comando", comando)
-        # comando = direcciones[miIP]["comandoPrefijo"] + args[1]
+        # print("comando", comando)
+        os.system(comando)
 
 
 def handlerMedianas2Vertical(address, *args):
