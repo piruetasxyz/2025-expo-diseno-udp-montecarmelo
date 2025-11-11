@@ -402,7 +402,8 @@ def handlerChicas(address, *args):
         archivo = random_file_in_folder(subCarpeta)
         print("archivo: " + archivo)
         print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
-        os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        os.system('./dual_vlc.sh ' + archivo + ' ' + archivo)
+        # os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
 def handlerMedianas1Horizontal(address, *args):
