@@ -184,8 +184,8 @@ def iniciar(ip):
             enviarMensajeTodos("/chicas/mostrarGenerativas/", genRandom, clientes)
             time.sleep(10 * pizca)
             # 010s = 00m10s
-            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
-            enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
+            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            # enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
             # choose random number between 1 and 21
             pregunta1 = random.randint(1, 21)
             enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
@@ -265,7 +265,7 @@ def iniciar(ip):
             time.sleep(10 * pizca)
             # 310s = 05m10s
             # MEDIANAS vertical mostrar ejes
-            enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
+            # enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
             enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
             pregunta2 = random.randint(1, 21)
