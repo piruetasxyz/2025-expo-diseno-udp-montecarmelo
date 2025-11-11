@@ -278,6 +278,10 @@ def iniciar(ip):
             # MEDIANAS vertical mostrar ejes
             enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
+            enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
+            pregunta1 = random.randint(1, 21)
+            enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
+            time.sleep(10 * pizca)
             # 320s = 05m20s
             enviarMensajeTodos("/grandes/mostrarGenerativas/", 1, clientes)
             time.sleep(10 * pizca)
