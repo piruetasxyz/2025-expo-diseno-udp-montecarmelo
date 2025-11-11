@@ -390,8 +390,8 @@ def handlerChicas(address, *args):
             print("voy a tratar de mostrar una respuesta")
             # buscar respuestas correspondientes
             preguntaActual = preguntas[args[0]]
-            respuestasPosibles = preguntas[args[0]]["respuestas"]
-            print("respuestasPosibles:", respuestasPosibles)
+            respuestasPosibles = preguntas[args[0]]["respuestas"]["eje-" + str(direcciones[miIP]["eje"])]
+            print("respuestasPosiblesDelEje:", respuestasPosibles)
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
 
