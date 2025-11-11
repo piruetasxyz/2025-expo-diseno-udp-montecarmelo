@@ -36,7 +36,6 @@ generativas = {
 }
 
 
-
 def obtenerNetwork():
     # obtener el nombre de la red wifi
     return subprocess.run(["iwgetid", "-r"], capture_output=True, text=True).stdout.strip()
@@ -391,6 +390,8 @@ def handlerChicas(address, *args):
             print("voy a tratar de mostrar una respuesta")
             # buscar respuestas correspondientes
             preguntaActual = preguntas[args[0]]
+            respuestasPosibles = preguntas[args[0]]["respuestas"]
+            print("respuestasPosibles:", respuestasPosibles)
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
 
