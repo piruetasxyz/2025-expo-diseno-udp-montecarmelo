@@ -85,6 +85,7 @@ COMMON_OPTS_1=(
   --video-x "$X1" --video-y "$Y1" --width "$W1" --height "$H1" \
   --fullscreen \
   --play-and-exit \
+  --video-filter=transform --transform-type=0
   -- "$VID1" &
 
 PID1=$!
@@ -94,6 +95,7 @@ PID1=$!
   --video-x "$X2" --video-y "$Y2" --width "$W2" --height "$H2" \
   --fullscreen \
   --play-and-exit \
+  --video-filter=transform --transform-type=0
   -- "$VID2" &
 
 PID2=$!
