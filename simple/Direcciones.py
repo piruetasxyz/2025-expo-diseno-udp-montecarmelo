@@ -34,7 +34,7 @@ direcciones = {
         "eje": 1,
         "tipoPantalla": 2,
         "numero": 2,
-        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit --video-filter=transform --transform-type=90 '",
+        "comandoPrefijo": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit --video-filter=transform --transform-type=270 '",
         "comandoSufijo": ".mp4'",
         "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
