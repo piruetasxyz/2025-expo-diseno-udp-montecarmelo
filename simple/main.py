@@ -423,6 +423,8 @@ def handlerChicas(address, *args):
 
 def handlerMedianas1Horizontal(address, *args):
     print(address)
+    # prints args
+    print("args:", args)
     if address.startswith("/medianas/horizontal/mostrarPreguntas/"):
         print("args[0]:" + str(args[0]))
         print("args[1]:" + str(args[1]))
