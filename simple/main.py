@@ -66,8 +66,10 @@ def random_subfolder(path):
 
 def random_file_in_folder(folder_path):
     # Get all files (ignore subfolders)
+
+    # Get all files that don't start with "._"
     files = [f for f in os.listdir(folder_path)
-             if os.path.isfile(os.path.join(folder_path, f))]
+             if not f.startswith("._") and os.path.isfile(os.path.join(folder_path, f))]
 
     if not files:
         raise ValueError("No files found in the folder.")
