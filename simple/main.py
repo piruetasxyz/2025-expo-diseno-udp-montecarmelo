@@ -187,6 +187,8 @@ def iniciar(ip):
             # enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
             # choose random number between 1 and 21
             pregunta1 = random.randint(1, 21)
+            enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
+            enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
             enviarMensajeTodos("/medianas/horizontal/mostrarPreguntas/", pregunta1, clientes)
             time.sleep(10 * pizca)
             # 020s = 00m20s
