@@ -19,7 +19,7 @@ from Direcciones import direcciones
 
 # variables globales
 clientes = []
-pizca = 1.01
+pizca = 1.0001
 probabilidadRespuesta = 1.0
 
 generativas = {
@@ -434,8 +434,8 @@ def handlerChicas(address, *args):
             # pathRespuestaAleatoria = "/home/" + os.getlogin() + "/respuestas/" + respuestaAleatoria + ".mp4"
             # OTRA PANA
             pathRespuestaAleatoria = random_file_in_folder("/home/" + os.getlogin() + "/respuestas/")
-            print("respuestasPosiblesDelEje:", respuestasPosibles)
-            print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
+            # print("respuestasPosiblesDelEje:", respuestasPosibles)
+            # print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
             # comando para osSystem
             # elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria   
             archivo = random_file_in_folder("/home/" + os.getlogin() + "/respuestas/")
