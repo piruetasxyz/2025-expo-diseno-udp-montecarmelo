@@ -54,7 +54,7 @@ direcciones = {
         "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
         "comandoTexto": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
-        "comandoSufijoTexto": "'.mov'",
+        "comandoSufijoTexto": ".mov'",
     },
     "192.168.1.21": {
         "descripcion": "eje 2 chica 1",
@@ -111,7 +111,7 @@ direcciones = {
         "comandoGenerativa": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
         "comandoSufijoGenerativa": ".mov'",
         "comandoTexto": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
-        "comandoSufijoTexto": "'.mov'",
+        "comandoSufijoTexto": ".mov'",
     },
     "192.168.1.31": {
         "descripcion": "eje 3 chica 1",
