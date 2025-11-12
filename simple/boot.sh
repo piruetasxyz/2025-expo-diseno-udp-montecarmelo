@@ -2,6 +2,17 @@
 
 sleep 10
 
+# Wait until PCManFM-Qt (desktop manager) is running
+while ! pgrep -x "pcmanfm-qt" > /dev/null; do
+  sleep 1
+done
+
+# Give it an extra second to finish loading the desktop
+sleep 2
+
+# Set the desktop color to black
+pcmanfm-qt --set-wallpaper-color "#000000"
+
 # CONFIGURATION
 WIFI_NAME="TP-Link_A9A4"
 TARGET_DIR="$HOME/2025-expo-diseno-udp-montecarmelo/simple"
