@@ -94,7 +94,7 @@ def iniciar(ip):
     if direcciones[ip]["eje"] == 0:
         clientes = []
         for direccion in direcciones.keys():
-            if (direccion["eje"] != 0):
+            if (direcciones[direccion]["eje"] != 0):
                 print("agregarClientes con ip: " + direccion)
                 clientes.append(SimpleUDPClient(direccion, 1234))
         print(clientes)
