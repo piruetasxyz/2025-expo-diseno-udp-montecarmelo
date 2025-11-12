@@ -18,7 +18,7 @@ y pegar esto ahí
 [Desktop Entry]
 Type=Application
 Name=Boot Script
-Exec=bash -c "pcmanfm-qt --set-wallpaper-color '#000000'; sleep 10; lxterminal -e $HOME/2025-expo-diseno-udp-montecarmelo/simple/boot.sh"
+Exec=bash -c "sleep 10 && lxterminal -e $HOME/2025-expo-diseno-udp-montecarmelo/simple/boot.sh"
 X-GNOME-Autostart-enabled=true
 ```
 
