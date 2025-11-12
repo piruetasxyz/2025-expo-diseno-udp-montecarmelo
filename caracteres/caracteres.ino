@@ -19,7 +19,7 @@
 // pantalla 3 tiene soldada A1
 // pantalla 4 tiene soldada A2
 
-const int eje = 1;
+const int eje = 3;
 const int numeroArduino = 2;
 
 const uint8_t direccion1 = 0x27;
