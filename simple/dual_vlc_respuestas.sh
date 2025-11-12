@@ -70,7 +70,7 @@ COMMON_OPTS_0=(
   --no-embedded-video
   --no-one-instance
   --quiet
-  --video-filter=transform --transform-type=270
+  --video-filter=transform --transform-type=180
 
 )
 
