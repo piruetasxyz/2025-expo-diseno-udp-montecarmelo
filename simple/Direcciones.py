@@ -186,7 +186,7 @@ direcciones = {
         "numero": 0
     },
     "192.168.1.52": {
-        "descripcion": "192.168.1.52",
+        "descripcion": "macbook mateo",
         "eje": 0,
         "tipoPantalla": 0,
         "numero": 0
