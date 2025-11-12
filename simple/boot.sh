@@ -1,8 +1,10 @@
 #!/bin/bash
 
+sleep 10
+
 # CONFIGURATION
 WIFI_NAME="TP-LINK_A9A4"
-TARGET_DIR="$HOME/2025-expo-diseno-udp-montecarmelo"
+TARGET_DIR="$HOME/2025-expo-diseno-udp-montecarmelo/simple"
 PYTHON_SCRIPT="main.py"
 SCRIPT1="dual_vlc_generativas.sh"
 SCRIPT2="dual_vlc_respuestas.sh"
@@ -13,9 +15,10 @@ echo "Waiting to connect to WiFi: $WIFI_NAME ..."
 while true; do
     CURRENT_WIFI=$(iwgetid -r)
     if [ "$CURRENT_WIFI" == "$WIFI_NAME" ]; then
-        echo "Connected to $WIFI_NAME!"
+        echo "success, connected to $WIFI_NAME!"
         break
     else
+        echo "Currently connected to: $CURRENT_WIFI. Retrying in 5 seconds..."
         sleep 5
     fi
 done
