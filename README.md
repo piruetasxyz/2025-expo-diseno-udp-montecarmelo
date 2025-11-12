@@ -1,5 +1,30 @@
 # 2025-expo-diseno-udp-montecarmelo
 
+en toda raspberry pi del proyecto hacer estos dos pasos:
+
+```bash
+mkdir -p ~/.config/autostart
+```
+
+luego
+
+```bash
+nano ~/.config/autostart/boot.desktop
+```
+
+y pegar esto ahí
+
+```bash
+[Desktop Entry]
+Type=Application
+Name=Boot Script
+Exec=bash -c "pcmanfm-qt --set-wallpaper-color '#000000'; sleep 10; lxterminal -e $HOME/2025-expo-diseno-udp-montecarmelo/simple/boot.sh"
+X-GNOME-Autostart-enabled=true
+```
+
+para grabar `ctrl+o`
+para salir `ctrl+x`
+
 ## Índice
 
 - [Contenidos en general](#contenidos-en-general)
