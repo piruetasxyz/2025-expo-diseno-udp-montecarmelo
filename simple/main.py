@@ -195,7 +195,7 @@ def iniciar(ip):
             time.sleep(10 * pizca)
             # 020s = 00m20s
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
-            
+            nviarMensajeTodos("/grandes/mostrarTextos/", 1, clientes)
             time.sleep(10 * pizca)
             # 030s = 00m30s
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
@@ -510,7 +510,7 @@ def handlerGrandes(address, *args):
         elif address.startswith("/grandes/mostrarTextos/"):
             print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
             esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"]
-            print("esteCOMANDOGRANDE", )
+            print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
             os.system(comando)
 
     # else:
