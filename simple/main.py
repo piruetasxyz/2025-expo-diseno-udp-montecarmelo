@@ -121,7 +121,6 @@ def activate_venv(principal=False):
     if principal:
         venv_path = "/Users/" + os.getlogin() + "/github/2025-expo-diseno-udp-montecarmelo/simple/env"
     else:
-
         venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
     # Determine Python version
     python_version = f"python{sys.version_info.major}.{sys.version_info.minor}"
@@ -165,7 +164,7 @@ def iniciar(ip):
     if direcciones[ip]["eje"] == 0:
         clientes = []
         for direccion in direcciones.keys():
-            if (direccion["eje" != 0]):
+            if (direccion["eje"] != 0):
                 print("agregarClientes con ip: " + direccion)
                 clientes.append(SimpleUDPClient(direccion, 1234))
         print(clientes)
@@ -496,7 +495,9 @@ def handlerMedianas2Vertical(address, *args):
 # pantallas grandes, son 3, una por eje
 def handlerGrandes(address, *args):
     print(address)
-    if address.startswith("/grandes/mostrarGenerativas/"):
+    if address.startswith("/macbook/reboot/"):
+        os.system("sudo reboot")
+    elif address.startswith("/grandes/mostrarGenerativas/"):
         print("llega un mensaje a grande")
         if address.startswith("/grandes/mostrarGenerativas/"):
             region = args[0]
