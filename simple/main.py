@@ -507,11 +507,11 @@ def handlerGrandes(address, *args):
             archivo = random_file_in_folder(subCarpeta)
             # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
             os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
-        elif address.startswith("/grandes/mostrarTextos/"):
-            print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
-            esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"]
-            print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
-            os.system(comando)
+    elif address.startswith("/grandes/mostrarTextos/"):
+        print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
+        esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"]
+        print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
+        os.system(comando)
 
     # else:
         # print("mensaje no reconocido en grande")
