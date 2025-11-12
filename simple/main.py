@@ -439,7 +439,7 @@ def handlerChicas(address, *args):
             # comando para osSystem
             # elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria   
             archivo = random_file_in_folder("/home/" + os.getlogin() + "/respuestas/")
-            elCOMANDO = './dual_vlc_generativas.sh ' + archivo + ' ' + archivo
+            elCOMANDO = './dual_vlc_respuestas.sh ' + archivo + ' ' + archivo
             print("elCOMANDO:", elCOMANDO)
             os.system(elCOMANDO)
             # if (preguntas[args[0]]["respuestas"]):
