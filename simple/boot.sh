@@ -3,7 +3,7 @@
 # sleep for a sec
 sleep 10
 
-amixer sset 'Master' 80% unmute
+amixer sset 'Master' 40% unmute
 amixer sset 'Headphone' 100% unmute
 amixer sset 'PCM' 20%
 
