@@ -395,7 +395,6 @@ def iniciar(ip):
 
     # si eres raspi con pantalla, haz esto otro
     else:
-        print("dispatcher!")
         dispatcher = Dispatcher()
 
         # si eres pantalla chica
@@ -548,7 +547,6 @@ if miIP in direcciones.keys() and direcciones[miIP]["eje"] == 0:
         print("error", e)
 else:
     try:
-        print("no soy principal")
         activate_venv()
     except Exception as e:
         print("error", e)
@@ -559,7 +557,6 @@ else:
 
 
 if (miIP in direcciones.keys()):
-    print("mi direccion esta en el diccionario de direcciones")
     print("soy: " + str(direcciones[miIP]["descripcion"]))
     iniciar(miIP)
 
