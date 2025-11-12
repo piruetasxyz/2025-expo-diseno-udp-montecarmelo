@@ -517,7 +517,7 @@ def handlerGrandes(address, *args):
         # print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
         archivoTexto = random_file_in_folder("/home/" + os.getlogin() + "/textos/")
         
-        esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + archivoTexto
+        esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + archivoTexto + "'"
 
         print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
         os.system(esteCOMANDOGRANDE)
