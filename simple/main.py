@@ -420,7 +420,9 @@ def iniciar(ip):
 
 def handlerChicas(address, *args):
     print(address)
-    if address.startswith("/chicas/mostrarRespuestas/"):
+    if address.startswith("/macbook/reboot/"):
+        os.system("sudo reboot")
+    elif address.startswith("/chicas/mostrarRespuestas/"):
         # randomizar
         # if (random.random() < probabilidadRespuesta):
         if True:
@@ -460,7 +462,9 @@ def handlerMedianas1Horizontal(address, *args):
     print(address)
     # prints args
     print("args:", args)
-    if address.startswith("/medianas/horizontal/mostrarPreguntas/"):
+    if address.startswith("/macbook/reboot/"):
+        os.system("sudo reboot")
+    elif address.startswith("/medianas/horizontal/mostrarPreguntas/"):
         #  pad it with one 0 if its less than 10
         num = str(args[0]).zfill(2)
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/preguntas/" + num + ".mp4'"
@@ -478,7 +482,9 @@ def handlerMedianas1Horizontal(address, *args):
 
 def handlerMedianas2Vertical(address, *args):
     print(address)
-    if address.startswith("/medianas/vertical/mostrarEjes/"):
+    if address.startswith("/macbook/reboot/"):
+        os.system("sudo reboot")
+    elif address.startswith("/medianas/vertical/mostrarEjes/"):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
         print(comando)
         os.system(comando)
