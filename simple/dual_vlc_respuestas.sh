@@ -79,7 +79,6 @@ COMMON_OPTS_1=(
   --no-one-instance
   --quiet
   --no-audio
-  --no-video-filter
   --no-video-filter=transform --video-filter transform --transform-type=90
 )
 
