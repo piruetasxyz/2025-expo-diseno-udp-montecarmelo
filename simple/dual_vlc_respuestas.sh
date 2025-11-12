@@ -39,7 +39,7 @@ readarray -t MONS < <(xrandr --listactivemonitors | tail -n +2)
 if [[ ${#MONS[@]} -lt 2 ]]; then
   echo "Error: fewer than 2 active monitors detected."
   xrandr --listactivemonitors
-  exit 4
+  # exit 4
 fi
 
 parse_geom() {
