@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# CONFIGURATION
+WIFI_NAME="TP-LINK_A9A4"
+TARGET_DIR="$HOME/2025-expo-diseno-udp-montecarmelo"
+PYTHON_SCRIPT="main.py"
+SCRIPT1="dual_vlc_generativas.sh"
+SCRIPT2="dual_vlc_respuestas.sh"
+TERMINAL_CMD="lxterminal"
+
+# --- Wait until connected to the correct WiFi ---
+echo "Waiting to connect to WiFi: $WIFI_NAME ..."
+while true; do
+    CURRENT_WIFI=$(iwgetid -r)
+    if [ "$CURRENT_WIFI" == "$WIFI_NAME" ]; then
+        echo "Connected to $WIFI_NAME!"
+        break
+    else
+        sleep 5
+    fi
+done
+
+# --- Open a new terminal and run commands inside it ---
+$TERMINAL_CMD -e "bash -c '
+    echo Connected. Starting update...
+    cd \"$TARGET_DIR\" || exit 1
+    echo Pulling latest changes from git...
+    git pull
+
+    echo Setting execute permissions...
+    chmod +x \"$SCRIPT1\" \"$SCRIPT2\"
+
+    echo Running Python script...
+    python3 \"$PYTHON_SCRIPT\"
+
+    echo Done.
+    exec bash
+'"
