@@ -515,7 +515,10 @@ def handlerGrandes(address, *args):
             os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
     elif address.startswith("/grandes/mostrarTextos/"):
         # print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
-        esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + "/home/" + os.getlogin() + "/textos/texto-1" + direcciones[miIP]["comandoSufijoTexto"]
+        archivoTexto = random_file_in_folder("/home/" + os.getlogin() + "/textos/")
+        
+        esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + archivoTexto
+
         print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
         os.system(esteCOMANDOGRANDE)
 
