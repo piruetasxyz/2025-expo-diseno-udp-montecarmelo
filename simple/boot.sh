@@ -5,7 +5,7 @@ sleep 10
 
 amixer sset 'Master' 100% unmute
 amixer sset 'Headphone' 100% unmute
-amixer sset 'PCM' 70%
+amixer sset 'PCM' 40%
 
 # Set the desktop color to black
 pcmanfm --set-wallpaper-mode color --set-wallpaper '#000000'
