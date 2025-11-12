@@ -79,7 +79,7 @@ COMMON_OPTS_1=(
   --no-one-instance
   --quiet
   --no-audio
-  --video-filter=transform --transform-type=270
+  --video-filter=transform --transform-type=180
 )
 
 # Launch first video on monitor 1
