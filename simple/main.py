@@ -195,7 +195,6 @@ def iniciar(ip):
             time.sleep(10 * pizca)
             # 020s = 00m20s
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
-            nviarMensajeTodos("/grandes/mostrarTextos/", 1, clientes)
             time.sleep(10 * pizca)
             # 030s = 00m30s
             enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
