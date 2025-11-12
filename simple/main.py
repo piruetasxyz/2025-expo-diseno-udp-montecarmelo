@@ -168,7 +168,7 @@ def iniciar(ip):
                 print("agregarClientes con ip: " + direccion)
                 clientes.append(SimpleUDPClient(direccion, 1234))
         print(clientes)
-        # enviarMensajeTodos("/admin/init/", 1, clientes)
+        enviarMensajeTodos("/admin/init/", 1, clientes)
         # enviarMensajeTodos("/medianas/vertical/mostrarEjes/", 1, clientes)
         # pausa de 2 segundos antes de empezar el cicllo
         time.sleep(2 * pizca)
@@ -420,7 +420,9 @@ def iniciar(ip):
 
 def handlerChicas(address, *args):
     print(address)
-    if address.startswith("/macbook/reboot/"):
+    if address.startswith("/admin/init/"):
+        subprocess.run(["pkill", "-9", "vlc"])
+    elif address.startswith("/macbook/reboot/"):
         os.system("sudo reboot")
     elif address.startswith("/chicas/mostrarRespuestas/"):
         # randomizar
@@ -462,7 +464,9 @@ def handlerMedianas1Horizontal(address, *args):
     print(address)
     # prints args
     print("args:", args)
-    if address.startswith("/macbook/reboot/"):
+    if address.startswith("/admin/init/"):
+        subprocess.run(["pkill", "-9", "vlc"])
+    elif address.startswith("/macbook/reboot/"):
         os.system("sudo reboot")
     elif address.startswith("/medianas/horizontal/mostrarPreguntas/"):
         #  pad it with one 0 if its less than 10
@@ -482,7 +486,9 @@ def handlerMedianas1Horizontal(address, *args):
 
 def handlerMedianas2Vertical(address, *args):
     print(address)
-    if address.startswith("/macbook/reboot/"):
+    if address.startswith("/admin/init/"):
+        subprocess.run(["pkill", "-9", "vlc"])
+    elif address.startswith("/macbook/reboot/"):
         os.system("sudo reboot")
     elif address.startswith("/medianas/vertical/mostrarEjes/"):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
@@ -501,7 +507,9 @@ def handlerMedianas2Vertical(address, *args):
 # pantallas grandes, son 3, una por eje
 def handlerGrandes(address, *args):
     print(address)
-    if address.startswith("/macbook/reboot/"):
+    if address.startswith("/admin/init/"):
+        subprocess.run(["pkill", "-9", "vlc"])
+    elif address.startswith("/macbook/reboot/"):
         os.system("sudo reboot")
     elif address.startswith("/grandes/mostrarGenerativas/"):
         print("llega un mensaje a grande")
