@@ -444,6 +444,7 @@ def handlerChicas(address, *args):
             archivo = random_file_in_folder("/home/" + os.getlogin() + "/respuestas/")
             elCOMANDO = './dual_vlc_respuestas.sh ' + archivo + ' ' + archivo
             print("elCOMANDO:", elCOMANDO)
+            subprocess.run(["pkill", "-9", "vlc"])
             os.system(elCOMANDO)
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
@@ -455,6 +456,7 @@ def handlerChicas(address, *args):
         print("subcarpeta: " + subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
         print("archivo: " + archivo)
+        subprocess.run(["pkill", "-9", "vlc"])
         os.system('./dual_vlc_generativas.sh ' + archivo + ' ' + archivo)
         # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
         # os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
@@ -481,6 +483,7 @@ def handlerMedianas1Horizontal(address, *args):
         # print(subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
         print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        subprocess.run(["pkill", "-9", "vlc"])
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
@@ -493,6 +496,7 @@ def handlerMedianas2Vertical(address, *args):
     elif address.startswith("/medianas/vertical/mostrarEjes/"):
         comando = direcciones[miIP]["comandoPrefijo"] + "/home/" + os.getlogin() + "/ejes/eje" + str(direcciones[miIP]["eje"]) + ".mp4'"
         print(comando)
+        subprocess.run(["pkill", "-9", "vlc"])
         os.system(comando)
     elif address.startswith("/medianas/mostrarGenerativas/"):
         region = args[0]
@@ -501,6 +505,7 @@ def handlerMedianas2Vertical(address, *args):
         # print(subCarpeta)
         archivo = random_file_in_folder(subCarpeta)
         print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+        subprocess.run(["pkill", "-9", "vlc"])
         os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
 
 
@@ -520,6 +525,7 @@ def handlerGrandes(address, *args):
             print(subCarpeta)
             archivo = random_file_in_folder(subCarpeta)
             # print(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
+            subprocess.run(["pkill", "-9", "vlc"])
             os.system(direcciones[miIP]["comandoGenerativa"] + archivo + "'")
     elif address.startswith("/grandes/mostrarTextos/"):
         # print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
@@ -530,16 +536,6 @@ def handlerGrandes(address, *args):
         print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
         os.system(esteCOMANDOGRANDE)
 
-    # else:
-        # print("mensaje no reconocido en grande")
-    # if address.startswith("/mostrarGenerativas/"):
-    #     subCarpeta = None
-
-# while obtenerNetwork() != "TP-LINK_A9A4":
-#     print("no estoy en la red TP-LINK_A9A4, esperando...")
-#     print(len(obtenerNetwork()))
-#     print(len("TP-LINK_A9A4"))
-#     time.sleep(5)
 
 miIP = obtenerIP()
 print("mi IP es: " + str(obtenerIP()))
