@@ -198,12 +198,11 @@ def iniciar(ip):
             
             time.sleep(10 * pizca)
             # 030s = 00m30s
-            
+            enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
             time.sleep(10 * pizca)
             # 040s = 00m40s
-            
-            enviarMensajeTodos("/chicas/mostrarRespuestas/",
-             pregunta1, clientes)
+            enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
+            enviarMensajeTodos("/chicas/mostrarRespuestas/", pregunta1, clientes)
             time.sleep(10 * pizca)
             # 050s = 00m50s
             
@@ -439,8 +438,9 @@ def handlerChicas(address, *args):
             print("respuestasPosiblesDelEje:", respuestasPosibles)
             print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
             # comando para osSystem
-            elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
-            # elCOMANDO = './dual_vlc_generativas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
+            # elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria   
+            archivo = "/home/" + os.getlogin() + "/respuestas/" + "001" + ".mp4"
+            elCOMANDO = './dual_vlc_generativas.sh ' + archivo + ' ' + archivo
             print("elCOMANDO:", elCOMANDO)
             os.system(elCOMANDO)
             # if (preguntas[args[0]]["respuestas"]):
