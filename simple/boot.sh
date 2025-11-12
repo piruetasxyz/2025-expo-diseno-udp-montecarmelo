@@ -34,7 +34,7 @@ $TERMINAL_CMD -e "bash -c '
     chmod +x \"$SCRIPT1\" \"$SCRIPT2\"
 
     echo Running Python script...
-    source $HOME/2025-expo-diseno-udp-montecarmelo/simple/env/bin/activate
+    source env/bin/activate
     python3 \"$PYTHON_SCRIPT\"
 
     echo Done.
