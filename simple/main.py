@@ -439,7 +439,9 @@ def handlerChicas(address, *args):
             print("respuestasPosiblesDelEje:", respuestasPosibles)
             print("pathRespuestaAleatoria:", pathRespuestaAleatoria)
             # comando para osSystem
-            elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
+            # elCOMANDO = './dual_vlc_respuestas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
+            elCOMANDO = './dual_vlc_generativas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
+            dual_vlc_generativas
             print("elCOMANDO:", elCOMANDO)
             os.system(elCOMANDO)
    
