@@ -443,7 +443,6 @@ def handlerChicas(address, *args):
             # elCOMANDO = './dual_vlc_generativas.sh ' + pathRespuestaAleatoria + ' ' + pathRespuestaAleatoria
             print("elCOMANDO:", elCOMANDO)
             os.system(elCOMANDO)
-   
             # if (preguntas[args[0]]["respuestas"]):
             # respuestasPosibles = preguntas[args[0]]["respuestas"]
 
