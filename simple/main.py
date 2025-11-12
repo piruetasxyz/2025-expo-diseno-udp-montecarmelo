@@ -511,7 +511,7 @@ def handlerGrandes(address, *args):
         print(direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"])
         esteCOMANDOGRANDE = direcciones[miIP]["comandoTexto"] + "texto-1" + direcciones[miIP]["comandoSufijoTexto"]
         print("esteCOMANDOGRANDE", esteCOMANDOGRANDE)
-        os.system(comando)
+        os.system(esteCOMANDOGRANDE)
 
     # else:
         # print("mensaje no reconocido en grande")
