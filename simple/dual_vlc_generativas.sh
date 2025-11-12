@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dual_vlc_preguntas.sh — Play two videos on two different displays with two VLC instances (Raspberry Pi / Linux, X11)
+# dual_vlc_generativas.sh — Play two videos on two different displays with two VLC instances (Raspberry Pi / Linux, X11)
 
 set -euo pipefail
 

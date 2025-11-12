@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dual_vlc_respuestas.sh — Play two videos on two different displays with two VLC instances (Raspberry Pi / Linux, X11)
+# dual_vlc_preguntas.sh — Play two videos on two different displays with two VLC instances (Raspberry Pi / Linux, X11)
 
 set -euo pipefail
 
@@ -70,6 +70,7 @@ COMMON_OPTS_0=(
   --no-embedded-video
   --no-one-instance
   --quiet
+  --video-filter=transform --transform-type=0
 )
 
 COMMON_OPTS_1=(
@@ -77,7 +78,8 @@ COMMON_OPTS_1=(
   --no-embedded-video
   --no-one-instance
   --quiet
-  --no-audio  
+  --no-audio
+  --video-filter=transform --transform-type=0
 )
 
 # Launch first video on monitor 1
@@ -85,7 +87,6 @@ COMMON_OPTS_1=(
   --video-x "$X1" --video-y "$Y1" --width "$W1" --height "$H1" \
   --fullscreen \
   --play-and-exit \
-  --video-filter=transform --transform-type=0
   -- "$VID1" &
 
 PID1=$!
@@ -95,7 +96,6 @@ PID1=$!
   --video-x "$X2" --video-y "$Y2" --width "$W2" --height "$H2" \
   --fullscreen \
   --play-and-exit \
-  --video-filter=transform --transform-type=0
   -- "$VID2" &
 
 PID2=$!
