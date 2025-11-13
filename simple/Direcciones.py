@@ -172,6 +172,13 @@ direcciones = {
         "comandoTexto": "vlc --fullscreen --no-video-deco --qt-minimal-view --no-sub-autodetect-file --no-video-title-show --play-and-exit '",
         "comandoSufijoTexto": ".mov'",
     },
+    "192.168.1.40": {
+        "tipo": "dev",
+        "descripcion": "principal",
+        "eje": 0,
+        "tipoPantalla": 0,
+        "numero": 0
+    },
     "192.168.1.50": {
         "tipo": "dev",
         "descripcion": "macbook aaron",
@@ -197,7 +204,7 @@ direcciones = {
         "tipoPantalla": 0,
         "numero": 0
     },
-        "192.168.1.54": {
+    "192.168.1.54": {
         "descripcion": "celular aaon",
         "eje": 0,
         "tipoPantalla": 0,

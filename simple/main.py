@@ -114,14 +114,12 @@ def enviarMensaje(cliente, etiqueta, valor):
     cliente.send_message(etiqueta, valor)
 
 
-def activate_venv(principal=False):
+def activate_venv():
 
     venv_path = None
 
-    if principal:
-        venv_path = "/Users/" + os.getlogin() + "/github/2025-expo-diseno-udp-montecarmelo/simple/env"
-    else:
-        venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
+
+    venv_path = "/home/" + os.getlogin() + "/2025-expo-diseno-udp-montecarmelo/simple/env"
     # Determine Python version
     python_version = f"python{sys.version_info.major}.{sys.version_info.minor}"
 
@@ -505,7 +503,7 @@ print("mi IP es: " + str(obtenerIP()))
 if miIP in direcciones.keys() and direcciones[miIP]["eje"] == 0:
     try:
         print("soy principal")
-        activate_venv(principal=True)
+        activate_venv()
     except Exception as e:
         print("error", e)
 else:
