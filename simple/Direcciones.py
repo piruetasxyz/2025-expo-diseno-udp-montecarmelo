@@ -197,4 +197,10 @@ direcciones = {
         "tipoPantalla": 0,
         "numero": 0
     },
+        "192.168.1.54": {
+        "descripcion": "celular aaon",
+        "eje": 0,
+        "tipoPantalla": 0,
+        "numero": 0
+    },
 }
