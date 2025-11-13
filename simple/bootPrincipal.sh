@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # sleep for a while
-sleep 30
+sleep 10
 
 # Set the desktop color to black
 pcmanfm --set-wallpaper-mode color --set-wallpaper '#000000'
@@ -24,6 +24,9 @@ while true; do
         sleep 5
     fi
 done
+
+# esperar 30 segundos a que todo se prenda
+sleep 30
 
 # --- Open a new terminal and run commands inside it ---
 $TERMINAL_CMD -e "bash -c '
